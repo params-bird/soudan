@@ -59,3 +59,7 @@ gem "jquery-rails"
 gem 'carrierwave'
 gem 'gretel'
 gem 'seed-fu'
+gem 'devise-bootstrap-views'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+gem 'rb-readline'
