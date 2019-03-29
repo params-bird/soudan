@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Avater:</strong>
+  <%= @user.avater %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @user.category.name %>
+</p>
+
+<%= link_to 'Edit', edit_user_registration_path(@user) %> |
+<%= link_to 'Back', root_path %>
