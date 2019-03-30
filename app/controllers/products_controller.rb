@@ -2,35 +2,36 @@ class ProductsController < ApplicationController
   before_action :set_form_data, only: [:new, :edit]
 
   def new
-    @products = Product.new
+    @product = Product.new
+    1.times { @product.images.build }
   end
 
   def create
-    @products = Product.new(products_params)
-    if @products.save
+    @product = Product.new(products_params)
+    if @product.save
       redirect_to root_path
       flash[:success] = "出品が完了しました"
     else
-      redirect_to new_product_path
+      render :new
       flash[:danger] = "必須項目をすべて選択してください"
     end
   end
 
   def edit
-    @products = Product.find_by(id: params[:id])
-    @category = @products.category
+    @product = Product.find_by(id: params[:id])
+    @category = @product.category
   end
 
   def update
     product = Product.find_by(id: params[:id])
     Product.update(update_product_params) if user.id == current_user.id
-    @products = Product.find_by(id: params[:id])
-    @category = @products.category
+    @product = Product.find_by(id: params[:id])
+    @category = @product.category
   end
 
   def destroy
-    @products = Product.find(params[:id])
-    @products.destroy if user_id == current_user.id
+    @product = Product.find(params[:id])
+    @product.destroy if user_id == current_user.id
     redirect_to root_path, notice: '作品を削除しました'
   end
 
@@ -41,7 +42,7 @@ class ProductsController < ApplicationController
 
   private
   def products_params
-    params.require(:product).permit(:category_id, :name, :introduction, images_attributes: [:image_path]).merge(user_id: current_user.id)
+    params.require(:product).permit(:category_id, :name, :introduction,  images_attributes: [:image_path]).merge(user_id: current_user.id)
   end
 
 

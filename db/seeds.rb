@@ -13,7 +13,7 @@ Product.create!(
 
 #Imageモデル
 Image.create!(
-  image: "", product_id: "1",
+  image_path: "", product_id: "1",
 )
 #Campanyモデル
 Campany.create!(

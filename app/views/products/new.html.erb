@@ -1,6 +1,6 @@
 <h2>作品投稿</h2>
 
-<%= form_for(@products) do |f| %>
+<%= form_for @product do |f| %>
 
   <div class="field">
     <%= f.label "作品名" %><br />
@@ -14,7 +14,10 @@
 
   <div class="field">
     <%= f.label "作品画像" %><br />
-    <%= f.file_field :image, autocomplete: "off" %>
+        <%# <%= f.file_field :images %> %>
+    <%= f.fields_for :images do |image| %>
+      <%= image.file_field :image_path, multipart: :true %>
+      <% end %>
   </div>
 
   <div class="field">
