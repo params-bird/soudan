@@ -14,6 +14,15 @@ Rails.application.routes.draw do
     sessions:      'campanies/sessions',
   }
 
+  devise_scope :user do
+    get '/users/sign_out' => 'users/sessions#destroy'
+  end
+
+  devise_scope :campany do
+    get '/campanies/sign_out' => 'campanies/sessions#destroy'
+  end
+
+
   root 'users#show'
   resources :products
   # resources :campanies

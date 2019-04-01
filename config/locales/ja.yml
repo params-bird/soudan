@@ -210,16 +210,4 @@ ja:
     errors:
       verification_failed: 'reCAPTCHA認証に失敗しました。'
 
-  enums:
-    product:
-      condition:
-        unused: 新品、未使用
-        near_to_unused: 未使用に近い
-        no_dirt: 目立った傷や汚れなし
-        bit_dirt: やや傷や汚れあり
-        dirt: 傷や汚れあり
-        bad: 全体的に状態が悪い
-      date:
-        oneday_twoday: 1~2日で発送
-        twoday_threeday: 2~3日で発送
-        fourday_sevenday: 4~7日で発送
+
