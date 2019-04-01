@@ -5,10 +5,14 @@
   <%= @user.name %>
 </p>
 
-<p>
+<%
+=begin%>
+ <p>
   <strong>Avater:</strong>
   <%= @user.avater %>
 </p>
+<%
+=end%>
 
 <%= link_to 'Edit', edit_user_registration_path(@user) %> |
 <%= link_to 'Back', root_path %>

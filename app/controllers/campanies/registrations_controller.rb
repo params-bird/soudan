@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
-class Users::RegistrationsController < Devise::RegistrationsController
+class Campanies::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
   before_action :set_form_data, only: [:new, :edit]
+
   # GET /resource/sign_up
-  def new
-    super
-  end
+  # def new
+  #   super
+  # end
 
   # POST /resource
   # def create
@@ -15,9 +16,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # GET /resource/edit
-  def edit
-    super
-  end
+  # def edit
+  #   super
+  # end
 
   # PUT /resource
   # def update
@@ -39,18 +40,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   protected
-  def set_form_data
-    @category = Category.all
-  end
-
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :category_id])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:campany_name, :campany_logo, :category_id, :campany_url, :email, :tel, :staff_name, :staff_first_name, :staff_last_name_kana, :staff_first_name_kana])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :avater, :category_id])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:campany_name, :campany_logo, :category_id, :campany_url, :email, :tel, :staff_last_name_kana, :staff_first_name_kana])
+  end
+
+  def set_form_data
+    @category = Category.all
   end
 
   # The path used after sign up.

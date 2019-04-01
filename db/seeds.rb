@@ -17,7 +17,7 @@ Image.create!(
 )
 #Campanyモデル
 Campany.create!(
-  campany_name: 'Aデザインオフィス', category_id: "1", campany_url: 'http://www.abc.co.jp', email: 'abc@test.com', tel: '09012345678', staff_last_name_kana: 'モンキーD', staff_first_name_kana: 'ルフィー',
+  name: 'Aデザインオフィス', category_id: "1", campany_url: 'http://www.abc.co.jp', email: 'abc@test.com', tel: '09012345678', staff_last_name_kana: 'モンキー', staff_first_name_kana: 'ルフィー', password: '111111', password_confirmation: '111111'
   )
 
 Offer.create!(

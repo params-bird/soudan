@@ -4,23 +4,8 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label "ニックネーム" %><br />
-    <%= f.text_field :name, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label "アイコン" %><br />
-    <%= f.file_field :avater, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label "ジャンル" %><br />
-    <%= f.collection_select :category_id, @category, :id, :name, {prompt: "選択してください"}%>
-  </div>
-
-  <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "off" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
