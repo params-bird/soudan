@@ -1,6 +1,12 @@
 class ProductsController < ApplicationController
   before_action :set_form_data, only: [:new, :edit]
 
+def show
+  @product = Product.find(current_user.id)
+  @like = Like.new
+end
+
+
   def new
     @product = Product.new
     1.times { @product.images.build }

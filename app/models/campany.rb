@@ -1,13 +1,8 @@
 class Campany < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
 
-  has_many :likes
-  has_many :funs
-  has_many :masseges
-  has_many :offers
+  belongs_to :user
 
   validates :campany_url, presence: true, format: { with: /\A#{URI::regexp(%w(http https))}\z/, message: '入力に誤りがあります。' }
 

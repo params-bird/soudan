@@ -1,0 +1,63 @@
+<h2><%= t('.sign_up') %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label "会社名" %><br />
+    <%= f.text_field :name, autocomplete: "off" %>
+  </div>
+
+  <%= f.fields_for :campany do |campany| %>
+    <div class="field">
+      <%= campany.label "会社URL" %><br />
+      <%= campany.text_field :campany_url, autocomplete: "off" %>
+    </div>
+
+    <div class="field">
+      <%= campany.label :tel %><br />
+      <%= campany.telephone_field :tel, autocomplete: "off" %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "カテゴリー" %><br />
+    <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "選択してください"}%>
+  </div>
+
+  <%= f.fields_for :campany do |campany| %>
+    <div class="field">
+      <%= campany.label "ご担当者様　姓（カナ）" %><br />
+      <%= campany.text_field :staff_last_name_kana, autocomplete: "off" %>
+    </div>
+
+    <div class="field">
+      <%= campany.label "ご担当者様　名（カナ）" %><br />
+      <%= campany.text_field :staff_first_name_kana, autocomplete: "off" %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit t('.sign_up')%>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

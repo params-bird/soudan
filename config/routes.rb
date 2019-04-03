@@ -7,25 +7,22 @@ Rails.application.routes.draw do
   sessions:      'users/sessions',
   }
 
-  devise_for :campanies, controllers: {
-    confirmations: 'ampanies/confirmations',
-    passwords:     'campanies/passwords',
-    registrations: 'campanies/registrations',
-    sessions:      'campanies/sessions',
-  }
-
   devise_scope :user do
     get '/users/sign_out' => 'users/sessions#destroy'
+    get '/campany/sign_up' => 'users/registrations#campany' ,as: :new_campany
+    post'/campany' => 'users/registrations#create'
   end
 
-  devise_scope :campany do
-    get '/campanies/sign_out' => 'campanies/sessions#destroy'
+  resources :users do
+    member do
+      get :following, :followers
+    end
   end
-
 
   root 'users#show'
-  resources :products
-  # resources :campanies
-  # resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :products do
+    resources :likes, only: [:create, :destroy]
+  end
+
+  resources :funs, only: [:create, :destroy]
 end

@@ -1,9 +1,34 @@
 <p id="notice"><%= notice %></p>
 
+<h1>ユーザー詳細ページ</h1>
+<h3><%= @user.name %></h3>
+<h2>投稿内容</h2>
+<% @user.products.each do |product| %>
+  <a href="#<%= product.user.id %>"><%= product.introduction %></a>
+  <hr>
+<% end %>
+<h3>いいねしている投稿</h3>
+<% @user.liked_products.each do |product| %>
+  <%= product.user.name %>
+  <%= product.introduction %>
+<% end %>
+<%= link_to "ユーザー一覧へ", users_path %>
+<%= link_to "ホームへ戻る", products_path %>
+
 <p>
   <strong>Name:</strong>
-  <%= @user.name %>
+    <%= @user.name %>
+
 </p>
+
+ <%
+=begin%>
+ <section class="stats">
+  <%= render 'shared/stats' %>
+  <%= render 'follow_form' if user_signed_in? %>
+</section>
+<%
+=end%>
 
 <%
 =begin%>

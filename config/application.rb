@@ -11,5 +11,6 @@ module Portfolio
       g.helper false
       g.test_framework false
     end
+    config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end
