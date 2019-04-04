@@ -22,3 +22,16 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+- 基本機能
+  - devise ユーザー登録
+    - User
+    - Campany (Userの子モデルとしてCampanyテーブルに同時登録)
+    - ユーザー登録の際にカテゴリー選択できる様にseedファイル作成済み
+  -投稿機能
+  - いいね機能
+    - UserがUserのproductionに対していいねできる
+  - フォロー機能実装
+    - UserがUserのproductionに対していいねできる
+  - メッセージ機能
+    - UserがUsernにDMを送れる。モデルはRoom、Entery(中間テーブル)、Message

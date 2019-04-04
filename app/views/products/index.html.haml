@@ -1,0 +1,18 @@
+%h1 いいねサンプル
+- if user_signed_in?
+  = link_to "ログアウト", destroy_user_session_path, :method => :delete
+  = link_to "マイページへ", user_path(current_user.id)
+  = link_to "ユーザー一覧へ", root_path
+  %h2 投稿する
+  = form_for @product do |f|
+    = f.text_field :name
+    = f.submit
+  %hr/
+  %h2 投稿一覧
+  - @products.each do |product|
+    %a{:href => "/users/#{product.user.id}"}= product.user.email
+    %a{:href => "/posts/#{product.id}"}= product.content
+    (#{product.liked_users.count})
+- else
+  = link_to "ユーザー登録", new_user_registration_path
+  = link_to "ログイン", new_user_session_path
