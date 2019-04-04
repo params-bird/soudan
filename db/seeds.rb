@@ -4,36 +4,60 @@ fashion, neil, hair, architecture, space, interior, furniture, lighting, product
 ])
 #Userモデル
 User.create!([
-  {name: 'Aさん', email: 'a@test.com', password: '111111', category_id: "1"},
-  {name: 'ABCデザインオフィス', email: 'b@test.com', password: '111111', category_id: "1"}
+  {name: 'デザイン太郎', email: 'a@test.com', password: '111111', category_id: "6",},
+  {name: 'デザイン次郎', email: 'b@test.com', password: '111111', category_id: "6",},
+  {name: 'デザイン三郎', email: 'c@test.com', password: '111111', category_id: "6",},
+  {name: ' 大成建設事務所', email: 'shimizu@test.com', password: '111111', category_id: "6",},
+  {name: ' 竹中インテリアオフィス', email: 'takenaka@test.com', password: '111111', category_id: "5",},
 ])
 
-Product.create!(
-  user_id: '1', category_id: '1', name: "美の巨匠", introduction: "歴史に残る名作",
-)
+Product.create!([
+  {user_id: '1', category_id: '6', name: "椅子をデザインしました！", introduction: "心地よい椅子",},
+  {user_id: '1', category_id: '6', name: "こんな椅子はどうですか？", introduction: "観賞用椅子",},
+  {user_id: '2', category_id: '5', name: "プログラマー向けにデザインしました", introduction: "疲れない椅子",},
+  {user_id: '3', category_id: '5', name: "こんな空間あったらいいな", introduction: "心地よい空間",},
+])
 
 #Imageモデル
 Image.create!(
   image_path: "", product_id: "1",
 )
 #Campanyモデル
-Campany.create!(
-  user_id: '2', staff_last_name_kana: 'モンキー', staff_first_name_kana: 'ルフィー', campany_url: 'http://www.abc.co.jp', tel: '09012345678', campany_logo: '',
-)
+Campany.create!([
+  {user_id: '4', staff_last_name_kana: 'タケナカ', staff_first_name_kana: 'ナオト', campany_url: 'http://www.takenaka.test', tel: '09012341234', campany_logo: '',},
+  {user_id: '5', staff_last_name_kana: 'シミズ', staff_first_name_kana: 'イチロウ', campany_url: 'http://www.shimizu.test', tel: '08056785678', campany_logo: '',},
+])
 
-Offer.create!(
-  campany_id: "1", offer_massege: '社員１名募集中',
-)
-
-Massege.create!(
-  user_id: '1', campany_id: '1', massege: '良い作品',
-)
-
-Like.create!(
-  user_id: '1', product_id: '1',
-)
+Like.create!([
+  {user_id: '2', product_id: '1',},
+  {user_id: '5', product_id: '1',},
+  {user_id: '5', product_id: '2',},
+])
 
 #Funモデル
 Fun.create!([
-  {follower_id: '1', followed_id: '2'},
+  {follower_id: '5', followed_id: '1'},
+])
+
+# Roomモデル　DMメッセージ　個々の部屋番号　ーーーーーーーーーーー〜
+Room.create!([
+  {name: '1'},
+  {name: '2'},
+])
+
+# Entryモデル　DMメッセージ　個々の部屋番号　ーーーーーーーーーーー〜
+Entry.create!([
+  {user_id: '5', room_id: '1'},
+  {user_id: '1', room_id: '1'},
+  {user_id: '4', room_id: '2'},
+  {user_id: '1', room_id: '2'},
+])
+
+# Messageモデル　誰がどの部屋で何をコメントしたか　ーーーーーーーーーーー〜
+Message.create!([
+  {user_id: '4', room_id: '1', content: 'デザイン太郎さん、はじめまして。'},
+  {user_id: '1', room_id: '1', content: '大成建設事務所さん、コメントありがとうございます。'},
+  {user_id: '5', room_id: '2', content: 'デザイン太郎さん、はじめまして。'},
+  {user_id: '1', room_id: '2', content: '竹中インテリアオフィスさん、コメントありがとうございます。'},
+  {user_id: '5', room_id: '2', content: '月曜日に面接可能ですか？'},
 ])

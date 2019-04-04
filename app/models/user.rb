@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :products, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_products, through: :likes, source: :product
+  has_many :messages, dependent: :destroy
+  has_many :entries, dependent: :destroy
 
   # userモデルの中でcampanyモデルへも同時書き込み　ーーーーーーーーー
   has_one :campany, inverse_of: :user
@@ -18,7 +20,6 @@ class User < ApplicationRecord
   has_many :passive_funs, class_name: "Fun",
   foreign_key: "follower_id",
   dependent: :destroy
-  has_many :masseges
 
    # ユーザーをフォローする
    def follow(other_user)

@@ -1,16 +1,34 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  # before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
   def index
     @users = User.all
   end
-
   # GET /users/1
   # GET /users/1.json
   def show
+    @user=User.find(params[:id])
+    @current_user_entry=Entry.where(user_id: current_user.id)
+    @user_entry=Entry.where(user_id: @user.id)
+    if @user.id == current_user.id
+    else
+      @current_user_entry.each do |cu|
+        @user_entry.each do |u|
+          if cu.room_id == u.room_id then
+            @is_room = true
+            @room_id = cu.room_id
+          end
+        end
+      end
+      if @is_room
+      else
+        @room = Room.new
+        @entry = Entry.new
+      end
+    end
   end
 
   # GET /users/new
@@ -63,9 +81,9 @@ class UsersController < ApplicationController
   end
 
   private
-    def set_user
-        @user = User.find(current_user.id)
-    end
+    # def set_user
+    #     @user = User.find(current_user.id)
+    # end
 
 
     # Never trust parameters from the scary internet, only allow the white list through.

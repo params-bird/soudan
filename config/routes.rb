@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'users#index'
+
   devise_for :users, controllers: {
   confirmations: 'users/confirmations',
   passwords:     'users/passwords',
@@ -19,10 +21,12 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'users#show'
   resources :products do
     resources :likes, only: [:create, :destroy]
   end
 
   resources :funs, only: [:create, :destroy]
+  resources :messages, only: [:create]
+  resources :rooms, only: [:create, :show, :index]
+
 end

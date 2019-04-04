@@ -12,6 +12,28 @@
   <%= product.user.name %>
   <%= product.introduction %>
 <% end %>
+
+    <p><a href="/rooms">受信BOXへ</a>
+
+
+<%# ------------------------------------------------ %>
+
+<% if @user.id == current_user.id %>
+
+<% else %>
+  <% if @is_room == true %>
+    <p><a href="/rooms/<%= @room_id %>">チャットへ</a>
+    <% else %>
+    <%= form_for @room do |f| %>
+      <%= fields_for @entry do |e| %>
+        <%= e.hidden_field :user_id, value: @user.id %>
+      <% end %>
+      <%= f.submit "チャットを始める" %>
+    <% end %>
+  <% end %>
+<% end %>
+
+
 <%= link_to "ユーザー一覧へ", users_path %>
 <%= link_to "ホームへ戻る", products_path %>
 

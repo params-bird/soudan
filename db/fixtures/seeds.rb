@@ -4,12 +4,11 @@ fashion, neil, hair, architecture, space, interior, furniture, lighting, product
 ])
 #Userモデル
 User.create!([
-  {name: 'a-designer', email: 'a@test.com', password: '111111', category_id: "1"},
-  {name: 'b-designer', email: 'b@test.com', password: '111111', category_id: "1"}
+  {name: 'ケンイチ', email: 'ken@test.com', password: '111111', category_id: "1"}, {name: 'ABCデザインオフィス', email: 'b@t.com', password: '111111', category_id: "2"}
 ])
 
 Product.create!(
-  user_id: "1", category_id: "1", name: "美の巨匠", introduction: "歴史に残る名作",
+  user_id: '1', category_id: '1', name: "美の巨匠", introduction: "歴史に残る名作",
 )
 
 #Imageモデル
@@ -18,22 +17,14 @@ Image.create!(
 )
 #Campanyモデル
 Campany.create!(
-  user_id: "1", staff_last_name_kana: 'モンキー', staff_first_name_kana: 'ルフィー', campany_url: 'http://www.abc.co.jp', tel: '09012345678', campany_logo: '',
-)
-
-Offer.create!(
-  campany_id: "1", offer_massege: '社員１名募集中',
-)
-
-Massege.create!(
-  user_id: '1', campany_id: '1', massege: '良い作品',
+  user_id: '2', staff_last_name_kana: 'モンキー', staff_first_name_kana: 'ルフィー', campany_url: 'http://www.abc.co.jp', tel: '09012345678', campany_logo: '',
 )
 
 Like.create!(
-  liker_id: '1', liked_id: '1',
+  user_id: '1', product_id: '1',
 )
 
 #Funモデル
-Fun.create!([
+Fun.create!(
   {follower_id: '1', followed_id: '2'},
-])
+)
