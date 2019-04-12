@@ -14,9 +14,9 @@ ActiveRecord::Schema.define(version: 20190403080750) do
 
   create_table "campanies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id"
-    t.string "staff_last_name_kana"
-    t.string "staff_first_name_kana"
-    t.string "campany_url"
+    t.string "staff_last_name_kana", null: false
+    t.string "staff_first_name_kana", null: false
+    t.string "campany_url", null: false
     t.bigint "tel"
     t.binary "campany_logo"
     t.datetime "created_at", null: false
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20190403080750) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
+    t.binary "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -66,7 +67,7 @@ ActiveRecord::Schema.define(version: 20190403080750) do
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
     t.bigint "room_id"
-    t.text "content"
+    t.text "content", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["room_id"], name: "index_messages_on_room_id"
@@ -76,8 +77,8 @@ ActiveRecord::Schema.define(version: 20190403080750) do
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
     t.integer "category_id"
-    t.string "name"
-    t.string "introduction"
+    t.string "name", null: false
+    t.string "introduction", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_products_on_user_id"
@@ -90,9 +91,9 @@ ActiveRecord::Schema.define(version: 20190403080750) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
+    t.string "name", null: false
     t.binary "avater"
-    t.integer "category_id"
+    t.integer "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false

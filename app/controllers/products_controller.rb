@@ -14,13 +14,13 @@ end
 
   def create
     @product = Product.new(products_params)
-    if @product.save
-      redirect_to root_path
-      flash[:success] = "出品が完了しました"
-    else
-      render :new
-      flash[:danger] = "必須項目をすべて選択してください"
-    end
+    # if @product.save
+    #   redirect_to root_path
+    #   flash[:success] = "出品が完了しました"
+    # else
+    #   render :new
+    #   flash[:danger] = "必須項目をすべて選択してください"
+    # end
   end
 
   def edit

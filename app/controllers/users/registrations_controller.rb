@@ -28,7 +28,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up,
-      keys: [:name, :category_id, campany_attributes: [:campany_name, :campany_logo, :category_id, :campany_url, :tel, :staff_last_name_kana, :staff_first_name_kana]])
+      keys: [:name,  :avater, :category_id, campany_attributes: [:campany_name, :campany_logo, :category_id, :campany_url, :tel, :staff_last_name_kana, :staff_first_name_kana]])
   end
 
   # If you have extra params to permit, append them to the sanitizer.

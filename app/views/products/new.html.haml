@@ -11,8 +11,7 @@
   .field
     = f.label "作品画像"
     %br/
-    \%&gt;
-    \#{f.fields_for :images do |image|}
+    = f.fields_for :images do |image|
       = image.file_field :image_path, multipart: :true
   .field
     = f.label "作品紹介"

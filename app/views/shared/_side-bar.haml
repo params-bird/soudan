@@ -1,0 +1,29 @@
+.side-bar
+  .side-bar__user-avater
+    = image_tag @user.avater
+  .side-bar__user-name
+    = @user.name
+    .space-y-sm2
+  - if @user.id == current_user.id
+    .side-bar_other-info
+      %a{href: user_rooms_path(current_user)} 受信BOX
+    .side-bar_other-info
+      %a{:href => "/users/#{current_user.id}"} マイページ
+    - if params[:controller] == 'users' && params[:action] == 'show'
+      .side-bar_other-info
+        %a{href: products_user_path} 投稿一覧
+  - else
+    .side-bar_dm
+      - if @user.id == current_user.id
+      - else
+        - if @is_room == true
+          %a.dm-btn{href: user_room_path(user_id: current_user.id, id: @room_id)} チャットへ
+        - else
+          = form_for @room do |f|
+            = fields_for @entry do |e|
+              = e.hidden_field :user_id, value: @user.id
+            = f.submit "メッセージを送る", class:"dm-btn"
+    .side-bar_other-info
+    .side-bar_other-info
+      投稿一覧
+  .space-y-sm2

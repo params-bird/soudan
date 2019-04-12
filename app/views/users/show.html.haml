@@ -1,37 +1,26 @@
-%p#notice= notice
+.breadcrumbs-header-contener
+  .breadcrumbs-header
+    - breadcrumb :user_show
+    = breadcrumbs separator: " &nbsp;&nbsp;&#12297;&nbsp; "
+
+.main-body
+  .message-page
+    = render "shared/side-bar"
+
+  .message-page-right
+    .message-container
+
 %h1 ユーザー詳細ページ
+
 %h3= @user.name
-%h2 投稿内容
-- @user.products.each do |product|
-  %a{href: "##{product.user.id}"}= product.introduction
-  %hr/
+
+
 %h3 いいねしている投稿
 - @user.liked_products.each do |product|
   = product.user.name
   = product.introduction
-%p
-  %a{href: "/rooms"} 受信BOXへ
-  - if @user.id == current_user.id
-  - else
-    - if @is_room == true
-      %p
-        %a{href: "/rooms/#{@room_id}"} チャットへ
-    - else
-      = form_for @room do |f|
-        = fields_for @entry do |e|
-          = e.hidden_field :user_id, value: @user.id
-        = f.submit "チャットを始める"
-  = link_to "ユーザー一覧へ", users_path
-  = link_to "ホームへ戻る", products_path
-%p
-  %strong Name:
-  = @user.name
-%section.stats
-  -# = render 'shared/stats'
-  -# = render 'follow_form' if user_signed_in?
-%p
-  %strong Avater:
-  = @user.avater
+
+
 = link_to 'Edit', edit_user_registration_path(@user)
 |
 = link_to 'Back', root_path

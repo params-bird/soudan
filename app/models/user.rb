@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :liked_products, through: :likes, source: :product
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
+  # has_many :rooms, through: :entries
+  mount_uploader :avater, ImageUploader
 
   # userモデルの中でcampanyモデルへも同時書き込み　ーーーーーーーーー
   has_one :campany, inverse_of: :user

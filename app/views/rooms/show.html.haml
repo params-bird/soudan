@@ -1,27 +1,100 @@
-%h1 DM
-%h4 参加者
-- @entries.each do |e|
-  %h5
-    %strong
-      %a{:href => "/users/#{e.user.id}"}
-        = e.user.name
-        さん
-%hr/
-- if @messages.present?
-  - @messages.each do |m|
-    %strong= m.content
-    %small
-      by
-      %strong
-        %a{:href => "/users/#{m.user_id}"}
-          = m.user.name
-          さん
-    %hr/
-- else
-  %h3.text-center メッセージはまだありません
-= form_for @message do |f|
-  = f.text_area :content, placeholder: "メッセージを入力して下さい" , size: 70
-  = f.hidden_field :room_id, value: @room.id
-  %br/
-  = f.submit "投稿する"
-= link_to "ユーザー一覧に戻る", users_path
+.breadcrumbs-header-contener
+  .breadcrumbs-header
+    - breadcrumb :message_room, @user
+    = breadcrumbs separator: " &nbsp;&nbsp;&#12297;&nbsp; "
+
+
+
+.main-body
+  .message-page
+    = render "shared/side-bar"
+    .message-page-right
+      .message-container
+        -# .message-container__inner-left
+          -# .message-container__user-avater
+            -# = image_tag current_user.avater
+        .message-container__inner-right
+          .message-container__input-message
+            = form_for @message do |f|
+              = f.text_area :content, placeholder: "メッセージを入力して下さい" , class: "message-input-area", "turbolinks": false
+              = f.hidden_field :room_id, value: @room.id
+              = f.submit "送信", class: "message-btn"
+      - @messages.each do |m|
+        .message-container__message-box
+          .message-box__left
+            .message-box__avater
+              = image_tag m.user.avater
+          .message-box__right
+            .message-box__info
+              .message-box__send-user-name
+                %strong
+                %a{:href => "/users/#{m.user_id}"}
+                  = m.user.name
+              .message-box__send-time
+                %p 送信日：
+                = l(m.created_at, format: :long)
+            .message
+              = m.content
+-# %h1 DM
+-# %h4 参加者
+-# - @entries.each do |e|
+-#   %h5
+-#     %strong
+-#       %a{:href => "/users/#{e.user.id}"}
+-#         = e.user.name
+-#         さん
+-# %hr/
+-# - if @messages.present?
+-#   - @messages.each do |m|
+-#     %strong= m.content
+-#     %small
+-#       by
+-#       %strong
+-#         %a{:href => "/users/#{m.user_id}"}
+-#           = m.user.name
+-#           さん
+-#     %hr/
+-# - else
+-#   %h3.text-center メッセージはまだありません
+-# = form_for @message do |f|
+-#   = f.text_area :content, placeholder: "メッセージを入力して下さい" , size: 70
+-#   = f.hidden_field :room_id, value: @room.id
+-#   %br/
+-#   = f.submit "投稿する"
+-# = link_to "ユーザー一覧に戻る", users_path
+
+
+
+
+
+
+
+
+
+-# %h1 DM
+-# %h4 参加者
+-# - @entries.each do |e|
+-#   %h5
+-#     %strong
+-#       %a{:href => "/users/#{e.user.id}"}
+-#         = e.user.name
+-#         さん
+-# %hr/
+-# - if @messages.present?
+-#   - @messages.each do |m|
+-#     %strong= m.content
+-#     %small
+-#       by
+-#       %strong
+-#         %a{:href => "/users/#{m.user_id}"}
+-#           = m.user.name
+-#           さん
+-#     %hr/
+-# - else
+-#   %h3.text-center メッセージはまだありません
+-# = form_for @message do |f|
+-#   = f.text_area :content, placeholder: "メッセージを入力して下さい" , size: 70
+-#   = f.hidden_field :room_id, value: @room.id
+-#   %br/
+-#   = f.submit "投稿する"
+-# = link_to "ユーザー一覧に戻る", users_path

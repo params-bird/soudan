@@ -1,0 +1,17 @@
+.main-body
+  .message-page
+    = render "shared/side-bar"
+
+  .message-page-right
+    .message-container
+      %h2 #{@user.name}さん投稿一覧
+
+      - @user.products.each do |product|
+        %a{href: "##{product.user.id}"}= product.introduction
+        %hr/
+
+
+      %h3 いいねしている投稿
+      - @user.liked_products.each do |product|
+        = product.user.name
+        = product.introduction

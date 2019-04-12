@@ -1,16 +1,17 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
-  # before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :user_products_index]
 
   # GET /users
   # GET /users.json
   def index
+    @user = User.new
     @users = User.all
   end
   # GET /users/1
   # GET /users/1.json
   def show
-    @user=User.find(params[:id])
+    # @user=User.find(params[:id])
     @current_user_entry=Entry.where(user_id: current_user.id)
     @user_entry=Entry.where(user_id: @user.id)
     if @user.id == current_user.id
@@ -80,10 +81,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def user_products_index
+    @user=User.find(params[:id])
+  end
+
+
   private
-    # def set_user
-    #     @user = User.find(current_user.id)
-    # end
+    def set_user
+        @user = User.find(params[:id])
+    end
 
 
     # Never trust parameters from the scary internet, only allow the white list through.

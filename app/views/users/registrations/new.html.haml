@@ -1,29 +1,56 @@
-%h2= t('.sign_up')
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label "ニックネーム"
-    %br/
-    = f.text_field :name, autofocus: true, autocomplete: "off"
-  .field
-    = f.label "ジャンル"
-    %br/
-    = f.collection_select :category_id, @category, :id, :name, {prompt: "選択してください"}
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "off"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .actions
-    = f.submit t('.sign_up')
-= render "devise/shared/links"
+.space-y-sm4
+.main-body
+  .page
+    .registration-box
+      -# .ragistration-box__header
+      .registration-box__bottom
+        .label-box
+          .space-y-sm2
+          %p メールアドレスで新規登録
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = render "devise/shared/error_messages", resource: resource
+            .space-y-sm2
+            .label-box__inner
+              = f.label "ニックネーム"
+              %br/
+              = f.text_field :name, autofocus: true, autocomplete: "off", placeholder: "", class:"input-default"
+            .label-box__inner
+              = f.label "プロフィール写真"
+              %br/
+              .input-default
+                = f.file_field :avater, multipart: :true
+            .label-box__inner
+              = f.label "ジャンル"
+              %br/
+              = f.collection_select :category_id, @category, :id, :name, {prompt: "選択してください"}, class:"input-default"
+            .label-box__inner
+              = f.label :email
+              %br/
+              = f.email_field :email, autofocus: true, autocomplete: "off", placeholder: "例）abc@design.com",class:"input-default"
+            .label-box__inner
+              = f.label :password
+              %br/
+              = f.password_field :password, autocomplete: "off", placeholder: "半角英数字６文字以上", class:"input-default"
+            .label-box__inner
+              = f.label :password_confirmation
+              %br/
+              = f.password_field :password_confirmation, autocomplete: "off", class:"input-default"
+            .label-box__inner
+            .label-box__inner
+              = f.submit t('.sign_up'), class:"input-default"
+            .label-box__inner
+        .sns-registration-container
+          .space-y-sm2
+          %p SNSで新規登録
+          .space-y-sm4
+          %label LINE登録
+          .btn-sm
+          .space-y-sm4
+          %label Twitter登録
+          .btn-sm
+          .space-y-sm4
+          %label Google登録
+          .btn-sm
+          .space-y-sm4
+          %p アカウントを作成することにより、利用規約およびプライバシーポリシーに同意されたものとさせていただきます。
+= render "shared/footer"

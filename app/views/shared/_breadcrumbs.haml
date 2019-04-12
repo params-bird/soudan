@@ -1,0 +1,22 @@
+.breadcrumbs-header-contener
+  .breadcrumbs-header
+
+    - if params[:controller] == 'users' && params[:action] == 'show'
+      - breadcrumb 'users_show', @user
+
+    - elsif params[:controller] == 'rooms' && params[:action] == 'index'
+      - breadcrumb 'mail_box', @user
+
+    - elsif params[:controller] == 'rooms' && params[:action] == 'show'
+      - breadcrumb 'message_room', @user
+
+    -# - elsif params[:controller] == 'products' && params[:action] == 'search'
+    -#   - breadcrumb 'search'.to_sym
+
+    -# - elsif params[:controller] == 'users/registrations' && params[:action] == 'edit'
+    -#   - breadcrumb 'users_edit'.to_sym
+
+    -# - elsif params[:controller] == 'users' && params[:action] == 'logout'
+    -#   - breadcrumb 'logout'.to_sym
+
+    = breadcrumbs separator: " &nbsp;&nbsp;&#12297;&nbsp; "

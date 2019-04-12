@@ -1,5 +1,69 @@
-.abc {
+.main-body_container{
+  border: solid #808000;
+  height: 300px;
+  width: 100%;
+}
+
+.inner-item{
   position: absolute;
-  left: 30px;
-  top: 30px;
+  background-color: burlywood;
+  height: 400px;
+  min-width: 744px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.post-btn{
+  @include btn-sm;
+}
+
+.scroll-wrap{
+  padding: 20px;
+  padding: 20px;
+  width: 100%;
+  margin: auto;
+}
+
+
+.scroll-list {
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  height: 200px;
+}
+
+.scroll-item {
+  /* 横スクロール用 */
+  display: inline-block;
+  white-space:normal;
+  width: 200px;
+  height: 100%;
+  position: relative;
+  &_image{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    cursor: pointer;
+  }
+  &_title{
+    position: absolute;
+    bottom: 3px;
+    left: 25px;
+    height: 10%;
+    width: 80%;
+    padding: 0% 10%;
+    margin: auto;
+    background-color: gray;
+    opacity: 0.6;
+    -webkit-filter: blur(8px);
+  }
+  .p{
+    bottom: 2px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    color: white;
+  }
 }

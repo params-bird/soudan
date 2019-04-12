@@ -1,14 +1,30 @@
-# Category
-fashion, neil, hair, architecture, space, interior, furniture, lighting, product, car, jewelry, goods, character, graphic, ceramics, food = Category.create!([
-  {name: "ファッションデザイン"}, {name: "ネイルデザイン"}, {name: "ヘアデザイン"}, {name: "建築デザイン"}, {name: "空間デザイン"}, {name: "インテリアデザイン"}, {name: "家具デザイン"}, {name: "照明デザイン"}, {name: "プロダクトデザイン"}, {name: "カーデザイン"}, {name: "ジュエリーデザイン"}, {name: "雑貨デザイン"}, {name: "キャラクターデザイン"}, {name: "グラフィックデザイン"}, {name: "陶芸"}, {name: "フード"}, {name: "アート"}, {name: "その他デザイン・アート"}
+
+Category.create!([
+  {name: "ファッションデザイン", image: open("#{Rails.root}/db/fixtures/images/1.jpg")},
+  {name: "ネイルデザイン", image: open("#{Rails.root}/db/fixtures/images/2.jpg")},
+  {name: "ヘアデザイン", image: open("#{Rails.root}/db/fixtures/images/3.jpg")},
+  {name: "建築デザイン", image: open("#{Rails.root}/db/fixtures/images/4.jpg")},
+  # {name: "空間デザイン", image: open("#{Rails.root}/db/fixtures/images/5.jpg")},
+  {name: "インテリアデザイン", image: open("#{Rails.root}/db/fixtures/images/6.jpg")},
+  {name: "家具デザイン", image: open("#{Rails.root}/db/fixtures/images/7.jpg")},
+  {name: "照明デザイン", image: open("#{Rails.root}/db/fixtures/images/8.jpg")},
+  {name: "カーデザイン", image: open("#{Rails.root}/db/fixtures/images/10.jpg")},
+  {name: "ジュエリーデザイン", image: open("#{Rails.root}/db/fixtures/images/11.jpg")},
+  {name: "キャラクターデザイン", image: open("#{Rails.root}/db/fixtures/images/13.jpg")},
+  {name: "グラフィックデザイン", image: open("#{Rails.root}/db/fixtures/images/14.jpg")},
+  {name: "陶芸", image: open("#{Rails.root}/db/fixtures/images/15.jpg")},
+  {name: "フード", image: open("#{Rails.root}/db/fixtures/images/16.jpg")},
+  {name: "アート", image: open("#{Rails.root}/db/fixtures/images/17.jpg")},
+  {name: "その他デザイン・アート", image: open("#{Rails.root}/db/fixtures/images/18.jpg")},
 ])
+
 #Userモデル
 User.create!([
-  {name: 'デザイン太郎', email: 'a@test.com', password: '111111', category_id: "6",},
-  {name: 'デザイン次郎', email: 'b@test.com', password: '111111', category_id: "6",},
-  {name: 'デザイン三郎', email: 'c@test.com', password: '111111', category_id: "6",},
-  {name: ' 大成建設事務所', email: 'shimizu@test.com', password: '111111', category_id: "6",},
-  {name: ' 竹中インテリアオフィス', email: 'takenaka@test.com', password: '111111', category_id: "5",},
+  {name: 'デザイン太郎', avater: open("#{Rails.root}/db/fixtures/images/users/1.png"), email: 'a@test.com', password: '111111', category_id: "6",},
+  {name: 'デザイン次郎', avater: open("#{Rails.root}/db/fixtures/images/users/2.png"), email: 'b@test.com', password: '111111', category_id: "6",},
+  {name: 'デザイン三郎', avater: open("#{Rails.root}/db/fixtures/images/users/3.png"), email: 'c@test.com', password: '111111', category_id: "6",},
+  {name: ' 大成建設事務所', avater: open("#{Rails.root}/db/fixtures/images/users/4.png"), email: 'shimizu@test.com', password: '111111', category_id: "6",},
+  {name: ' 竹中インテリアオフィス', avater: open("#{Rails.root}/db/fixtures/images/users/5.png"), email: 'takenaka@test.com', password: '111111', category_id: "5",},
 ])
 
 Product.create!([
@@ -47,9 +63,9 @@ Room.create!([
 
 # Entryモデル　DMメッセージ　個々の部屋番号　ーーーーーーーーーーー〜
 Entry.create!([
-  {user_id: '5', room_id: '1'},
+  {user_id: '4', room_id: '1'},
   {user_id: '1', room_id: '1'},
-  {user_id: '4', room_id: '2'},
+  {user_id: '5', room_id: '2'},
   {user_id: '1', room_id: '2'},
 ])
 
