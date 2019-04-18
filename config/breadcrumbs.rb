@@ -6,27 +6,50 @@ end
 #   link 'ログアウト', logout_users_path
 # end
 
-
-# ユーザ一覧ページヘのパンくずリスト
+# マイページ ーーーーーーーーーーーーーー
 crumb :user_show do
-  link "マイページ"
-  parent :root
+  if params[:controller] == 'users' && params[:action] == 'show'
+    @user = User.find(params[:id])
+    unless @user.id == current_user.id
+      link "#{@user.name}さん", user_path(@user.id)
+    else
+      link "マイページ", user_path(current_user.id)
+    parent :root
+    end
+  else
+    link "マイページ", user_path(current_user.id)
+    parent :root
+  end
 end
+# ーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 crumb :room_index do
-  link '受信BOX', user_rooms_path((current_user))
+  link '受信BOX', user_rooms_path(current_user)
   parent :user_show
 end
 
 crumb :message_room do
-  link 'チャットルーム', user_room_path
+  # 1件しかレコードが入っていないことはわかってるので、配列からfirstで取り出しハッシュ形式に変わる。これをしないと配列に入った値をeachで取り出さないといけない
+  @room_id = Entry.where(room_id: params[:id]).where.not(user_id: current_user.id).first
+  @reception_user = User.find(@room_id.user_id)
+  link "#{@reception_user.name}さんとのチャットルーム", user_room_path
   parent :room_index
 end
 
-# crumb :users_edit do
-#   link 'プロフィール', edit_user_registration_path
-#   parent :users_show
-# end
+crumb :user_edit do
+  link 'アカウント情報更新'
+  parent :user_show
+end
+
+crumb :post_product do
+  link '作品投稿'
+  parent :user_show
+end
+
+crumb :product_index do
+  link '投稿一覧'
+  parent :user_show
+end
 
 
 # 検索ページーーーーーーーーーーーーーーーーーーーーーーーー

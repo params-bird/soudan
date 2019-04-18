@@ -1,0 +1,47 @@
+.breadcrumbs-header-contener
+  .breadcrumbs-header
+    - breadcrumb :user_edit
+    = breadcrumbs separator: " &nbsp;&nbsp;&#12297;&nbsp; "
+
+.main-body
+  .message-page
+    = render "shared/side-bar"
+    .page
+      .text-box
+        %h5 アカウント情報更新
+      .registration-box
+        .registration-box-inner
+          .space-y-sm2
+          = form_for(@user) do |f|
+            -# = render "devise/shared/error_messages", resource: resource
+            .label-box__inner
+              = f.label "会社名"
+              %br/
+              = f.text_field :name,  autofocus: true, autocomplete: "off", class:"input-default"
+            = f.fields_for :campany do |campany|
+              .label-box__inner
+                = campany.label "会社URL"
+                %br/
+                = campany.text_field :campany_url, autocomplete: "off", class:"input-default"
+            .label-box__inner
+              = f.label "業種カテゴリー"
+              %br/
+              = f.collection_select :category_id, Category.all, :id, :name, {prompt: "選択してください"}, class:"input-default"
+            = f.fields_for :campany do |campany|
+              .label-box__inner
+                = campany.label "ご担当者様　姓（カナ）"
+                %br/
+                = campany.text_field :staff_last_name_kana, autocomplete: "off", class:"input-default"
+              .label-box__inner
+                = campany.label "ご担当者様　名（カナ）"
+                %br/
+                = campany.text_field :staff_first_name_kana, autocomplete: "off", class:"input-default"
+            .label-box__inner
+              = f.label "ご担当者様　メールアドレス"
+              %br/
+              = f.email_field :email, autocomplete: "off", class:"input-default"
+
+            .space-y-sm3
+            .label-box__inner
+              = f.submit "更新する", class:"input-default"
+          .space-y-sm4

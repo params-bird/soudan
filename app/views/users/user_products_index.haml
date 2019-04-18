@@ -1,17 +1,17 @@
-.main-body
-  .message-page
-    = render "shared/side-bar"
+.breadcrumbs-header-contener
+  .breadcrumbs-header
+    - breadcrumb :product_index
+    = breadcrumbs separator: " &nbsp;&nbsp;&#12297;&nbsp; "
 
-  .message-page-right
-    .message-container
-      %h2 #{@user.name}さん投稿一覧
+.img-main-body
+  .user-products-index
+    = render partial: 'shared/product-show-box', collection: @products, as: :product
 
-      - @user.products.each do |product|
-        %a{href: "##{product.user.id}"}= product.introduction
-        %hr/
+  -# .message-page
+  -#   = render "shared/side-bar"
 
-
-      %h3 いいねしている投稿
-      - @user.liked_products.each do |product|
-        = product.user.name
-        = product.introduction
+.user-likes-products
+  %h3 いいねしている投稿
+  - @user.liked_products.each do |product|
+    = product.user.name
+    = product.introduction

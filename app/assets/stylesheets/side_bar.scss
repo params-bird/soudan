@@ -1,0 +1,99 @@
+.side-bar {
+  width: 30%;
+  margin-right: 3%;
+  &__user-avater {
+    width: 130px;
+    height: 130px;
+    margin: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    &_inner{
+      height: inherit;
+      img {
+        border-radius: 50%;
+        height: inherit;
+      }
+    }
+    #side_avater{
+      width: 130px;
+      height: 130px;
+      margin: auto;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+
+  &__user-name {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+  }
+  &_other-info {
+    height: 50px;
+    width: 50%;
+    margin: auto;
+    padding: 4%;
+    text-align: center;
+    border-block-end: 1px dotted gray;
+  }
+}
+
+.side-bar_btn{
+  .dm-btn{
+    display: flex;
+    width: 150px;
+    margin: auto;
+    justify-content: center;
+    border: 1px solid red;
+    border-radius: 4px;
+    color:  red !important;
+    padding: 5px;
+    height: 3rem;
+  }
+  .dm-btn:hover {
+    background-color: red;
+    color:white !important;
+  }
+  a{
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+  }
+  a:hover {
+    background-color: red;
+    color:white !important;
+  }
+}
+
+
+.mail-box{
+  width: 60%;
+  &__inner{
+  margin-bottom: 30px;
+  border-block-end: 1px solid gray;
+  }
+  &__info {
+    position: relative;
+    padding: 5px 0px 10px 0px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    &__send-user-name {
+      width: 70%;
+      position: absolute;
+      left: 0%;
+      color: royalblue;
+      // text-decoration: underline;
+    }
+    &__send-time {
+      position: absolute;
+      display: flex;
+      right: 1%;
+      font-size: 0.8rem;
+    }
+  }
+  .mail-last-message{
+    line-height: 1.8;
+    font-size: 0.8rem;
+  }
+}

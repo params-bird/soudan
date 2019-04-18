@@ -1,6 +1,6 @@
 .breadcrumbs-header-contener
   .breadcrumbs-header
-    - breadcrumb :message_room, @user
+    - breadcrumb :message_room
     = breadcrumbs separator: " &nbsp;&nbsp;&#12297;&nbsp; "
 
 
@@ -10,13 +10,13 @@
     = render "shared/side-bar"
     .message-page-right
       .message-container
-        -# .message-container__inner-left
-          -# .message-container__user-avater
-            -# = image_tag current_user.avater
+        .message-container__inner-left
+          .message-container__user-avater
+            = image_tag current_user.avater
         .message-container__inner-right
           .message-container__input-message
             = form_for @message do |f|
-              = f.text_area :content, placeholder: "メッセージを入力して下さい" , class: "message-input-area", "turbolinks": false
+              = f.text_area :content, placeholder: "メッセージを入力して下さい" , class: "message-input-area", "turbolinks": false, autocomplete: "off"
               = f.hidden_field :room_id, value: @room.id
               = f.submit "送信", class: "message-btn"
       - @messages.each do |m|
@@ -28,13 +28,12 @@
             .message-box__info
               .message-box__send-user-name
                 %strong
-                %a{:href => "/users/#{m.user_id}"}
                   = m.user.name
               .message-box__send-time
                 %p 送信日：
                 = l(m.created_at, format: :long)
             .message
-              = m.content
+              = simple_format(m.content)
 -# %h1 DM
 -# %h4 参加者
 -# - @entries.each do |e|

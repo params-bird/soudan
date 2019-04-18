@@ -1,0 +1,8 @@
+.product-show-box
+  .product-show-box_img
+    = image_tag product.images[0].image_path_url, id:"box_img"
+  .product-show-box_text
+    .product-show-box_text_title
+      %p #{product.name}
+    .product-show-box_text_introduction
+      %p #{product.introduction}

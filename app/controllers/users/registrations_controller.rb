@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create, :new, :campany]
-  before_action :configure_account_update_params, only: [:update]
-  before_action :set_form_data, only: [:new, :campany, :edit]
+  before_action :configure_account_update_params, only: [:edit, :update]
 
   # 企業の登録フォーム
   def campany
     @user = User.new
     @user.build_campany
   end
+
   # POST /resource
   def create
     super
@@ -16,13 +16,23 @@ class Users::RegistrationsController < Devise::RegistrationsController
     user.save
   end
   # GET /resource/edit
-  def edit
-    super
+
+  # def update
+
+  # end
+
+  def after_sign_up_path_for(resource)
+    user_path(current_user.id)
+  end
+
+  def after_update_path_for(resource)
+    user_path(current_user.id)
   end
 
   protected
-  def set_form_data
-    @category = Category.all
+
+  def set_user
+    @user = User.find(params[:id])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -31,15 +41,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
       keys: [:name,  :avater, :category_id, campany_attributes: [:campany_name, :campany_logo, :category_id, :campany_url, :tel, :staff_last_name_kana, :staff_first_name_kana]])
   end
 
-  # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :avater, :category_id], campany_attributes: [:campany_name, :campany_logo, :category_id, :campany_url, :email, :tel, :staff_last_name_kana, :staff_first_name_kana])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :avater, :category_id, campany_attributes: [:id, :campany_name, :campany_logo, :category_id, :campany_url, :tel, :staff_last_name_kana, :staff_first_name_kana]])
   end
+
 end
-  # PUT /resource
-  # def update
-  #   super
-  # end
 
   # DELETE /resource
   # def destroy

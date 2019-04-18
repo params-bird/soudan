@@ -1,21 +1,68 @@
-%h2 作品投稿
-= form_for @product do |f|
-  .field
-    = f.label "作品名"
-    %br/
-    = f.text_field :name, autofocus: true, autocomplete: "off"
-  .field
-    = f.label "ジャンル"
-    %br/
-    = f.collection_select :category_id, @category, :id, :name, {prompt: "---"}
-  .field
-    = f.label "作品画像"
-    %br/
-    = f.fields_for :images do |image|
-      = image.file_field :image_path, multipart: :true
-  .field
-    = f.label "作品紹介"
-    %br/
-    = f.text_area :introduction, autofocus: true, autocomplete: "off"
-  .actions
-    = f.submit "投稿"
+
+.breadcrumbs-header-contener
+  .breadcrumbs-header
+    - breadcrumb :post_product
+    = breadcrumbs separator: " &nbsp;&nbsp;&#12297;&nbsp; "
+
+.main-body
+  .message-page
+    = render "shared/side-bar"
+    .post-box
+      %h5 作品投稿
+      .post-box_inner
+        .space-y-sm2
+        = form_for @product do |f|
+          .label-box__inner
+            = f.label "作品名"
+            %br/
+            = f.text_field :name, autofocus: true, autocomplete: "off", class:"input-default", id:"name"
+            %br/
+            タイトルを入力してください。
+          .label-box__inner
+            = f.label "ジャンル"
+            %br/
+            = f.collection_select :category_id, @category, :id, :name, {prompt: "---"}, class:"input-default", id:"category"
+          .label-box__inner
+            = f.label "画像"
+          .img_upload
+            .img_upload_wrap
+              .img_upload_wrap__inner
+                #img_field{:onclick => "$('#upicon').click()"}クリックして画像を追加
+                = f.fields_for :images do |image|
+                  = image.file_field :image_path, class: "image", style: "display:none;", id: "upicon", multipart: :true
+
+              .img_upload_wrap__inner
+                #img_field_2{:onclick => "$('#upicon_2').click()"}
+                  %i.fas.fa-image
+                  %i.fas.fa-file-upload.add
+                = f.fields_for :images do |image|
+                  = image.file_field :image_path, class: "image", style: "display:none;", id: "upicon_2", multipart: :true
+
+              .img_upload_wrap__inner
+                #img_field_3{:onclick => "$('#upicon_3').click()"}
+                  %i.fas.fa-image
+                  %i.fas.fa-file-upload.add
+                = f.fields_for :images do |image|
+                  = image.file_field :image_path, class: "image", style: "display:none;", id: "upicon_3", multipart: :true
+
+
+          .label-box__inner
+            = f.label "作品紹介"
+            %br/
+            = f.text_area :introduction, autofocus: true, autocomplete: "off", class: "product_introduction", id:"product_introduction"
+          .label-box__inner
+            = f.submit :投稿, class:"post-btn"
+
+
+        .overlay{:style => "display:none;"}
+          .crop_modal
+          .close_btn
+          .select_icon_btn 決定
+
+
+          = hidden_field_tag "action", params[:action]
+          = hidden_field_tag "route", "products"
+          = hidden_field_tag "idParams", current_user.id
+
+
+

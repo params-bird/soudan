@@ -28,16 +28,31 @@ User.create!([
 ])
 
 Product.create!([
-  {user_id: '1', category_id: '6', name: "椅子をデザインしました！", introduction: "心地よい椅子",},
-  {user_id: '1', category_id: '6', name: "こんな椅子はどうですか？", introduction: "観賞用椅子",},
+  {user_id: '1', category_id: '1', name: "椅子をデザインしました！", introduction: "心地よい椅子",},
+  {user_id: '1', category_id: '1', name: "こんな椅子はどうですか？", introduction: "観賞用椅子",},
+  {user_id: '1', category_id: '1', name: "椅子をデザインしました！", introduction: "心地よい椅子",},
+  {user_id: '1', category_id: '1', name: "こんな椅子はどうですか？", introduction: "観賞用椅子",},
+  {user_id: '1', category_id: '2', name: "椅子をデザインしました！", introduction: "心地よい椅子",},
+  {user_id: '1', category_id: '2', name: "こんな椅子はどうですか？", introduction: "観賞用椅子",},
+  {user_id: '1', category_id: '2', name: "椅子をデザインしました！", introduction: "心地よい椅子",},
+  {user_id: '1', category_id: '2', name: "こんな椅子はどうですか？", introduction: "観賞用椅子",},
   {user_id: '2', category_id: '5', name: "プログラマー向けにデザインしました", introduction: "疲れない椅子",},
   {user_id: '3', category_id: '5', name: "こんな空間あったらいいな", introduction: "心地よい空間",},
 ])
 
 #Imageモデル
-Image.create!(
-  image_path: "", product_id: "1",
-)
+Image.create!([
+  {image_path: open("#{Rails.root}/db/fixtures/images/1.jpg"), product_id: "1",},
+  {image_path: open("#{Rails.root}/db/fixtures/images/1.jpg"), product_id: "1",},
+  {image_path: open("#{Rails.root}/db/fixtures/images/1.jpg"), product_id: "2",},
+  {image_path: open("#{Rails.root}/db/fixtures/images/1.jpg"), product_id: "2",},
+  {image_path: open("#{Rails.root}/db/fixtures/images/1.jpg"), product_id: "3",},
+  {image_path: open("#{Rails.root}/db/fixtures/images/2.jpg"), product_id: "3",},
+  {image_path: open("#{Rails.root}/db/fixtures/images/2.jpg"), product_id: "3",},
+  {image_path: open("#{Rails.root}/db/fixtures/images/3.jpg"), product_id: "4",},
+  {image_path: open("#{Rails.root}/db/fixtures/images/3.jpg"), product_id: "5",},
+  {image_path: open("#{Rails.root}/db/fixtures/images/3.jpg"), product_id: "6",},
+])
 #Campanyモデル
 Campany.create!([
   {user_id: '4', staff_last_name_kana: 'タケナカ', staff_first_name_kana: 'ナオト', campany_url: 'http://www.takenaka.test', tel: '09012341234', campany_logo: '',},
@@ -45,9 +60,9 @@ Campany.create!([
 ])
 
 Like.create!([
+  {user_id: '1', product_id: '1',},
   {user_id: '2', product_id: '1',},
-  {user_id: '5', product_id: '1',},
-  {user_id: '5', product_id: '2',},
+  {user_id: '1', product_id: '2',},
 ])
 
 #Funモデル
@@ -57,23 +72,23 @@ Fun.create!([
 
 # Roomモデル　DMメッセージ　個々の部屋番号　ーーーーーーーーーーー〜
 Room.create!([
-  {name: '1'},
-  {name: '2'},
+  {room_created_user_id: '1', reception_user_id: '2'},
+  {room_created_user_id: '1', reception_user_id: '5'},
 ])
 
 # Entryモデル　DMメッセージ　個々の部屋番号　ーーーーーーーーーーー〜
 Entry.create!([
-  {user_id: '4', room_id: '1'},
   {user_id: '1', room_id: '1'},
-  {user_id: '5', room_id: '2'},
+  {user_id: '2', room_id: '1'},
   {user_id: '1', room_id: '2'},
+  {user_id: '5', room_id: '2'},
 ])
 
 # Messageモデル　誰がどの部屋で何をコメントしたか　ーーーーーーーーーーー〜
 Message.create!([
-  {user_id: '4', room_id: '1', content: 'デザイン太郎さん、はじめまして。'},
-  {user_id: '1', room_id: '1', content: '大成建設事務所さん、コメントありがとうございます。'},
+  {user_id: '1', room_id: '1', content: 'デザイン太郎さん、はじめまして。'},
+  {user_id: '2', room_id: '1', content: 'コメントありがとうございます。'},
   {user_id: '5', room_id: '2', content: 'デザイン太郎さん、はじめまして。'},
-  {user_id: '1', room_id: '2', content: '竹中インテリアオフィスさん、コメントありがとうございます。'},
+  {user_id: '1', room_id: '2', content: 'コメントありがとうございます。'},
   {user_id: '5', room_id: '2', content: '月曜日に面接可能ですか？'},
 ])

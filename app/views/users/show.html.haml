@@ -9,18 +9,3 @@
 
   .message-page-right
     .message-container
-
-%h1 ユーザー詳細ページ
-
-%h3= @user.name
-
-
-%h3 いいねしている投稿
-- @user.liked_products.each do |product|
-  = product.user.name
-  = product.introduction
-
-
-= link_to 'Edit', edit_user_registration_path(@user)
-|
-= link_to 'Back', root_path

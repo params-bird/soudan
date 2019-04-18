@@ -19,6 +19,8 @@ $warning: #ffc107;
 $danger: #dc3545;
 $light: #f8f9fa;
 $dark: #343a40;
+$skyblue: #2cc2e4;
+$madgreen: #00a4bb;
 
 $font-family-sans-serif:
 // Safari for OS X and iOS (San Francisco)
@@ -75,21 +77,31 @@ a {
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  // display: none;
   -webkit-appearance: none;
   -webkit-overflow-scrolling: touch;
 }
 
 img {
   width: inherit;
-  height: inherit;
 }
 
+input, textarea, select{
+  outline: 0;
+}
+
+
+@import 'index';
 @import 'mixin/share';
 @import 'modules/_flash';
-@import 'share-parts';
+@import 'modules/breadcrumbs';
+@import 'share_parts';
 @import 'users';
+@import 'side_bar';
 @import 'campany';
 @import 'rooms';
 @import 'messages';
-@import 'lightslider';
+@import 'products';
+@import 'cropper.min';
+@import 'modules/product-show-box';
+@import 'cropper_castam';

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :user_products_index]
+  before_action :authenticate_user!, only: [:show, :edit, :update, :destroy, :user_products_index]
+  before_action :set_user, only: [:show, :update, :destroy, :user_products_index]
 
   # GET /users
   # GET /users.json
@@ -14,35 +14,25 @@ class UsersController < ApplicationController
     # @user=User.find(params[:id])
     @current_user_entry=Entry.where(user_id: current_user.id)
     @user_entry=Entry.where(user_id: @user.id)
-    if @user.id == current_user.id
+    if @user.id == current_user.id    #ログイン中のユーザーとマイページ所有のユーザーが合致するか
     else
       @current_user_entry.each do |cu|
         @user_entry.each do |u|
-          if cu.room_id == u.room_id then
+          if cu.room_id == u.room_id then   #ログインユーザーとマイページ所有者のチャットルームがあるか確認
             @is_room = true
             @room_id = cu.room_id
           end
         end
       end
-      if @is_room
-      else
+      if @is_room         #値が入っていれば（roomがすでにあれば）
+      else    #値が入っていなければ（roomがなければ）新しいroomインスタンスを作る。
         @room = Room.new
         @entry = Entry.new
       end
     end
   end
 
-  # GET /users/new
-  def new
-    @user = User.new
-  end
 
-  # GET /users/1/edit
-  def edit
-  end
-
-  # POST /users
-  # POST /users.json
   def create
     @user = User.new(user_params)
 
@@ -57,11 +47,16 @@ class UsersController < ApplicationController
     end
   end
 
+  # 企業の更新フォーム
+  def edit_campany
+    @user = User.find(current_user.id)
+  end
+
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      if @user.update(user_params)
+      if @user.update(update_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -82,9 +77,8 @@ class UsersController < ApplicationController
   end
 
   def user_products_index
-    @user=User.find(params[:id])
+    @products = @user.products.includes(:images)
   end
-
 
   private
     def set_user
@@ -92,9 +86,7 @@ class UsersController < ApplicationController
     end
 
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:name, :avater, :category_id)
+    def update_params
+      params.require(:user).permit(:name, :avater, :category_id, campany_attributes: [:id, :campany_name, :campany_logo, :category_id, :campany_url, :email, :tel, :staff_last_name_kana, :staff_first_name_kana])
     end
-
 end

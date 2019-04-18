@@ -14,11 +14,20 @@
               = f.label "ニックネーム"
               %br/
               = f.text_field :name, autofocus: true, autocomplete: "off", placeholder: "", class:"input-default"
+
             .label-box__inner
               = f.label "プロフィール写真"
               %br/
               .input-default
                 = f.file_field :avater, multipart: :true
+
+            -# .label-box__inner
+            -#   = f.label "プロフィール写真"
+            -#   %br/
+            -#   #img_field_1{:onclick => "$('#avater').click()"}
+            -#     = f.file_field :avater, multipart: :true、class: "input-default", style: "display:none;", id: "avater", multipart: :true
+
+
             .label-box__inner
               = f.label "ジャンル"
               %br/
@@ -37,7 +46,7 @@
               = f.password_field :password_confirmation, autocomplete: "off", class:"input-default"
             .label-box__inner
             .label-box__inner
-              = f.submit t('.sign_up'), class:"input-default"
+              = f.submit t('.sign_up'), class:"post-btn"
             .label-box__inner
         .sns-registration-container
           .space-y-sm2

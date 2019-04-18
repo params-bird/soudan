@@ -24,6 +24,12 @@ $(function(){
   },5000);
 });
 
+$(function(){
+  setTimeout(function() {
+    $('.success').fadeOut('slow');
+  },8000);
+});
+
 
 $(document).ready(function() {
   $('.lightSlider').lightSlider({
@@ -53,6 +59,7 @@ $(document).ready(function() {
 });
 
 
+// メッセージ入力フォーム自動拡大　ーーーーーーーーーーーーーーーー
 
 $(document).ready(function() {
   $('.message-input-area').on('focus',function(){
@@ -65,8 +72,12 @@ $(document).ready(function() {
 
 $(document).ready(function() {
   $('.message-input-area').on('focus',function(){
-    $('.message-container').height(155);
+    $('.message-container').height(145);
   }).on('submit', function(){
-    $('.message-container').height(80);
+    $('.message-container').height(70);
   });
 });
+
+// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+

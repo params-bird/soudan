@@ -13,7 +13,6 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'users/sessions#destroy'
     get '/campany/sign_up' => 'users/registrations#campany' ,as: :new_campany
     post'/campany' => 'users/registrations#create'
-    get 'parts' =>  'users/registrations#parts'
   end
 
   resources :users do
@@ -23,21 +22,32 @@ Rails.application.routes.draw do
     end
   end
 
-resources :users, only: [:show] do
-  resources :rooms, only: [:show, :index]
-    member do
-      get 'show'
-      get 'index'
-    end
-end
+  resources :users do
+    resources :rooms
+      member do
+        get 'show'
+        get 'index'
+      end
+  end
+
+  # resources :users, only: [:show] do
+  #   resources :rooms, only: [:show, :index]
+  #     member do
+  #       get 'show'
+  #       get 'index'
+  #     end
+  # end
+
 
 
   resources :products do
     resources :likes, only: [:create, :destroy]
+    resources :images
   end
 
-  resources :rooms, only: [:create, :index]
+  resources :rooms, only: [:create]
   resources :funs, only: [:create, :destroy]
   resources :messages, only: [:create]
+  get 'campany/edit', to: 'users#edit_campany', as: 'edit_campany'
 
 end

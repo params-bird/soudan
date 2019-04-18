@@ -15,6 +15,7 @@
     .col-1.col-sm-1
   - else
     .col-3.col-sm-2.col-xl-1.p-0.m-1.d-flex
-      %a.btn.w-100.btn-danger.text-nowrap{href: destroy_user_session_path, role: "button"} ログアウト
+      %a.btn.w-100.btn-outline-info.text-nowrap{href: user_path(current_user.id), role: "button"} マイページ
+    .col-3.col-sm-2.col-xl-1.p-0.m-1.d-flex
+      %a.btn.w-100.btn-outline-secondary.text-nowrap{href: destroy_user_session_path, role: "button"} ログアウト
     .col-1.col-sm-1
-  -# = render 'shared/breadcrumbs'
