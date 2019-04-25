@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'users#index'
+  root 'soudan#soudan_top'
 
   devise_for :users, controllers: {
   confirmations: 'users/confirmations',
@@ -11,43 +11,31 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get '/users/sign_out' => 'users/sessions#destroy'
-    get '/campany/sign_up' => 'users/registrations#campany' ,as: :new_campany
-    post'/campany' => 'users/registrations#create'
   end
+
+
 
   resources :users do
-    member do
-      get :following, :followers
-      get 'user_products', to: 'users#user_products_index', as: 'products'
-    end
+    resources :bads, only: [:create, :destroy]
+    resources :thanks, only: [:create, :destroy]
+    resources :blocks, only: [:create, :destroy]
   end
 
-  resources :users do
-    resources :rooms
-      member do
-        get 'show'
-        get 'index'
-      end
+  resources :topics do
+    resource :closes, only: [:create]
+    resources :chat_rooms, only: [:new, :create, :show, :destroy]
   end
 
-  # resources :users, only: [:show] do
-  #   resources :rooms, only: [:show, :index]
-  #     member do
-  #       get 'show'
-  #       get 'index'
-  #     end
-  # end
 
+  resources :chat_rooms
+  get 'chat_room', to: 'chat_rooms#room'
+  resources :user_chat_rooms
 
-
-  resources :products do
-    resources :likes, only: [:create, :destroy]
-    resources :images
-  end
-
-  resources :rooms, only: [:create]
-  resources :funs, only: [:create, :destroy]
+  resources :soudan, only: [:index]
   resources :messages, only: [:create]
-  get 'campany/edit', to: 'users#edit_campany', as: 'edit_campany'
+  get 'soudan_top', to: 'users#soudan_top'
 
+
+
+  
 end

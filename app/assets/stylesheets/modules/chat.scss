@@ -1,0 +1,98 @@
+.chat-room__body{
+  width: 100vmin;
+  margin: auto;
+  height: 86%;
+  &__inner{
+    // width: 100vmin;
+    // margin: auto;
+    height: 90%;
+    overflow-y: scroll;
+  }
+}
+
+
+  .message-box__inner {
+    width: 100%;
+    padding: 2% 0% 2% 6%;
+    display: flex;
+    border-block-end: 1px solid lightgray;
+    &__left {
+      width: 12vmax;
+      display: flex;
+      .message-box__avater {
+        width: 14vmin;
+        height: 14vmin;
+        border-radius: 50%;
+        border: thin dotted lightgray;
+        object-fit: cover;
+        img {
+          border-radius: 50%;
+        }
+      }
+    }
+    &__right {
+      width: 90%;
+      position: relative;
+      .message-box__info {
+        height: 20px;
+        width: 100%;
+        font-size: 0.9rem;
+        .message-box__send-user-name {
+          // width: 70%;
+          position: absolute;
+          left: 0%;
+        }
+        .message-box__send-time {
+          position: absolute;
+          display: flex;
+          right: 1%;
+          font-size: 0.8rem;
+        }
+      }
+      .message {
+        font-size: 0.9rem;
+        line-break: strict;
+      }
+      .message-nowrap {
+        font-size: 0.9rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .topic-box__inner__right__status{
+        display: flex;
+        width: 100%;
+        height: 20px;
+        .topic-box__inner__right__status__read{
+          font-size: 0.8rem;
+          font-weight: bold;
+          background-color:dimgrey;
+          color: white;
+          border-radius: 5px;
+          padding: 2px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          p{}
+        }
+        .topic-box__inner__right__status__noread{
+          font-size: 0.8rem;
+          font-weight: bold;
+          background-color: red;
+          color: white;
+          border-radius: 5px;
+          padding: 2px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          p{}
+        }
+        .topic-box__inner__right__status__time{
+          font-size: 0.8rem;
+          right: 20px;
+          position: absolute;
+          p{}
+        }
+      }
+    }
+  }

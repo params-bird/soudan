@@ -1,0 +1,101 @@
+
+.mobile-body__main__topic{
+  width: 100%;
+  height: calc(100vh - 35px);
+  overflow-y: scroll;
+  // height: 100vh;
+  // padding: 20px;
+  &__inner{
+    width: 100%;
+    height: 100%;
+    // background-color: lightblue;
+  }
+}
+
+
+.topic-box{
+  width: 99%;
+  margin: 0px auto 10px auto;
+  height:  11vmax;
+  border-bottom: 1px solid dimgray;
+  .topic-box__inner{
+    display: flex;
+    width: 96%;
+    margin: auto;
+    height: 100%;
+    .topic-box__inner__left{
+      width: 30%;
+      height: 100%;
+      padding-top: 5px;
+      // border-right: 1px solid dimgray;
+      text-align: center;
+      font-size: 0.8rem;
+      .status-now{
+        height: 30%;
+        width: 11vmax;
+        margin: auto;
+        background-color:$red;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .status-mail{
+        height: 30%;
+      }
+      .status-mail-count{
+        height: 30%;
+      }
+    }
+    .topic-box__inner__right{
+      width: 70%;
+      height: 100%;
+      .topic-box__inner__right__title{
+        height: 65%;
+        overflow: hidden;
+        text-align: justify;
+
+      }
+      .topic-box__inner__right__info{
+        display: flex;
+        height: 30%;
+        font-size: 0.5rem;
+        position: relative;
+        align-items: flex-end;
+        .topic-box__inner__right__info__category{
+          border-radius: 5px;
+          border: 1px solid$red;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          p{
+            text-align: center;
+            margin: 0px 4px;
+
+          }
+        }
+        .topic-box__inner__right__info__user{
+          text-align: right;
+          width: 40%;
+          position: absolute;
+          right: 21%;
+          p{
+
+          }
+        }
+        .topic-box__inner__right__info__time{
+          width: 20%;
+          text-align: right;
+          position: absolute;
+          right: 0;
+          p{
+
+          }
+
+        }
+      }
+    }
+  }
+}

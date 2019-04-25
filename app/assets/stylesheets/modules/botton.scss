@@ -1,0 +1,298 @@
+
+  .white-line-btn{
+    display: flex;
+    // width: 23%;
+    height: 50%;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    color: white;
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+    i{
+      width: 23%;
+      display: block;
+    }
+    p{
+      size: 1.5rem;
+      font-size: 0.8rem;
+    }
+  }
+
+  .nocolor-btn{
+    display: flex;
+    // width: 23%;
+    height: 70%;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    i{
+      width: 23%;
+      display: block;
+    }
+    p{
+      size: 1.5rem;
+      font-size: 0.8rem;
+    }
+  }
+
+  .start-soudan{
+    width: 70vmin;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25vmax;
+    cursor: pointer;
+    .start-btn{
+      height: 7.5vmax;
+      margin: 2vmin 0%;
+      width: 100%;
+      border-radius: 0.4rem;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+    }
+  }
+
+  .start-soudan-sm{
+    width: 70vmin;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    &__start-btn{
+      height: 7.5vmax;
+      margin: 8vmin 0%;
+      width: 100%;
+      border-radius: 2rem;
+      background-color: #e91e63;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+    }
+  }
+
+  .sns-select{
+    width: 60vmin;
+    margin: 6vmax auto;
+    font-family: 'Roboto', sans-serif;
+    color: grey;
+    .sns-select__mail{
+      height: 6.5vmax;
+      margin: 3vmin 0%;
+      width: 100%;
+      border-radius: 0.4rem;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+      &_logo{
+        background: url(l_e_inquiry_141);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 8%;
+        height: 50%;
+        position: absolute;
+        left: 14%;
+
+      }
+    }
+    .sns-select__google{
+      height: 7vmax;
+      margin: 3vmin 0%;
+      width: 100%;
+      border-radius: 0.4rem;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+      &_logo{
+        background: url(icons8-googleのロゴ);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 16%;
+        height: 50%;
+        position: absolute;
+        left: 10%;
+      }
+    }
+    .sns-select__line{
+      height: 7vmax;
+      margin: 3vmin 0%;
+      width: 100%;
+      border-radius: 0.4rem;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+      &_logo{
+        background: url(LINE_SOCIAL_Basic);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 12%;
+        height: 50%;
+        position: absolute;
+        left: 12%;
+      }
+    }
+    .sns-select__twitter{
+      height: 7vmax;
+      margin: 3vmin 0%;
+      width: 100%;
+      border-radius: 0.4rem;
+      background-color:white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+      &_logo{
+        background: url(Twitter_Social_Icon_Rounded_Square_Color);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 12%;
+        height: 50%;
+        position: absolute;
+        left: 12%;
+      }
+    }
+  }
+
+  .sns-select-signin{
+    width: 60vmin;
+    margin: 2vmax auto;
+    font-family: 'Roboto', sans-serif;
+    color: grey;
+    .sns-select-signin__google{
+      border: 1px solid grey;
+      height: 7vmax;
+      margin: 3vmin 0%;
+      width: 100%;
+      border-radius: 0.4rem;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+      &_logo{
+        background: url(icons8-googleのロゴ);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 16%;
+        height: 50%;
+        position: absolute;
+        left: 10%;
+      }
+    }
+    .sns-select-signin__line{
+      border: 1px solid grey;
+      height: 7vmax;
+      margin: 3vmin 0%;
+      width: 100%;
+      border-radius: 0.4rem;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+      &_logo{
+        background: url(LINE_SOCIAL_Basic);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 12%;
+        height: 50%;
+        position: absolute;
+        left: 12%;
+      }
+    }
+    .sns-select-signin__twitter{
+      border: 1px solid grey;
+      height: 7vmax;
+      margin: 3vmin 0%;
+      width: 100%;
+      border-radius: 0.4rem;
+      background-color:white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+      &_logo{
+        background: url(Twitter_Social_Icon_Rounded_Square_Color);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 12%;
+        height: 50%;
+        position: absolute;
+        left: 12%;
+      }
+    }
+  }
+
+
+.my-page_btn{
+  .dm-btn{
+    display: flex;
+    width: 150px;
+    margin: auto;
+    justify-content: center;
+    border: 1px solid red;
+    border-radius: 4px;
+    color:  red !important;
+    padding: 5px;
+    height: 3rem;
+  }
+  .dm-btn:hover {
+    background-color: red;
+    color:white !important;
+  }
+  a{
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+  }
+  a:hover {
+    background-color: red;
+    color:white !important;
+  }
+}
+
+
+.register-btn {
+  width: 100%;
+  height: 6vmax;
+  border-radius: 0.5rem;
+  margin: 3vmin 0%;
+  background-color: #00a4bb;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.9rem;
+
+  a{
+    position: absolute;
+  }
+}

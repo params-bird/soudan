@@ -1,0 +1,124 @@
+// /*====================
+// スマホを基本設計にする
+//  - 〜479px：スマートフォン縦
+//  - 480px〜599px：スマートフォン横
+//  - 600px〜959px：タブレット
+//  - 960px〜1279px：小型PC
+//  - 1280px〜：大型PC
+// ====================*/
+// @media screen and (max-width:639px) {
+  /*スマホ用のcssを記述*/
+
+.mobile-body__headparts{
+  position: fixed;
+  top:0;
+  z-index: 1;
+  height: 9vmax;
+  .mobile-body__header{
+    height: 6vmax;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 0.2rem;
+    font-weight: bold;
+    border-bottom: 1px solid #0000000f;
+    background-image: url(head-image);
+    padding-right: 15px;
+    &__title{
+    position: absolute;
+    right: 0%;
+    left: 0%;
+    color: white;
+    font-size: 0.8rem;
+    text-align: center;
+    }
+  }
+}
+
+.mobile-body__headparts__white{
+  position: fixed;
+  top:0;
+  z-index: 1;
+  height: 9vmax;
+  .mobile-body__header{
+    height: 6vmax;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 0.2rem;
+    font-weight: lighter;
+    border-bottom: 1px solid #0000000f;
+    background-color: white;
+    padding-right: 15px;
+    &__title{
+    position: absolute;
+    right: 0%;
+    left: 0%;
+    color: navy;
+    font-size: 0.8rem;
+    text-align: center;
+    }
+  }
+}
+
+  .bread-crumb{
+    font-size: 0.8rem;
+    color: darkgray;
+    padding-left: 1rem;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+  }
+
+
+
+
+  .header-hidden-space{
+    height: 9vmax;
+    background-color: white;
+  }
+
+.user_icon{
+  width: 7vmin;
+  height: 45%;
+  border-radius: 50%;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  left: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: gray;
+  i{
+    font-size: 1.5rem;
+  }
+}
+
+.question-btn{
+  display: flex;
+  width: 23%;
+  height: 70%;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  background-color:limegreen;
+  color: white;
+  position: relative;
+  padding: 10px;
+  &:hover{
+    background-color: #00C300;
+  }
+  &:active{
+    background-color:：#00B300;
+  }
+  i{
+    width: 23%;
+    display: block;
+  }
+  p{
+    size: 1.5rem;
+    font-size: 0.8rem;
+  }
+}

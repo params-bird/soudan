@@ -1,74 +1,29 @@
-$blue: #007bff;
-$indigo: #6610f2;
-$purple: #6f42c1;
-$pink: #e83e8c;
-$red: #dc3545;
-$orange: #fd7e14;
-$yellow: #ffc107;
-$green: #28a745;
-$teal: #20c997;
-$cyan: #17a2b8;
-$white: #fff;
-$gray: #6c757d;
-$gray-dark: #343a40;
-$primary: #007bff;
-$secondary: #6c757d;
-$success: #28a745;
-$info: #17a2b8;
-$warning: #ffc107;
-$danger: #dc3545;
-$light: #f8f9fa;
-$dark: #343a40;
-$skyblue: #2cc2e4;
+
 $madgreen: #00a4bb;
-
-$font-family-sans-serif:
-// Safari for OS X and iOS (San Francisco)
--apple-system,
-// Chrome < 56 for OS X (San Francisco)
-BlinkMacSystemFont,
-// Windows
-"Segoe UI",
-// Android
-"Roboto",
-// Basic web fallback
-"Helvetica Neue", Arial, sans-serif,
-// Emoji fonts
-"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
-
-// @import 'modules/_reset';
+$red:#e91e63;
+$darknavy: #01105f;
+$linecolor: #00C300;
+$linecolor-hover: #00E000;
 
 
-.selector-for-some-widget {
-  box-sizing: content-box;
-}
 
-.stats {
-  overflow: auto;
-  margin-top: 0;
-  padding: 0;
-  a {
-    float: left;
-    padding: 0 10px;
-    border-left: 1px solid gray;
-    color: gray;
-    &:first-child {
-      padding-left: 0;
-      border: 0;
-    }
-    &:hover {
-      text-decoration: none;
-      color: blue;
-    }
-  }
-  strong {
-    display: block;
-  }
-}
+
 
 // 個別共通設定　ーーーーーーーーーーー
 
 * { box-sizing: border-box;
+}
+
+body{
+  margin: 0px !important;
+  width: 100vw;
+}
+
+p {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 a {
@@ -91,17 +46,19 @@ input, textarea, select{
 }
 
 
-@import 'index';
-@import 'mixin/share';
-@import 'modules/_flash';
+@import 'modules/flash';
 @import 'modules/breadcrumbs';
-@import 'share_parts';
-@import 'users';
-@import 'side_bar';
-@import 'campany';
-@import 'rooms';
-@import 'messages';
-@import 'products';
-@import 'cropper.min';
+@import 'modules/tablet_header';
+@import 'modules/tablet_footer';
+@import 'modules/chat';
+@import 'modules/input-message';
+@import 'modules/botton';
+@import 'modules/error';
 @import 'modules/product-show-box';
-@import 'cropper_castam';
+@import 'modules/soudan';
+
+@import 'tablet';
+@import 'soudan-top';
+@import 'users';
+@import 'topics';
+@import 'messages';

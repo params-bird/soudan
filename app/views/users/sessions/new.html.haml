@@ -1,39 +1,37 @@
-.space-y-sm4
-.main-body
-  .page
+.mobile-body
+  =render 'module/header'
+  .mobile-body__inner__fixed
     .registration-box
       -# .ragistration-box__header
-      .registration-box__bottom
-        .label-box
-          .space-y-sm2
-          %p メールアドレスでログイン
-          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .space-5
+      .label-box
+        .space-y-sm2
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .label-box__inner
+            = f.label :email
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email", class:"input-default"
+          .space-2
+          .label-box__inner
+            = f.label :password
+            %br/
+            = f.password_field :password, autocomplete: "current-password", class:"input-default"
+          - if devise_mapping.rememberable?
+            .space-2
             .label-box__inner
-              = f.label :email
-              %br/
-              = f.email_field :email, autofocus: true, autocomplete: "email", class:"input-default"
-            .label-box__inner
-              = f.label :password
-              %br/
-              = f.password_field :password, autocomplete: "current-password", class:"input-default"
-            - if devise_mapping.rememberable?
-              .label-box__inner
-                = f.check_box :remember_me
-                = f.label :remember_me
-            .label-box__inner
-              = f.submit t('.sign_in'), class:"input-default"
+              = f.check_box :remember_me
+              = f.label :remember_me
+          .label-box__inner
+            = f.submit t('.sign_in'), class:"input-default"
+        %section.sns-select-signin
+          %p.or SNSでログイン
+          .sns-select-signin__google
+            .sns-select-signin__google_logo
+            %a{href: "#"}Google
+          .sns-select-signin__twitter
+            .sns-select-signin__twitter_logo
+            %a{href: "#"}Twitter
+          .sns-select-signin__line
+            .sns-select-signin__line_logo
+            %a{href: "#"}LINE
           = render "devise/shared/links"
-        .sns-registration-container
-          .space-y-sm2
-          %p SNSでログイン
-          .space-y-sm4
-          %label LINEログイン
-          .btn-sm
-          .space-y-sm4
-          %label Twitterログイン
-          .btn-sm
-          .space-y-sm4
-          %label Googleログイン
-          .btn-sm
-          .space-y-sm4
-          %p アカウントを作成することにより、利用規約およびプライバシーポリシーに同意されたものとさせていただきます。

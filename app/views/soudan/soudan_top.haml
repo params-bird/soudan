@@ -1,0 +1,152 @@
+.mobile-body__main__top-page
+  %section
+    .top-page__headparts
+      .top-page__header
+        .top-page__logo
+        .top-page__title
+          %a{href: root_path} soudan
+        - unless user_signed_in?
+          .white-line-btn
+            %a{href: new_user_registration_path}ユーザー登録
+          .nocolor-btn
+            %a{href: new_user_session_path}ログイン
+        - else
+          .nocolor-btn
+          .nocolor-btn
+            %a{href: destroy_user_session_path}ログアウト
+      .top-page__header__title
+
+  %section.service-title
+    %h2 もっと気軽に相談しよう！
+    %p あなたの周りに相談相手はいますか？
+    %p soudanは相談しやすい人を見つけて相談できる相談に特化した
+    %p いつでも相談できるSNSサービスです。
+    %a{href: "#"}もっと詳しく　＞＞
+
+
+  -# %section.start-soudan
+  -#   .start-btn
+  -#     %a{href: "#"}相談する
+  %section.sns-select
+    .sns-select__mail
+      .sns-select__mail_logo
+      %a{href: "#"}メールアドレス
+    .sns-select__google
+      .sns-select__google_logo
+      %a{href: "#"}Google
+    .sns-select__twitter
+      .sns-select__twitter_logo
+      %a{href: "#"}Twitter
+    .sns-select__line
+      .sns-select__line_logo
+      %a{href: "#"}LINE
+
+%section.topic-nav
+  %nav
+    %ul 相談相手になる
+    %ul 相談する
+  .topic-nav__border
+
+%section.what-soudan
+  .what-soudan__center
+    %section
+      %h1 MESSAGE
+      %h2 話しの合う相談相手はいますか？
+      .what-soudan__text
+        %p 日常の中で話が合う人、合わない人がいると思います。
+        %p 相談しているけど伝わっていない気がする、本当に言いたいことはそうじゃない。
+
+      %h3 どうして？
+      .what-soudan__image
+        .what-soudan__image__inner
+        = image_tag 'communication-4141527_1920'
+      .what-soudan__text
+        %p それぞれが経験してきたこと、タイミング、その時の環境が違うので価値観が合わないのは当然です。十人十色の言葉通り、それぞれ違う声を持っています。
+
+      %h3 話の合う相談相手とは
+      .what-soudan__image
+        .what-soudan__image__inner
+        = image_tag 'team-2651913_1920'
+      .what-soudan__text
+        %p 近い経験、近い価値観を持った近い色の人
+
+      %h3 でもどうすれば？
+      .what-soudan__image
+        .what-soudan__image__inner
+        = image_tag 'feedback-3653368_1920'
+      .what-soudan__text
+        %p 話が合いそうな方のみと相談する。
+
+      %h3 どのように？
+      .what-soudan__text
+        %p soudanでは投稿した相談に対しあった返信から話が合いそうな方のみと相談ができます。
+
+    %section
+      %h1 HOW TO
+      %h3 #1 相談を投稿する
+      .what-soudan__image
+        .what-soudan__image__inner
+        = image_tag 'aerial-3644077_1920'
+
+      %h3 #2 受信メッセージの中から選んで返信する
+      .what-soudan__image
+        .what-soudan__image__inner
+        = image_tag 'whatsapp-3012138_1920'
+
+      %h3 #3 ありがとうを伝えよう
+      .what-soudan__image
+        .what-soudan__image__inner
+        = image_tag 'feedback-3677258_1920'
+
+      %h3 #4 解決済みにして受付を終了する
+      .what-soudan__image
+        .what-soudan__image__inner
+        = image_tag 'checkbox-152187_1280'
+
+    %section
+      %h3 #お願い
+      .what-soudan__image
+        .what-soudan__image__inner
+        = image_tag 'thank-you-3690116_1920'
+      .what-soudan__text
+        %p soudanでは話の合う相談相手と相談できるをコンセプトにサービスを運営しております。頂いたメッセージに返信がないこともありますがご理解いただきますよう、よろしくお願い申し上げます。
+
+    %section
+      %h1 CASE
+      .what-soudan__text
+        %p 質問感覚でお気軽に投稿ください。
+        %p 仕事、付き合い、買い物、子育て、家選び、旅行、勉強、進路、将来、就職、留学、その他いろいろな相談をお気軽に投稿ください。
+      .start-soudan-sm
+        .start-soudan-sm__start-btn
+          %a{href: "#"}相談する
+      .what-soudan__image
+        .what-soudan__image__inner
+        = image_tag 'group-3530357_1920'
+
+
+
+%footer.footer-nav
+  .footer-nav__header soudan
+  %ul.footer-nav_ul
+    %li.footer-nav_ul_li
+      %a{href: "#",id:"what-soudan"}soudan とは？
+    %li.footer-nav_ul_li
+      %a{href: "#"}新規登録・ログイン
+    %li.footer-nav_ul_li
+    %li.footer-nav_ul_li
+      %a{href: "#"}相談を投稿する
+    %li.footer-nav_ul_li
+      %a{href: "#"}相談相手になる
+    %li.footer-nav_ul_li
+      %a{href: "#"}ありがとうの多いユーザー
+    %li.footer-nav_ul_li
+      %a{href: "#"}相談の多いカテゴリー
+    %li.footer-nav_ul_li
+    %li.footer-nav_ul_li
+      %a{href: "#"}運営会社
+    %li.footer-nav_ul_li
+      %a{href: "#"}利用規約
+    %li.footer-nav_ul_li
+      %a{href: "#"}プライバシーポリシー
+  %small
+    ©soudan INC. All rights reserved.

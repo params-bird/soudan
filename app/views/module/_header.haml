@@ -1,0 +1,21 @@
+.mobile-body__headparts
+  .mobile-body__header
+    -if user_signed_in?
+      .user_icon
+        %i.material-icons.md-dark.md-inactive
+          perm_identity
+    .top-page__title
+      %a{href: root_path} soudan
+    .mobile-body__header__title
+      = header_title
+    - if params[:controller] == 'topics' && params[:action] == 'index'
+      .question-btn
+        %i.fas.fa-edit.fa-4x
+        %p 相談する
+    -else
+  .bread-crumb
+    ここにパンくずでTOPIC名
+.header-hidden-space
+
+
+

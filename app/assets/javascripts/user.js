@@ -81,3 +81,24 @@ $(document).ready(function() {
 // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 
+$(function(){
+  $('#what-soudan').on('click', function(){
+      var targetTop = $('.what-soudan').offset().top;
+      $('html,body').animate({
+          scrollTop: targetTop
+      }, 500);
+      return false;
+  });
+});
+
+
+
+$(function(){
+  $('.footer-nav__header').on('click', function(){
+      var targetTop = $('.mobile-body__main__top-page').offset().top;
+      $('html,body').animate({
+          scrollTop: targetTop
+      }, 300);
+      return false;
+  });
+});
