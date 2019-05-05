@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
-  has_many :products
-  mount_uploader :image, ImageUploader
+  
+  has_many :topic
 end

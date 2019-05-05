@@ -1,13 +1,9 @@
 .mobile-body
-  =render 'module/header'
-  .mobile-body__inner
-    =render 'module/mail'
-    =render 'module/mail'
-    =render 'module/mail'
-    =render 'module/mail'
-    =render 'module/mail'
-    =render 'module/mail'
-    =render 'module/mail'
-    =render 'module/mail'
-    =render 'module/mail'
-  =render 'module/footer'
+  =render 'shared/header'
+  - if @no_topics
+    .no_message
+      #{@no_topics}
+  %section
+    .mobile-body__inner
+      =render partial: 'user-topic_chat-rooms', collection: @chat_rooms, as: :chat_rooms
+  =render 'shared/footer'

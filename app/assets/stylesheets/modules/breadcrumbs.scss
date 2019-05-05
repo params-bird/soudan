@@ -2,19 +2,30 @@
   width: 80%;
   margin: auto;
   color:gray;
-  // border-top: 1px solid #eee;
-  // border-width: thin;
   padding-top: 5px;
   margin-bottom: 30px;
-  // box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
   .breadcrumbs-header{
-    // width: 1020px;
-    // margin: 0 auto;
-    // font-size: 13px;
-    // letter-spacing: 0.1em;
   }
 }
 
+.bread-crumb{
+  font-size: 0.8rem;
+  color: darkgray;
+  padding-left: 5%;
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+}
+
+#bread-crumb__mypage{
+  font-size: 0.8rem;
+  padding-left: 5%;
+  width: 85%;
+  margin: auto;
+  background-color: none;
+  background: none;
+  color: black;
+  border: none;
+}
 // .current{
 //   font-weight: 800;
 // }

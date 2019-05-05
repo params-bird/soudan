@@ -15,24 +15,25 @@
 
 .topic-box{
   width: 99%;
-  margin: 0px auto 10px auto;
-  height:  11vmax;
+  margin: 10px auto 0px auto;
+  height:  11vh;
   border-bottom: 1px solid dimgray;
+  position: relative;
   .topic-box__inner{
     display: flex;
     width: 96%;
     margin: auto;
     height: 100%;
     .topic-box__inner__left{
-      width: 30%;
+      width: 25%;
       height: 100%;
-      padding-top: 5px;
+      padding-top: 2px;
       // border-right: 1px solid dimgray;
       text-align: center;
       font-size: 0.8rem;
       .status-now{
         height: 30%;
-        width: 11vmax;
+        width: 5rem;
         margin: auto;
         background-color:$red;
         color: white;
@@ -41,20 +42,46 @@
         align-items: center;
         justify-content: center;
       }
+      .status-close{
+        height: 30%;
+        width: 5rem;
+        margin: auto;
+        background-color:gray;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
       .status-mail{
         height: 30%;
+        padding-top:11px;
       }
       .status-mail-count{
         height: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &:hover #status-mail-count{
+        color: $red;
+      }
+      &:hover #status-mail{
+        color: $red;
       }
     }
-    .topic-box__inner__right{
-      width: 70%;
+    #topic-box__inner__right{
+      width: 50% !important;
       height: 100%;
+      padding-left: 2%;
+    }
+    .topic-box__inner__right,#topic-box__inner__right{
+      width: 73%;
+      height: 100%;
+      padding-left: 2%;
       .topic-box__inner__right__title{
         height: 65%;
         overflow: hidden;
-        text-align: justify;
 
       }
       .topic-box__inner__right__info{
@@ -62,40 +89,182 @@
         height: 30%;
         font-size: 0.5rem;
         position: relative;
-        align-items: flex-end;
         .topic-box__inner__right__info__category{
           border-radius: 5px;
-          border: 1px solid$red;
           height: 20px;
+          width: fit-content;
           display: flex;
           align-items: center;
           justify-content: center;
+          padding: 2%;
+          color: white;
+          background-color: $red;
+          font-weight: bold;
           p{
             text-align: center;
             margin: 0px 4px;
 
           }
         }
-        .topic-box__inner__right__info__user{
-          text-align: right;
-          width: 40%;
-          position: absolute;
-          right: 21%;
-          p{
-
-          }
-        }
-        .topic-box__inner__right__info__time{
-          width: 20%;
-          text-align: right;
+        .topic-box__inner__right__info__messanger{
+          display: flex;
           position: absolute;
           right: 0;
-          p{
+          width: 70%;
+          &__user{
+            text-align: right;
+            width: 70%;
+            p{
 
+            }
           }
-
+          &__time{
+            width: 40%;
+            text-align: right;
+            margin-left: 0.5rem;
+            text{
+              text-align: right;
+            }
+          }
         }
       }
     }
   }
+}
+
+
+.topic-new-box{
+  width:  100vmin;
+  margin: auto;
+  padding-top: 3%;
+  P{
+    text-align: center;
+  }
+  &__inner{
+    padding: 5px 20px 10px 20px;
+  }
+}
+
+.topic-input{
+  width: 100%;
+  height: 3rem;
+  margin: auto;
+  padding: 3px 5px;
+  border-radius: 4px;
+  background: #fff;
+  border: 1px solid dimgray;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+
+.topic-category-input{
+  width: 100%;
+  height: 40px;
+  margin: auto;
+  padding: 3px 5px;
+  border-radius:4px;
+  border: 1px solid dimgray;
+  background: #fff;
+  line-height: 1.5;
+  cursor: pointer;
+  outline-width: 2px;
+}
+
+
+.topic_text{
+  width: 100%;
+  height: 47vh;
+  margin: auto;
+  padding: 1% 2%;
+  border-radius: 4px;
+  border: 1px solid dimgray;
+  background: #fff;
+  line-height: 1.5;
+  cursor: pointer;
+  outline-width: 2px;
+  overflow-y: scroll;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+}
+.topic_text::-webkit-scrollbar{height:10px;}/*バーの太さ*/
+.topic_text::-webkit-scrollbar-track{background:#dddddd;}/*バーの背景色*/
+.topic_text::-webkit-scrollbar-thumb{background:lightseagreen;}/*バーの色*/
+
+
+
+.topic-show-box{
+  width:  100vmin;
+  margin: auto;
+  P{
+    font-size: 1rem;
+  }
+  &__flex-box{
+    display: flex;
+    align-items: center;
+  }
+  &__inner{
+    padding: 5px 20px 10px 20px;
+    &__title{
+      border-radius: 4px;
+      padding: 7px;
+      background-color: gold;
+      font-weight: bold;
+    }
+    &__text{
+      line-break: strict;
+      color: black;
+      border: 1px solid gray;
+      border-radius: 4px;
+      padding: 2%;
+      height: 55vh;
+      overflow: auto;
+    }
+    &__user-name{
+      margin-left: 1rem;
+    }
+    &__category-name{
+      border-radius: 5px;
+      height: 20px;
+      width: fit-content;
+      margin-top:0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2%;
+      color: white;
+      background-color: #e91e63;
+      font-weight: bold;
+    }
+    &__user-icon{
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+      background-image: url(no-photo-icon-22);
+      background-size: cover;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      white-space: nowrap;
+      i{
+        font-size: 1.5rem;
+      }
+      img{
+
+      }
+    }
+    &__time{
+    font-size: 0.8rem;
+    right: 2rem;
+    color: gray;
+    }
+  }
+}
+
+.icon-title,.icon-text{
+  width: 6rem;
+  // height: 2.5rem;
+  padding-left: 0.5rem;
+  color: black;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
 }

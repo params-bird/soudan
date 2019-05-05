@@ -19,7 +19,7 @@
   .mobile-body__footer{
     // position: fixed;
     // bottom:0px;
-    height: 6vmax;
+    height: 6vh;
     width: 100%;
     border-top: 1px solid dimgray;
     background-color: white;
@@ -37,41 +37,18 @@
         display: inline-grid;
         text-align: center;
         justify-content: center;
-        // align-items: center;
-        &:hover{
+        &:hover .material-icons.md-dark.md-inactive{
           color: $red;
         }
-        &:active{
+        &:hover .icon-item-title{
           color: $red;
+        }
+        .material-icons.md-dark.md-inactive{
+          color: rgba(0, 0, 0, 0.26);
         }
       }
     }
   }
 
-  // .mobile-body__footer-icon-names{
-  //   width: 100%;
-  //   height: 20px;
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   text-align: center;
-  //   font-weight: lighter;
-  //   background-color: white;
-  //   position: absolute;
-  //   bottom:0;
-  //   font-size: 0.5rem;
-  //   z-index: 1;
-  //   .icon-name{
-  //     width: 25%;
-  //   }
-  // }
-
-  .material-icons.md-dark.md-inactive{
-    color: rgba(0, 0, 0, 0.26);
-    &:hover{
-      // color: rgba(0, 0, 0, 0.54);
-      color: $red;
-    }
-  }
 
 

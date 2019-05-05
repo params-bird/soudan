@@ -1,0 +1,34 @@
+.mobile-body
+  =render 'shared/header'
+  .topic-show-box
+    .topic-show-box__inner
+      .topic-show-box__inner__top
+        .topic-show-box__flex-box
+          .topic-show-box__inner__user-icon
+            = image_tag @topic.user.avater
+          .topic-show-box__inner__user-name
+            #{@topic.user.name}
+            .topic-show-box__inner__time
+              = time_ago_in_words(@topic.created_at)+"前"
+        .topic-show-box__inner__title
+          #{@topic.title}
+        .topic-show-box__inner__category-name
+          #{@topic.category.name}
+
+      .topic-show-box__inner__bottom
+        .space-1
+        .topic-show-box__flex-box
+          .icon-text 相談内容
+
+        .topic-show-box__inner__text
+          = simple_format @topic.text
+        .space-3
+        - if @topic.user_id != current_user.id
+          - if @check_room == true
+            %a.post-btn{href: topic_chat_room_path(topic_id: @topic.id, id: @room_id)} メッセージルームへ
+          - else
+            = form_with url:topic_chat_rooms_path(topic_id: @topic.id), local: true do |f|
+              = fields_for @user_chat_room do |e|
+                = e.hidden_field :topic_create_user_id, value: @topic.user_id
+              = f.submit "相談相手になる", class:"post-btn"
+  =render 'shared/footer'

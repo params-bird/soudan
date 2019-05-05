@@ -1,0 +1,14 @@
+.top-page__headparts
+  .top-page__header
+    .top-page__logo
+    .top-page__title
+      %a{href: root_path} soudan
+    - unless user_signed_in?
+      .white-line-btn
+        %a{href: new_user_registration_path}ユーザー登録
+      .nocolor-btn
+        %a{href: new_user_session_path}ログイン
+    - else
+      .nocolor-btn
+      .nocolor-btn
+        %a{href: destroy_user_session_path,  method: :delete}ログアウト

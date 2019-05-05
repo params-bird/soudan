@@ -1,16 +1,22 @@
 .topic-box
-  .topic-box__inner
-    .topic-box__inner__left
-      .status-now 受付中
-      .status-mail 返信
-      .status-mail-count
-        %p 件
-    .topic-box__inner__right
-      .topic-box__inner__right__title トピックタイトルトピックタイトルトピックタイトルトピックタイトルトピックタイトル
-      .topic-box__inner__right__info
-        .topic-box__inner__right__info__category
-          %p 旅行
-        .topic-box__inner__right__info__user
-          %p ユーザー名
-        .topic-box__inner__right__info__time
-          %p ３０分前
+  = link_to topic_path(topic.id) do
+    .topic-box__inner
+      .topic-box__inner__left
+        - if topic.close.blank?
+          .status-now 受付中
+        - else
+          .status-close 解決済み
+        .status-mail 返信
+        .status-mail-count
+          #{topic.chat_rooms.count}件
+      .topic-box__inner__right
+        .topic-box__inner__right__title
+          #{topic.title}
+        .topic-box__inner__right__info
+          .topic-box__inner__right__info__category
+            #{topic.category.name}
+          .topic-box__inner__right__info__messanger
+            .topic-box__inner__right__info__messanger__user
+              #{topic.user.name}
+            .topic-box__inner__right__info__messanger__time
+              = time_ago_in_words(topic.created_at)+"前"

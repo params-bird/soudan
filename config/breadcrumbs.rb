@@ -1,12 +1,60 @@
-# crumb :root do
-#   link 'ホーム', root_path
+crumb :root do
+  link 'ホーム', root_path
+end
+
+crumb :topics_index do
+  link '投稿一覧', topics_path
+  parent :root
+end
+
+crumb :topics_new do
+  link "新規投稿"
+  parent :root
+end
+
+
+crumb :topics_show do
+  if params[:controller] == 'chat_rooms' && params[:action] == 'show'
+    @topic = Topic.find(params[:topic_id])
+    link "トッピック: #{@topic.title}", topic_path(params[:topic_id])
+  else
+    @topic = Topic.find(params[:id])
+    link "トッピック: #{@topic.title}"
+  end
+  parent :topics_index
+end
+
+crumb :user_chat_rooms_index do
+  link "メッセージ一覧",user_chat_rooms_path(user_id:current_user.id)
+  parent :user_mypage
+end
+
+crumb :chat_rooms_show do
+  link "メッセージルーム"
+  parent :user_chat_rooms_index
+end
+
+crumb :user_topics do
+  link "ユーザー投稿一覧",user_topics_path(id:current_user.id)
+  parent :user_mypage
+end
+
+crumb :user_mypage do
+  link "マイページ",user_mypage_path(id:current_user.id)
+  parent :root
+end
+
+crumb :users_topic_chat_rooms do
+  @topic = Topic.find(params[:topic_id])
+  link "#{@topic.title}の返信一覧"
+  parent :user_topics
+end
+
+# crumb :logout do
+#   link 'ログアウト', logout_users_path
 # end
 
-# # crumb :logout do
-# #   link 'ログアウト', logout_users_path
-# # end
-
-# # マイページ ーーーーーーーーーーーーーー
+# マイページ ーーーーーーーーーーーーーー
 # crumb :user_show do
 #   if params[:controller] == 'users' && params[:action] == 'show'
 #     @user = User.find(params[:id])
@@ -52,28 +100,28 @@
 # end
 
 
-# # 検索ページーーーーーーーーーーーーーーーーーーーーーーーー
-# # crumb :search do
-# # @keyword = params[:keyword]
-# # link @keyword, search_products_path
-# # end
-# # ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+# 検索ページーーーーーーーーーーーーーーーーーーーーーーーー
+# crumb :search do
+# @keyword = params[:keyword]
+# link @keyword, search_products_path
+# end
+# ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
-# # 商品詳細画面ーーーーーーーーーーーーーーーーーーーーーーーー
-# # crumb :products_category_0 do
-# # @product = Product.find(params[:id])
-# # link @product.category.root.name, product_path
-# # end
+# 商品詳細画面ーーーーーーーーーーーーーーーーーーーーーーーー
+# crumb :products_category_0 do
+# @product = Product.find(params[:id])
+# link @product.category.root.name, product_path
+# end
 
-# # crumb :products_category_1 do
-# # @product = Product.find(params[:id])
-# # link @product.category.parent.name, product_path
-# # parent :products_category_0
-# # end
+# crumb :products_category_1 do
+# @product = Product.find(params[:id])
+# link @product.category.parent.name, product_path
+# parent :products_category_0
+# end
 
-# # crumb :products_category_2 do
-# # @product = Product.find(params[:id])
-# # link @product.category.name, product_path
-# # parent :products_category_1
-# # end
-# # ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+# crumb :products_category_2 do
+# @product = Product.find(params[:id])
+# link @product.category.name, product_path
+# parent :products_category_1
+# end
+# ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー

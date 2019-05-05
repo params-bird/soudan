@@ -13,19 +13,25 @@
   .mobile-body{
     width: 100vw;
     height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden;
+    section{
+      margin-top: 2px;
+      overflow-y: scroll;
+      width: 100vw;
+      overflow-x: hidden;
+      height: calc(100vh - 15vh);
+    }
     &__inner{
     width: 100vmin;
     margin: auto;
     height: 86%;
-    overflow-y: scroll;
     }
     &__inner__fixed{
       width: 100vmin;
       margin: auto;
       height: 86%;
       overflow:hidden;
-      }
+    }
   }
 
 

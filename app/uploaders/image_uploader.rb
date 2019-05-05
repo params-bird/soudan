@@ -2,6 +2,17 @@
   # リサイズしたり画像形式を変更するのに必要
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
+  #画像が回転してしまう問題を解消
+  process :fix_rotate
+
+  def fix_rotate
+      manipulate! do |img|
+          img = img.auto_orient
+          img = yield(img) if block_given?
+          img
+      end
+  end
+
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:

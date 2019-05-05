@@ -1,17 +1,20 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  include IdGenerator
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
   has_many :messages, dependent: :destroy
+
+  has_many :topics, dependent: :destroy
+  has_many :chat_rooms, through: :user_chat_rooms
+  has_many :user_chat_rooms, dependent: :destroy
+  has_many :thanks
+  has_many :bads
+
   mount_uploader :avater, ImageUploader
 
-  # userモデルの中でcampanyモデルへも同時書き込み　ーーーーーーーーー
-  has_one :campany, inverse_of: :user
-  accepts_nested_attributes_for :campany
 
-# ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 # いいねメソッド定義　ーーーーーーーーーーーーーー
   def already_liked?(product)

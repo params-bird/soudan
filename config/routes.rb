@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'soudan#soudan_top'
+  resources :soudan, only: [:index]
+  root 'soudan#index'
 
   devise_for :users, controllers: {
   confirmations: 'users/confirmations',
@@ -8,34 +9,29 @@ Rails.application.routes.draw do
   registrations: 'users/registrations',
   sessions:      'users/sessions',
   }
-
   devise_scope :user do
     get '/users/sign_out' => 'users/sessions#destroy'
   end
 
-
-
   resources :users do
     resources :bads, only: [:create, :destroy]
-    resources :thanks, only: [:create, :destroy]
-    resources :blocks, only: [:create, :destroy]
+    resources :user_chat_rooms, only: [:index], as: 'chat_rooms'
+    resources :messages, only: [:create, :destroy]
+    resources :messages do
+      resources :thanks, only: [:create, :destroy]
+      resources :bads, only: [:create, :destroy]
+    end
   end
+
 
   resources :topics do
     resource :closes, only: [:create]
-    resources :chat_rooms, only: [:new, :create, :show, :destroy]
+    resources :chat_rooms
   end
 
+  get 'user/index', to: 'users#index', as: 'user_index'
+  get 'user/:id', to: 'users#mypage', as: 'user_mypage'
+  get 'users/:id/topics', to: 'users#user_topics', as: 'user_topics'
+  get 'search', to: 'topics#search', as: 'topics_search'
 
-  resources :chat_rooms
-  get 'chat_room', to: 'chat_rooms#room'
-  resources :user_chat_rooms
-
-  resources :soudan, only: [:index]
-  resources :messages, only: [:create]
-  get 'soudan_top', to: 'users#soudan_top'
-
-
-
-  
 end

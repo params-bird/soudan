@@ -7,8 +7,6 @@ $linecolor-hover: #00E000;
 
 
 
-
-
 // 個別共通設定　ーーーーーーーーーーー
 
 * { box-sizing: border-box;
@@ -17,6 +15,7 @@ $linecolor-hover: #00E000;
 body{
   margin: 0px !important;
   width: 100vw;
+  overflow-x: hidden;
 }
 
 p {
@@ -45,10 +44,17 @@ input, textarea, select{
   outline: 0;
 }
 
+@import 'tablet';
+@import 'soudan-top';
+@import 'users';
+@import 'topics';
+@import 'messages';
+@import 'search';
 
 @import 'modules/flash';
 @import 'modules/breadcrumbs';
 @import 'modules/tablet_header';
+@import 'modules/tablet_header_white';
 @import 'modules/tablet_footer';
 @import 'modules/chat';
 @import 'modules/input-message';
@@ -56,9 +62,3 @@ input, textarea, select{
 @import 'modules/error';
 @import 'modules/product-show-box';
 @import 'modules/soudan';
-
-@import 'tablet';
-@import 'soudan-top';
-@import 'users';
-@import 'topics';
-@import 'messages';

@@ -1,0 +1,33 @@
+.topic-box
+  .topic-box__inner
+    .topic-box__inner__left
+      = link_to topic_chat_rooms_path(topic_id: params[:id]) do
+        - if topic.close.blank?
+          .status-now 受付中
+        - else
+          .status-close 解決済み
+        .status-mail#status-mail 返信
+        .status-mail-count#status-mail-count
+          #{topic.chat_rooms.count}件
+    - case params.values_at :controller, :action
+    - when ['users', 'user_topics']
+      #topic-box__inner__right
+        = link_to topic_path(topic.id) do
+          .topic-box__inner__right__title
+            #{topic.title}
+          .topic-box__inner__right__info
+            .topic-box__inner__right__info__category
+              #{topic.category.name}
+    - else
+      .topic-box__inner__right
+        = link_to topic_path(topic.id) do
+          .topic-box__inner__right__title
+            #{topic.title}
+          .topic-box__inner__right__info
+            .topic-box__inner__right__info__category
+              #{topic.category.name}
+    - case params.values_at :controller, :action
+    - when ['users', 'user_topics']
+      - if topic.close.blank?
+        .topic-close
+          = link_to '受付を終了する', href=topic_closes_path(topic_id: topic.id), method: :post, data: { confirm: '相談を終了します' }

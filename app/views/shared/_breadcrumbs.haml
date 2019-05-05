@@ -1,22 +1,47 @@
-.breadcrumbs-header-contener
-  .breadcrumbs-header
+- case params.values_at :controller, :action
 
-    - if params[:controller] == 'users' && params[:action] == 'show'
-      - breadcrumb 'users_show', @user
+- when ['topics', 'index']
+  - breadcrumb :topics_index
 
-    - elsif params[:controller] == 'rooms' && params[:action] == 'index'
-      - breadcrumb 'mail_box', @user
+- when ['topics', 'new']
+  - breadcrumb :topics_new
 
-    - elsif params[:controller] == 'rooms' && params[:action] == 'show'
-      - breadcrumb 'message_room', @user
+- when ['topics', 'show']
+  - breadcrumb :topics_show
 
-    -# - elsif params[:controller] == 'products' && params[:action] == 'search'
-    -#   - breadcrumb 'search'.to_sym
+- when ['user_chat_rooms', 'index']
+  - breadcrumb :user_chat_rooms_index
 
-    -# - elsif params[:controller] == 'users/registrations' && params[:action] == 'edit'
-    -#   - breadcrumb 'users_edit'.to_sym
+- when ['chat_rooms', 'index']
+  - breadcrumb :users_topic_chat_rooms
 
-    -# - elsif params[:controller] == 'users' && params[:action] == 'logout'
-    -#   - breadcrumb 'logout'.to_sym
+- when ['chat_rooms', 'show']
+  - breadcrumb :chat_rooms_show
 
-    = breadcrumbs separator: " &nbsp;&nbsp;&#12297;&nbsp; "
+- when ['users', 'mypage']
+  - breadcrumb :user_mypage
+
+- when ['users', 'user_topics']
+  - breadcrumb :user_topics
+
+
+= breadcrumbs separator: " &nbsp;&nbsp;&#12297;&nbsp; "
+
+-# - when ['users', 'show']
+-#   - breadcrumb 'users_show'
+
+-# - elsif params[:controller] == 'rooms' && params[:action] == 'index'
+-#   - breadcrumb 'mail_box'
+
+-# - elsif params[:controller] == 'rooms' && params[:action] == 'show'
+-#   - breadcrumb 'message_room'
+
+-# -# - elsif params[:controller] == 'products' && params[:action] == 'search'
+-# -#   - breadcrumb 'search'.to_sym
+
+-# -# - elsif params[:controller] == 'users/registrations' && params[:action] == 'edit'
+-# -#   - breadcrumb 'users_edit'.to_sym
+
+-# -# - elsif params[:controller] == 'users' && params[:action] == 'logout'
+-# -#   - breadcrumb 'logout'.to_sym
+

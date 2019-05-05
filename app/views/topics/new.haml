@@ -1,24 +1,23 @@
 .mobile-body
-  =render 'module/header'
+  =render 'shared/header'
   .mobile-body__inner
-    .space-y-sm2
-    = form_for "#" do |f|
-      .label-box__inner
-        = f.label "タイトル"
-        %br/
-        = f.text_field :name, autofocus: true, autocomplete: "off", class:"input-default", id:"name", placeholder: "タイトルを入力してください"
-        %br/
-      .label-box__inner
-        = f.label "カテゴリー"
-        %br/
-        = f.collection_select :category_id, @category, :id, :name, {prompt: "---"}, class:"input-default", id:"category"
-
-      .label-box__inner
-        = f.label "内容"
-        %br/
-        = f.text_area :introduction, autofocus: true, autocomplete: "off", class: "product_introduction", id:"product_introduction"
-      .label-box__inner
-        = f.submit :投稿, class:"post-btn"
-
+    = form_for @topic do |f|
+      .topic-new-box
+        .topic-new-box__inner
+          = f.label "タイトル"
+          %br/
+          = f.text_area :title, autofocus: true, autocomplete: "off", class:"topic-input", placeholder: "タイトルを入力してください"
+          %br/
+        .topic-new-box__inner
+          = f.label "カテゴリー"
+          %br/
+          = f.collection_select :category_id, @category, :id, :name, {prompt: "選択してください"}, class:"topic-category-input"
+        .topic-new-box__inner
+          = f.label "内容"
+          %br/
+          = f.text_area :text, autofocus: true, autocomplete: "off", class: "topic_text"
+        .topic-new-box__inner
+          = f.submit :投稿, class:"post-btn"
+  =render 'shared/footer'
 
 

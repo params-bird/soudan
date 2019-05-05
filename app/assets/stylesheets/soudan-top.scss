@@ -13,7 +13,7 @@
   background-color: lightsalmon;
   width: 100vw;
   height: 93vh;
-  background: image-url('diwali-1787513_1920');
+  background: image-url('diwali-1787513_1921');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -22,9 +22,9 @@
     // position: fixed;
     // top:0;
     // z-index: 1;
-    height: 11vmax;
+    height: 8vh;
     .top-page__header{
-      height: 8vmax;
+      height: 8vh;
       width: 100vw;
       position: relative;
       display: flex;
@@ -74,21 +74,25 @@
       font-weight: bold;
     }
   }
+  #service-title{
+    cursor: pointer;
+  }
+
 
   .topic-nav{
     height: 7vmax;
-    width: 100vmin;
+    width: 100vw;
+    margin: auto;
     border-block-end: 1px solid lightgray;
-    nav{
-      display: flex;
-      width: 100vw;
-      position: absolute;
-    }
-    ul{
-      width: 50%;
+    display: flex;
+    a{
+      width: 49%;
       text-align: center;
+      display: flex;
       padding: inherit;
       cursor: pointer;
+      align-items: center;
+      justify-content: center;
     }
     .topic-nav__border{
     width: 1px;

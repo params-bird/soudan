@@ -1,18 +1,7 @@
 .mobile-body
-  =render 'module/header'
-  .mobile-body__inner
-    =render 'topic-box'
-    =render 'topic-box'
-    =render 'topic-box'
-    =render 'topic-box'
-    =render 'topic-box'
-    =render 'topic-box'
-    =render 'topic-box'
-    =render 'topic-box'
-    =render 'topic-box'
-    =render 'topic-box'
-    =render 'topic-box'
-    =render 'topic-box'
-    =render 'topic-box'
-    =render 'topic-box'
-  =render 'module/footer'
+  =render 'shared/header'
+  %section
+    .mobile-body__inner
+      =render partial: 'topic-box', collection: @topic, as: :topic
+
+  =render 'shared/footer'

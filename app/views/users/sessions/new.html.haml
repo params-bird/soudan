@@ -1,5 +1,5 @@
 .mobile-body
-  =render 'module/header'
+  =render 'shared/header'
   .mobile-body__inner__fixed
     .registration-box
       -# .ragistration-box__header
@@ -23,7 +23,7 @@
               = f.label :remember_me
           .label-box__inner
             = f.submit t('.sign_in'), class:"input-default"
-        %section.sns-select-signin
+        .sns-select-signin
           %p.or SNSでログイン
           .sns-select-signin__google
             .sns-select-signin__google_logo

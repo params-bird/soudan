@@ -13,22 +13,70 @@ module ApplicationHelper
   end
 
   def header_title
-    if params[:controller] == 'user_chat_rooms'
-      "受信箱"
-    elsif params[:controller] == 'chat_rooms' && params[:action] == 'index'
-      "TOPICタイトルの返信一覧"
-    elsif params[:controller] == 'chat_rooms' && params[:action] == 'room'
-      "hogehogeさんとのチャット"
-    elsif params[:controller] == 'topics' && params[:action] == 'index'
-      "新着一覧"
-    elsif params[:controller] == 'topics' && params[:action] == 'new'
-      "相談投稿"
-    elsif params[:controller] == 'users/registrations' && params[:action] == 'new'
+    case params.values_at :controller, :action
+    when ['user_chat_rooms', 'index']
+      "メッセージ一覧"
+    when ['chat_rooms', 'show']
+      "メッセージルーム"
+    when ['topics', 'index']
+      "投稿一覧"
+    when ['topics', 'new']
+      "相談"
+    when ['users/registrations', 'new']
       "新規登録"
-    elsif params[:controller] == 'users/sessions' && params[:action] == 'new'
+    when ['users/sessions', 'index']
       "ログイン"
-
+    when ['users', 'user_topics']
+      "ユーザー投稿一覧"
+    else
 
     end
   end
+
+
+  def star_rate
+    case
+    when @user.thanks.count < 1
+      "0%"
+    when @user.thanks.count < 5
+      "5%"
+    when @user.thanks.count < 10
+      "10%"
+    when @user.thanks.count < 20
+      "20%"
+    when @user.thanks.count < 30
+      "30%"
+    when @user.thanks.count < 40
+      "40%"
+    when @user.thanks.count < 50
+      "50%"
+    when @user.thanks.count < 60
+      "60%"
+    when @user.thanks.count < 70
+      "70%"
+    when @user.thanks.count < 80
+      "80%"
+    when @user.thanks.count < 90
+      "90%"
+    when @user.thanks.count < 100
+      "100%"
+    end
+  end
+
+
 end
+
+    # if params[:controller] == 'chat_rooms' && params[:action] == 'index'
+    #   "メッセージ一覧"
+    # elsif params[:controller] == 'chat_rooms' && params[:action] == 'show'
+    #   "メッセージルーム"
+    # elsif params[:controller] == 'topics' && params[:action] == 'index'
+    #   "投稿一覧"
+    # elsif params[:controller] == 'topics' && params[:action] == 'new'
+    #   "相談"
+    # elsif params[:controller] == 'users/registrations' && params[:action] == 'new'
+    #   "新規登録"
+    # elsif params[:controller] == 'users/sessions' && params[:action] == 'new'
+    #   "ログイン"
+    # elsif params[:controller] == 'users' && params[:action] == 'user_topics'
+    #   "ユーザー投稿一覧"

@@ -1,0 +1,19 @@
+.message-page
+  .mail-box
+    = link_to topic_chat_room_path(id: chat_rooms.topic_id, id: chat_rooms.id) do
+      .mail-box__inner
+        .mail-box__inner__left
+          .topic-show-box__inner__user-icon
+            = image_tag chat_rooms.user_chat_rooms[1].user.avater_url
+        .mail-box__inner__right
+          .mail-box__info
+            .mail-box__info__topic_title
+            .mail-box__info__send-user-name
+              %strong
+                = chat_rooms.user_chat_rooms[1].user.name
+                さん
+            .mail-box__info__send-time
+              = time_ago_in_words(chat_rooms.messages.last.created_at)+"前"
+          .mail-last-message
+            = chat_rooms.messages.last.content
+=render 'shared/footer'

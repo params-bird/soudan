@@ -1,58 +1,55 @@
-.breadcrumbs-header-contener
-  .breadcrumbs-header
-    - breadcrumb :user_edit
-    = breadcrumbs separator: " &nbsp;&nbsp;&#12297;&nbsp; "
+= hidden_field_tag "action", params[:action]
+= hidden_field_tag "route", "users"
+= hidden_field_tag "idParams", current_user.id
+.mobile-body
+  =render 'shared/header'
+  .space-5
+  .registration-box
+    .label-box
+      .space-y-sm2
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .space-y-sm2
 
-.main-body
-  .message-page
-    = render "shared/side-bar"
-    .page
-      .text-box
-        %h5 アカウント情報更新
-      .registration-box
-        .registration-box-inner
-          .space-y-sm2
-          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-            = render "devise/shared/error_messages", resource: resource
-            .label-box__inner
-              = f.label "ニックネーム"
-              %br/
-              = f.text_field :name, autofocus: true, autocomplete: "off", class:"input-default"
-            -# .label-box__inner
-            -#   = f.label "アイコン"
-            -#   %br/
-            -#   = f.file_field :avater, autocomplete: "off", class:"input-default"
-            .label-box__inner
-              = f.label "プロフィール写真"
-              %br/
-              -# .input-default{:onclick => "$('#avater').click()"} クリックして画像を選択
-              -# = f.file_field :avater, multipart: :true, class: "input-default", style: "display:none;", id: "avater", multipart: :true
-              .input-default{:onclick => "$('#avater').click()"} クリックして画像を選択
-              = f.file_field :avater, multipart: :true, style: "display:none;", id: "avater", multipart: :true
-            .label-box__inner
-              = f.label "ジャンル"
-              %br/
-              = f.collection_select :category_id, @category, :id, :name, {prompt: "選択してください"} ,class:"input-default"
-            .label-box__inner
-              = f.label :email
-              %br/
-              = f.email_field :email, autocomplete: "off", class:"input-default"
-            - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-              %div
-                Currently waiting confirmation for: #{resource.unconfirmed_email}
-            .label-box__inner
-              = f.label "変更後パスワード (変更しない場合は空欄)"
-              = f.password_field :password, autocomplete: "off", class:"input-default",placeholder: "半角英数字６文字以上"
-            .label-box__inner
-              = f.label "変更後パスワード確認用 "
-              %br/
-              = f.password_field :password_confirmation, autocomplete: "off", class:"input-default"
-            .label-box__inner
-              = f.label :current_password
-              = f.password_field :current_password, autocomplete: "off", class:"input-default"
-              %br/
-              %i#edit_text (変更を反映するには現在のパスワードを入力してください)
-              %br/
-            .label-box__inner
-              = f.submit "更新", class:"post-btn"
-            .space-y-sm3
+        .label-box__inner
+          = f.label "ニックネーム"
+          = f.text_field :name, autofocus: true, autocomplete: "off", placeholder: "", class:"input-default"
+
+        .label-box__inner
+          = f.label "プロフィール写真"
+          %br/
+          .img_upload
+            .img_upload_wrap
+              .img_upload_wrap__inner
+                = f.file_field :avater, class: "image", id: "upicon", multipart: :true
+        .label-box__inner
+          = f.label :email
+          = f.email_field :email, autofocus: true, autocomplete: "off", placeholder: "例）abc@design.com",class:"input-default"
+
+        .label-box__inner
+          = f.label "変更後パスワード (変更しない場合は空欄)"
+          = f.password_field :password, autocomplete: "off", class:"input-default",placeholder: "半角英数字６文字以上"
+
+        .label-box__inner
+          = f.label "変更後パスワード確認用 "
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "off", class:"input-default"
+
+        .label-box__inner
+          = f.label :current_password
+          = f.password_field :current_password, autocomplete: "off", class:"input-default"
+          %br/
+          %i#edit_text (変更を反映するには現在のパスワードを入力してください)
+          %br/
+
+        .label-box__inner
+          = f.submit "更新", class:"post-btn"
+        .label-box__inner#delete-account
+          %a= link_to 'アカウント削除', href="/users", method: :delete, data: { confirm: 'Are you sure?' }
+=render 'shared/footer'
+
+.overlay{:style => "display:none;"}
+  .crop_modal
+  .close_btn
+  .select_icon_btn 決定
+

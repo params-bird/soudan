@@ -1,1 +1,27 @@
-.footer
+.mobile-body__bottom-parts
+  - if params[:controller] == 'chat_rooms' && params[:action] == 'room'
+    =render 'shared/input-message'
+
+  .mobile-body__footer
+    .mobile-body__footer__inner
+      .mobile-body__footer__inner__icon-box
+        %i.material-icons.md-dark.md-inactive
+          %a{href: new_topic_path} border_color
+        %span.icon-item-title 相談する
+      .mobile-body__footer__inner__icon-box
+        %i.material-icons.md-dark.md-inactive
+          %a{href: topics_search_path} search
+        %span.icon-item-title カテゴリー
+      .mobile-body__footer__inner__icon-box
+        %i.material-icons.md-dark.md-inactive
+          %a{href: topics_path} format_list_bulleted
+        %span.icon-item-title 一覧
+        -# %a.icon-item-title{href: soudan_top_path} ホーム
+      .mobile-body__footer__inner__icon-box
+        %i.material-icons.md-dark.md-inactive
+          %a{href: user_chat_rooms_path(user_id: current_user.id)}mail
+        %span.icon-item-title メッセージ
+      .mobile-body__footer__inner__icon-box
+        %i.material-icons.md-dark.md-inactive
+          %a{href: user_mypage_path(current_user.id)} perm_identity
+        %span.icon-item-title メニュー

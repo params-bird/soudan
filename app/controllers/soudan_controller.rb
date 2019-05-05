@@ -1,8 +1,8 @@
 class SoudanController < ApplicationController
 
 
-def soudan_top
-  
+def index
+
 end
 
 

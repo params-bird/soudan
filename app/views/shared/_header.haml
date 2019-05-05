@@ -1,21 +1,25 @@
-/ Image and text
-.d-flex.shadow-sm.p-2.bg-white.rounded.sticky-top
-  -# %a.col-6.col-sm.d-flex.align-items-center{href: root_path}
-  .col-sm-1.d-none.d-sm-block
-  %a.col-5.col-sm.py-2.col-xl.d-flex.flex-grow{href: root_path}
-    .header-logo.w-100
-  - unless user_signed_in?
-    .col-3.col-sm-2.col-xl-1.p-0.m-1.d-flex
-      %button.btn.btn-outline-primary.w-100.text-nowrap{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", type: "button"} 新規登録
-      .dropdown-menu{"aria-labelledby" => "dropdownMenuButton"}
-        %a.dropdown-item{href: new_user_registration_path}  一般の方
-        %a.dropdown-item{href: new_campany_path} 法人企業様
-    .col-3.col-sm-2.col-xl-1.p-0.m-1.d-flex
-      %a.btn.w-100.btn-danger.text-nowrap{href: new_user_session_path, role: "button"} ログイン
-    .col-1.col-sm-1
-  - else
-    .col-3.col-sm-2.col-xl-1.p-0.m-1.d-flex
-      %a.btn.w-100.btn-outline-info.text-nowrap{href: user_path(current_user.id), role: "button"} マイページ
-    .col-3.col-sm-2.col-xl-1.p-0.m-1.d-flex
-      %a.btn.w-100.btn-outline-secondary.text-nowrap{href: destroy_user_session_path, role: "button"} ログアウト
-    .col-1.col-sm-1
+.mobile-body__headparts
+  - flash.each do |key, value|
+    = content_tag(:div, value, class: "#{key}", id: "#{key}")
+  .mobile-body__header
+    .mobile-body__header__service__name
+      %a{href: root_path}soudan
+    .mobile-body__header__title
+      = header_title
+    - if user_signed_in?
+      .icon-frame
+        .user_icon
+          %a{href: user_mypage_path(current_user.id)}
+            = image_tag @user.avater
+      -# .question-btn-frame
+      -#   .question-btn
+      -#     %i.fas.fa-edit.fa-4x
+      -#     %a{href: new_topic_path}相談する
+    - else
+      .nocolor-btn
+        %a{href: new_user_session_path}ログイン
+  .bread-crumb
+    =render 'shared/breadcrumbs'
+-# .header-hidden-space
+
+

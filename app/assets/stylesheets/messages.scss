@@ -1,140 +1,203 @@
-// // Place all the styles related to the messages controller here.
-// // They will automatically be included in application.css.
-// // You can use Sass (SCSS) here: http://sass-lang.com/
-// .message-page {
-//   display: flex;
-//   margin: 30px auto;
-//   padding-top: 50px;
-// }
-// .side-bar {
-//   width: 30%;
-//   margin-right: 3%;
-//   &__user-avater {
-//     width: 130px;
-//     height: 130px;
-//     margin: auto;
-//     border-radius: 50%;
-//     object-fit: cover;
-//     img {
-//       border-radius: 50%;
-//     }
-//   }
-//   &__user-name {
-//     width: 100%;
-//     text-align: center;
-//     padding-top: 20px;
-//   }
-//   &_other-info {
-//     height: 50px;
-//     width: 50%;
-//     margin: auto;
-//     padding: 4%;
-//     text-align: center;
-//     border-block-end: 1px dotted gray;
-//   }
-// }
-// .message-page-right {
-//   width: 70%;
-//   .message-container {
-//     height: 100px;
-//     padding: 1%;
-//     display: flex;
-//     margin-bottom: 10px;
-//     &__inner-left {
-//       height: 100%;
-//       width: 70px;
-//     }
-//     &__user-avater {
-//       width: 50px;
-//       height: 50px;
-//       border-radius: 50%;
-//       margin: auto;
-//       object-fit: cover;
-//       img {
-//         border-radius: 50%;
-//       }
-//     }
-//     .message-container__inner-right {
-//       position: relative;
-//       height: 100%;
-//       width: 100%;
-//       .message-container__input-message {
-//         width: 100%;
-//         height: 40px;
-//         position: absolute;
-//         .message-input-area {
-//           width: 100%;
-//           height: 45px;
-//           margin: auto;
-//           padding: 10px 16px 8px;
-//           border-radius: 4px;
-//           border: 1px solid lightgray;
-//           background: #fff;
-//           line-height: 1.5;
-//           cursor: pointer;
-//           outline-width: 2px;
-//           overflow: scroll;
-//         }
-//         .message-btn {
-//           background-color: gray;
-//           border-radius: 10px;
-//           position: absolute;
-//           right: 15px;
-//           color: white;
-//           p {
-//             color: white;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
+// Place all the styles related to the messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.message-page {
+}
 
-// .message-container__message-box {
-//   width: 100%;
-//   padding: 15px 0px;
-//   display: flex;
-//   border-block-end: 1px solid lightgray;
-//   .message-box__left {
-//     width: 80px;
-//     .message-box__avater {
-//       width: 60px;
-//       height: 60px;
-//       border-radius: 50%;
-//       background-color: blanchedalmond;
-//       object-fit: cover;
-//       img {
-//         border-radius: 50%;
-//       }
-//     }
-//   }
-//   .message-box__right {
-//     width: 90%;
-//     .message-box__info {
-//       display: flex;
-//       position: relative;
-//       width: 100%;
-//       padding: 5px 0px 10px 0px;
-//       margin-bottom: 30px;
-//       font-size: 0.9rem;
-//       .message-box__send-user-name {
-//         // width: 70%;
-//         position: absolute;
-//         left: 0%;
-//       }
-//       .message-box__send-time {
-//         position: absolute;
-//         right: 1%;
-//         font-size: 0.8rem;
-//       }
-//     }
-//     .message {
-//       line-height: 1.8;
-//       font-size: 0.9rem;
-//     }
-//   }
-// }
+.message-page {
+  width: 90vmin;
+  margin: auto;
+  .message-container {
+    width: 100%;
+    height: 60vh;
+    overflow: auto;
+    position: relative;
+    &__inner-left {
+      height: 100%;
+      width: 70px;
+    }
+    &__user-avater {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin: auto;
+      object-fit: cover;
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
+  .message-container__input{
+    position: fixed;
+    width: 90vmin;
+    margin: auto;
+    height: 35vh;
 
-// .mail-box{
+    &__message {
+      // width: 100%;
+      // height: 40px;
+      // position: absolute;
+      &__area {
+        width: 100%;
+        height: 6.5rem;
+        margin: auto;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        border: 1px solid lightgray;
+        background: #fff;
+        line-height: 1rem;
+        cursor: pointer;
+        outline-width: 2px;
+        overflow: scroll;
+      }
+      .message-btn {
+        background-color: gray;
+        border-radius: 10px;
+        position: absolute;
+        right: 15px;
+        color: white;
+        p {
+          color: white;
+        }
+      }
+    }
+  }
+}
 
-// }
+.message-container__message-box {
+  width: 100%;
+  padding: 15px 0px;
+  border-block-end: 1px solid lightgray;
+  .message-box__top {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    margin-bottom: 1rem;
+    a{
+      background-image: url(no-photo-icon-22);
+      background-size: cover;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      white-space: nowrap;
+      border-radius: 50%;
+      margin-right: 1rem;
+    }
+    .message-box__avater {
+      width: 3rem;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 0.5rem;
+      img {
+        border-radius: 50%;
+      }
+    }
+    .message-box__info {
+      display: flex;
+      width: 100%;
+      padding: 0.5rem 0;
+      .message-box__send-user-name {
+        width: 70%;
+      }
+      .message-box__send-time {
+        width: 30%;
+        display: flex;
+        justify-content: flex-end;
+        color: dimgray;
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .message-box__bottom {
+    width: 100%;
+    line-height: 1rem;
+    color: dimgray;
+    padding: 0 1rem;
+    .message {
+      line-height: 1.8;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.mail-box{
+  width: 100%;
+  &__inner{
+    display: flex;
+    margin-top: 10px;
+    border-block-end: 1px solid gray;
+    .mail-box__inner__left{
+      padding-top: 6px;
+      width: 10%;
+      text-align: -webkit-right;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .mail-box__inner__right{
+      width: 90%;
+      padding-left: 2%;
+    }
+  }
+  &__info {
+    position: relative;
+    padding: 5px 0px 10px 0px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    &__topic_title{
+      display: flex;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+      p{
+        font-size: smaller;
+      }
+    }
+    &__send-user-name {
+      width: 70%;
+      position: absolute;
+      left: 0%;
+      color: royalblue;
+      // text-decoration: underline;
+    }
+    &__send-time {
+      position: absolute;
+      display: flex;
+      right: 1%;
+      font-size: 0.8rem;
+      justify-content: flex-end;
+      margin-right: 0.5rem;
+      color: gray;
+    }
+  }
+  .mail-last-message{
+    font-size: 0.8rem;
+    height: 2rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+  }
+}
+
+.message-box__evaluation-flame{
+  display: flex;
+  padding-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  p{
+    font-size: xx-small;
+    color: gray;
+    padding-top: 4px;
+  }
+}
+
+.thanks-info{
+  font-size: xx-small;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  color: gray;
+  padding-top: 2px;
+}
