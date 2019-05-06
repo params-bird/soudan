@@ -2,7 +2,6 @@ class TopicsController < ApplicationController
   before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy]
   before_action :set_user, only: [:index, :new, :create, :show, :edit, :update, :destroy, :search]
   before_action :set_form_data, only: [:new, :edit, :search]
-  impressionist actions: [:index, :show]
 
   def index
     @topic = Topic.all.order(id: "DESC")
