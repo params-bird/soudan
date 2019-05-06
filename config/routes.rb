@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :soudan, only: [:index]
+  resources :soudan, only: [:index, :kiyaku, :privacy_policy]
   root 'soudan#index'
 
   devise_for :users, controllers: {
@@ -33,5 +33,6 @@ Rails.application.routes.draw do
   get 'user/:id', to: 'users#mypage', as: 'user_mypage'
   get 'users/:id/topics', to: 'users#user_topics', as: 'user_topics'
   get 'search', to: 'topics#search', as: 'topics_search'
-
+  get 'kiyaku', to: 'soudan#kiyaku', as: 'kiyaku'
+  get 'privacy_policy', to: 'soudan#privacy_policy', as: 'privacy_policy'
 end

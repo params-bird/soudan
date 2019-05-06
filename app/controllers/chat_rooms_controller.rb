@@ -10,7 +10,7 @@ class ChatRoomsController < ApplicationController
 
   def show
     @chat_room = ChatRoom.find(params[:id])
-    @chat_room_id = UserChatRoom.where(user_id:params[:id], user_id:current_user.id).pluck(:chat_room_id)
+    @chat_room_id = UserChatRoom.where(user_id:params[:id]).pluck(:chat_room_id)
     if UserChatRoom.where(user_id: current_user.id, chat_room_id: @chat_room.id).present?
       @messages = @chat_room.messages.order(created_at: :desc)
       @message = Message.new
@@ -22,12 +22,11 @@ class ChatRoomsController < ApplicationController
 
 
   def create
-    #相談相手になるをクリックした際にチャットルームと中間テーブルを作成する。
     @chat_room  = ChatRoom.create(topic_id: params[:topic_id], topic_create_user_id: params[:user_chat_room][:topic_create_user_id], sender_user_id: current_user.id)
     @user_chat_room1 = UserChatRoom.create(chat_room_id: @chat_room.id, user_id: @chat_room.topic.user.id)
     @user_chat_room2 = UserChatRoom.create(chat_room_id: @chat_room.id, user_id: @chat_room.sender_user_id)
     if @chat_room.save && @user_chat_room1.save && @user_chat_room2.save
-    redirect_to topic_chat_room_path(topic_id: params[:topic_id], id: @chat_room.id)   #相談相手になるをクリック後にチャットスペースに遷移する
+    redirect_to topic_chat_room_path(topic_id: params[:topic_id], id: @chat_room.id)
     end
 
   end
