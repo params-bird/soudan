@@ -109,13 +109,11 @@ build-iPhoneSimulator/
 /.bundle/
 /lib/bundler/man/
 /.vscode/
-/assets/images/
 # アップロードされたテスト画像を無視する
 /public/
 /db/fixtures/
-/db/schema.rb/
 /db/seeds.rb/
-app/assets/images/
+
 # for a library or gem, you might want to ignore these files since the code is
 # intended to run in multiple environments; otherwise, check them in:
 # Gemfile.lock
