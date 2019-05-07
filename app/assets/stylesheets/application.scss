@@ -1,10 +1,8 @@
-
 $madgreen: #00a4bb;
 $red:#e91e63;
 $darknavy: #01105f;
 $linecolor: #00C300;
 $linecolor-hover: #00E000;
-
 
 
 // 個別共通設定　ーーーーーーーーーーー
@@ -18,12 +16,6 @@ body{
   width: 100vw;
   overflow-x: hidden;
 }
-
-input , textarea , select {
-  /* 入力欄にフォーカスが当たっても拡大しない */
-  font-size: 16px;
-  transform: scale(0.8);
-  }
 
 p {
   margin-block-start: 0em;
@@ -47,9 +39,11 @@ img {
   width: inherit;
 }
 
-input, textarea, select{
+input , textarea , select {
+  /* 入力欄にフォーカスが当たっても拡大しない */
+  font-size: 16px;
   outline: 0;
-}
+  }
 
 @import 'tablet';
 @import 'soudan-top';
