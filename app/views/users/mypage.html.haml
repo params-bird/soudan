@@ -1,33 +1,34 @@
 .my-page__background-img
   =render 'shared/header'
-  .my-page
-    .my-card
-      .my-card__user-avater
-        .my-card__user-avater__inner
-          = image_tag @user.avater
-      .my-card__user-name
-        %strong #{@user.name}
-      .my-card__status
-        %i.far.fa-laugh
-          %p #{@user.thanks.count}
-        %i.far.fa-frown
-          %p #{@user.bads.count}
-      -# .my-card__status
-      -#   %p Record
-      -#   .star-rating-box
-      -#     .star-rating
-      -#       .star-rating-front{:style => "width: #{star_rate}"} ★★★★★
-      -#       .star-rating-back ★★★★★
-      -#     %p #{@user.thanks.count}
+  .my-page-flame
+    .my-page
+      .my-card
+        .my-card__user-avater
+          .my-card__user-avater__inner
+            = image_tag @user.avater
+        .my-card__user-name
+          %strong #{@user.name}
+        .my-card__status
+          %i.far.fa-laugh
+            %p #{@user.thanks.count}
+          %i.far.fa-frown
+            %p #{@user.bads.count}
+        -# .my-card__status
+        -#   %p Record
+        -#   .star-rating-box
+        -#     .star-rating
+        -#       .star-rating-front{:style => "width: #{star_rate}"} ★★★★★
+        -#       .star-rating-back ★★★★★
+        -#     %p #{@user.thanks.count}
 
-      %i.material-icons
-        %a{href: edit_user_registration_path} settings
-        %p 編集
+        %i.material-icons
+          %a{href: edit_user_registration_path} settings
+          %p 編集
 
-    .my-page_other-info
-      %a{href: user_topics_path(params[:id])} 投稿一覧
-    .my-page_other-info
-      %a{href: user_chat_rooms_path(user_id: current_user.id)}受信メッセージ一覧
+      .my-page_other-info
+        %a{href: user_topics_path(params[:id])} 投稿一覧
+      .my-page_other-info
+        %a{href: user_chat_rooms_path(user_id: current_user.id)}受信メッセージ一覧
 
 
 =render 'shared/footer'

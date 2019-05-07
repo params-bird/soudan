@@ -21,9 +21,11 @@
       height: calc(100vh - 15vh);
     }
     &__inner{
-    width: 100vmin;
-    margin: 8vh auto 0 auto;
-    height: 85vh;
+      width: 100vmin;
+      margin: 9vh auto 0 auto;
+      height: 85vh;
+      position: fixed;
+      overflow-y: auto;
     }
     &__inner__fixed{
       width: 100vmin;
