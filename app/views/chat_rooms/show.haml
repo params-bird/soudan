@@ -39,5 +39,6 @@
           = f.text_area :content, placeholder: "メッセージを入力して下さい" , class: "message-container__input__message__area", autocomplete: "off"
           = f.hidden_field :chat_room_id, value: @chat_room.id
           .space-1
-          = f.submit "送信", class: "post-btn"
+          .post-btn
+            = f.submit "送信"
   =render 'shared/footer'
