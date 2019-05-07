@@ -9,16 +9,11 @@ $linecolor-hover: #00E000;
 
 // 個別共通設定　ーーーーーーーーーーー
 
-
-* {
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Noto Sans JP', sans-serif;
-}
-
 * { box-sizing: border-box;
 }
 
 body{
+  font-family: 'Hiragino Sans', 'Meiryo', sans-serif;
   margin: 0px !important;
   width: 100vw;
   overflow-x: hidden;
