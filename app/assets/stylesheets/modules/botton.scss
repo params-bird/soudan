@@ -85,8 +85,10 @@
     position: absolute;
     bottom: 3%;
     .sns-select-flame{
-      display: flex;
-      justify-content: center;
+      margin-bottom: 1rem;
+      /* display: flex; */
+      /* justify-content: center; */
+      /* height: 40%; */
       .sns-select{
         width: 60vmin;
         margin: 0 auto;

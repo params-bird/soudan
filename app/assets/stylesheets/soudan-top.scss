@@ -60,11 +60,11 @@
   font-family: Arial Bold;
   }
   .index-page__top{
-
+    height: 40%;
+    align-items: center;
+    display: flex;
     .service-title{
-      height: 35%;
-      padding-left: 5vmin;
-      padding: 0% 8vmin;
+      padding: 0 0 0 8vmin;
       color: white;
       font-weight: bold;
       P{
