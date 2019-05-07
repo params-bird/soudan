@@ -9,7 +9,6 @@
 // @media screen and (max-width:639px) {
   /*スマホ用のcssを記述*/
 
-
   .mobile-body{
     width: 100vw;
     height: 100vh;
@@ -46,6 +45,7 @@
     overflow: hidden;
     position: relative;
     color: white;
+    scroll-snap-align: start;
     // &:before{
     //   content: '';
     //   background: inherit;

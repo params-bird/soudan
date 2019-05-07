@@ -12,7 +12,7 @@
 .mobile-body__main__top-page{
   background-color: lightsalmon;
   width: 100vw;
-  height: 93vh;
+  height: 100vh;
   background: image-url('top');
   background-repeat: no-repeat;
   background-size: cover;
@@ -61,8 +61,7 @@
   }
 
   .service-title{
-    margin-top: 15vh;
-    margin-top: 2rem;
+    height: 40%;
     padding-left: 5vmin;
     padding: 0% 8vmin;
     color: white;
@@ -82,12 +81,13 @@
 
 
   .topic-nav{
-    height: 7vh;
+    height: 10%;
     width: 100vw;
     margin: auto;
     border-block-end: 1px solid lightgray;
     display: flex;
     a{
+      color: white;
       width: 49%;
       text-align: center;
       display: flex;
@@ -96,14 +96,14 @@
       align-items: center;
       justify-content: center;
     }
-    .topic-nav__border{
-    width: 1px;
-    left: 50%;
-    position: absolute;
-    background-color: gray;
-    height: inherit;
-    position: absolute;
-    }
+    // .topic-nav__border{
+    // width: 1px;
+    // left: 50%;
+    // position: absolute;
+    // background-color: gray;
+    // height: inherit;
+    // position: absolute;
+    // }
   }
 
   .what-soudan{

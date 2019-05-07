@@ -1,21 +1,20 @@
-.mobile-body__main__top-page
-  %section
-    .top-page__headparts
-      .top-page__header
-        .top-page__logo
-        .top-page__title
-          %a{href: root_path}
-            %h4 soudan
-        - unless user_signed_in?
-          .white-line-btn
-            %a{href: new_user_registration_path}ユーザー登録
-          .nocolor-btn
-            %a{href: new_user_session_path}ログイン
-        - else
-          .nocolor-btn
-          .nocolor-btn
-            %a{href: destroy_user_session_path}ログアウト
-      .top-page__header__title
+%section.mobile-body__main__top-page
+  %section.top-page__headparts
+    .top-page__header
+      .top-page__logo
+      .top-page__title
+        %a{href: root_path}
+          %h4 soudan
+      - unless user_signed_in?
+        .white-line-btn
+          %a{href: new_user_registration_path}ユーザー登録
+        .nocolor-btn
+          %a{href: new_user_session_path}ログイン
+      - else
+        .nocolor-btn
+        .nocolor-btn
+          %a{href: destroy_user_session_path}ログアウト
+    .top-page__header__title
 
   %section.service-title
     %h2 もっと気軽に相談しよう！
@@ -43,10 +42,10 @@
         .sns-select__line_logo
         %a{href: "#"}LINE
 
-%section.topic-nav
-  %a{href: new_topic_path}相談する
-  %a{href: topics_path}新着一覧
-  .topic-nav__border
+  %section.topic-nav
+    %a{href: new_topic_path}相談する
+    %a{href: topics_path}新着一覧
+    .topic-nav__border
 
 %section.what-soudan
   .what-soudan__center
