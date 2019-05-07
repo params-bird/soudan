@@ -83,7 +83,6 @@
 
 .sns-select-flame{
   height: 40%;
-  position: static;
   display: flex;
   justify-content: center;
 
@@ -92,8 +91,6 @@
     margin: 0 auto;
     font-family: 'Roboto', sans-serif;
     color: grey;
-    position: absolute;
-    bottom:10vh;
     .sns-select__mail{
       height: 7vh;
       margin: 3vmin 0%;
