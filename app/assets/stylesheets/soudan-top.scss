@@ -67,6 +67,9 @@
       padding: 0 0 0 8vmin;
       color: white;
       font-weight: bold;
+      h2{
+        margin-block-start: unset;
+      }
       P{
         font-size: 0.9rem;
         line-height:2;
