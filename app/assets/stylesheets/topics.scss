@@ -193,14 +193,18 @@
 
 
 .topic-show-box{
-  width:  100vmin;
-  margin: auto;
+  width: 100vmin;
+  margin: 11vh auto 0 auto;
+  height: 85vh;
+  position: fixed;
+  overflow-y: auto;
   P{
     font-size: 1rem;
   }
   &__flex-box{
     display: flex;
     align-items: center;
+    margin-bottom: 3px;
   }
   &__inner{
     padding: 5px 20px 10px 20px;
