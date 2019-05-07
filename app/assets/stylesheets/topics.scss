@@ -194,7 +194,7 @@
 
 .topic-show-box{
   width: 100vmin;
-  margin: 11vh auto 0 auto;
+  margin: 9.5vh auto 0 auto;
   height: 85vh;
   position: fixed;
   overflow-y: auto;
@@ -208,6 +208,7 @@
   }
   &__inner{
     padding: 5px 20px 10px 20px;
+    overflow-y: auto;
     &__title{
       border-radius: 4px;
       padding: 7px;
@@ -220,7 +221,7 @@
       border: 1px solid gray;
       border-radius: 4px;
       padding: 2%;
-      height: 40vh;
+      height: 35vh;
       overflow: auto;
     }
     &__user-name{
