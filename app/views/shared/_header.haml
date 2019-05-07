@@ -3,7 +3,8 @@
     = content_tag(:div, value, class: "#{key}", id: "#{key}")
   .mobile-body__header
     .mobile-body__header__service__name
-      %a{href: root_path}soudan
+      %a{href: root_path}
+        %h4 soudan
     .mobile-body__header__title
       = header_title
     - if user_signed_in?

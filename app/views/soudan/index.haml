@@ -4,7 +4,8 @@
       .top-page__header
         .top-page__logo
         .top-page__title
-          %a{href: root_path} soudan
+          %a{href: root_path}
+            %h4 soudan
         - unless user_signed_in?
           .white-line-btn
             %a{href: new_user_registration_path}ユーザー登録
@@ -125,7 +126,8 @@
 
 
 %footer.footer-nav
-  .footer-nav__header soudan
+  .footer-nav__header
+    %h5 soudan
   %ul.footer-nav_ul
     %li.footer-nav_ul_li
       %a{href: "#",id:"what-soudan"}soudan とは？

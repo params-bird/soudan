@@ -2,7 +2,8 @@
   .top-page__header
     .top-page__logo
     .top-page__title
-      %a{href: root_path} soudan
+      %a{href: root_path}
+        %h4 soudan
     - unless user_signed_in?
       .white-line-btn
         %a{href: new_user_registration_path}ユーザー登録
