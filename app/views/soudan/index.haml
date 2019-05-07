@@ -15,37 +15,38 @@
         .nocolor-btn
           %a{href: destroy_user_session_path}ログアウト
     .top-page__header__title
-
-  %section.service-title
-    %h2 もっと気軽に相談しよう！
-    %p あなたの周りに相談相手はいますか？
-    %p soudanは相談しやすい人を見つけて相談できる相談に特化した
-    %p いつでも相談できるSNSサービスです。
-    %a#service-title もっと詳しく　＞＞
+  %section.index-page__top
+    .service-title
+      %h2 もっと気軽に相談しよう！
+      %p あなたの周りに相談相手はいますか？
+      %p soudanは相談しやすい人を見つけて相談できる相談に特化した
+      %p いつでも相談できるSNSサービスです。
+      %a#service-title もっと詳しく　＞＞
 
 
   -# %section.start-soudan
   -#   .start-btn
   -#     %a{href: "#"}相談する
-  %section.sns-select-flame
-    .sns-select
-      .sns-select__mail
-        .sns-select__mail_logo
-        %a{href: new_user_registration_path}メールアドレス
-      .sns-select__google
-        .sns-select__google_logo
-        %a{href: "#"}Google
-      .sns-select__twitter
-        .sns-select__twitter_logo
-        %a{href: "#"}Twitter
-      .sns-select__line
-        .sns-select__line_logo
-        %a{href: "#"}LINE
+  %section.index-page__bottom
+    .sns-select-flame
+      .sns-select
+        .sns-select__mail
+          .sns-select__mail_logo
+          %a{href: new_user_registration_path}メールアドレス
+        .sns-select__google
+          .sns-select__google_logo
+          %a{href: "#"}Google
+        .sns-select__twitter
+          .sns-select__twitter_logo
+          %a{href: "#"}Twitter
+        .sns-select__line
+          .sns-select__line_logo
+          %a{href: "#"}LINE
 
-  %section.topic-nav
-    %a{href: new_topic_path}相談する
-    %a{href: topics_path}新着一覧
-    .topic-nav__border
+    %section.topic-nav
+      %a{href: new_topic_path}相談する
+      %a{href: topics_path}新着一覧
+      .topic-nav__border
 
 %section.what-soudan
   .what-soudan__center

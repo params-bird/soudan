@@ -81,105 +81,108 @@
     }
   }
 
-.sns-select-flame{
-  display: flex;
-  justify-content: center;
+  .index-page__bottom{
+    position: absolute;
+    bottom: 5%;
+    .sns-select-flame{
+      display: flex;
+      justify-content: center;
+      .sns-select{
+        width: 60vmin;
+        margin: 0 auto;
+        font-family: 'Roboto', sans-serif;
+        color: grey;
+        .sns-select__mail{
+          height: 7vh;
+          margin: 3vmin 0%;
+          width: 100%;
+          border-radius: 0.4rem;
+          background-color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          cursor: pointer;
+          &_logo{
+            background: url(l_e_inquiry_141);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 8%;
+            height: 50%;
+            position: absolute;
+            left: 14%;
 
-  .sns-select{
-    width: 60vmin;
-    margin: 0 auto;
-    font-family: 'Roboto', sans-serif;
-    color: grey;
-    .sns-select__mail{
-      height: 7vh;
-      margin: 3vmin 0%;
-      width: 100%;
-      border-radius: 0.4rem;
-      background-color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      cursor: pointer;
-      &_logo{
-        background: url(l_e_inquiry_141);
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        width: 8%;
-        height: 50%;
-        position: absolute;
-        left: 14%;
-
-      }
-    }
-    .sns-select__google{
-      height: 7vh;
-      margin: 3vmin 0%;
-      width: 100%;
-      border-radius: 0.4rem;
-      background-color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      cursor: pointer;
-      &_logo{
-        background: url(icons8-googleのロゴ);
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        width: 16%;
-        height: 50%;
-        position: absolute;
-        left: 10%;
-      }
-    }
-    .sns-select__line{
-      height: 7vh;
-      margin: 3vmin 0%;
-      width: 100%;
-      border-radius: 0.4rem;
-      background-color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      cursor: pointer;
-      &_logo{
-        background: url(LINE_SOCIAL_Basic);
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 12%;
-        height: 50%;
-        position: absolute;
-        left: 12%;
-      }
-    }
-    .sns-select__twitter{
-      height: 7vh;
-      margin: 3vmin 0%;
-      width: 100%;
-      border-radius: 0.4rem;
-      background-color:white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      cursor: pointer;
-      &_logo{
-        background: url(Twitter_Social_Icon_Rounded_Square_Color);
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        width: 12%;
-        height: 50%;
-        position: absolute;
-        left: 12%;
+          }
+        }
+        .sns-select__google{
+          height: 7vh;
+          margin: 3vmin 0%;
+          width: 100%;
+          border-radius: 0.4rem;
+          background-color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          cursor: pointer;
+          &_logo{
+            background: url(icons8-googleのロゴ);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 16%;
+            height: 50%;
+            position: absolute;
+            left: 10%;
+          }
+        }
+        .sns-select__line{
+          height: 7vh;
+          margin: 3vmin 0%;
+          width: 100%;
+          border-radius: 0.4rem;
+          background-color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          cursor: pointer;
+          &_logo{
+            background: url(LINE_SOCIAL_Basic);
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 12%;
+            height: 50%;
+            position: absolute;
+            left: 12%;
+          }
+        }
+        .sns-select__twitter{
+          height: 7vh;
+          margin: 3vmin 0%;
+          width: 100%;
+          border-radius: 0.4rem;
+          background-color:white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          cursor: pointer;
+          &_logo{
+            background: url(Twitter_Social_Icon_Rounded_Square_Color);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 12%;
+            height: 50%;
+            position: absolute;
+            left: 12%;
+          }
+        }
       }
     }
   }
-
   .sns-select-signin{
     width: 60vmin;
     margin: 2vmax auto;
@@ -254,8 +257,6 @@
       }
     }
   }
-}
-
 
 .my-page_btn{
   .dm-btn{

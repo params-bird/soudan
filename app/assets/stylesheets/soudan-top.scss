@@ -59,26 +59,27 @@
   cursor: pointer;
   font-family: Arial Bold;
   }
+  .index-page__top{
 
-  .service-title{
-    height: 35%;
-    padding-left: 5vmin;
-    padding: 0% 8vmin;
-    color: white;
-    font-weight: bold;
-    P{
-      font-size: 0.7rem;
-      line-height:2.5;
-    }
-    a{
-      font-size: 0.2rem;
+    .service-title{
+      height: 35%;
+      padding-left: 5vmin;
+      padding: 0% 8vmin;
+      color: white;
       font-weight: bold;
+      P{
+        font-size: 0.7rem;
+        line-height:2.5;
+      }
+      a{
+        font-size: 0.2rem;
+        font-weight: bold;
+      }
+    }
+    #service-title{
+      cursor: pointer;
     }
   }
-  #service-title{
-    cursor: pointer;
-  }
-
 
   .what-soudan{
     width: 100vmin;
