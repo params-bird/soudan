@@ -41,8 +41,9 @@ class TopicsController < ApplicationController
   end
 
   def search
-    @topics = Topic.where(category_id: params[:category_id]).order(updated_at: "DESC").limit(50)
-
+    @topics = Topic.where(category_id: params[:category_id]).limit(49).order(updated_at: "DESC")
+  end
+  
   protected
   def set_form_data
     @category = Category.all
