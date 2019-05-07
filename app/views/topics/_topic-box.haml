@@ -3,8 +3,6 @@
     .topic-box__inner
       .topic-box__inner__left
         %strong 閲覧数
-        - binding.pry
-        = topic.impressions_count
         - if topic.close.blank?
           .status-now 受付中
         - else
