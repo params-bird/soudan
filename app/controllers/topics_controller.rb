@@ -5,7 +5,6 @@ class TopicsController < ApplicationController
 
   def index
     @topic = Topic.all.order(id: "DESC")
-    @topic.each{|topic| impressionist(topic) }
   end
 
 
