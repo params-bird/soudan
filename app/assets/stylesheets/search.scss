@@ -1,7 +1,13 @@
 .search-frame{
-  width: 90vmin;
+  width: 100vmin;
   padding: 1rem 0;
   margin: auto;
+  position: absolute;
+  top: 6vh;
+  form{
+    width: 90vmin;
+    margin: auto;
+  }
   &__flex{
     height: 35px;
     display: flex;
@@ -50,6 +56,9 @@
   border-right: none;
   border-radius: 5px 0px 0px 5px;
   background: #ffffff;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
 }
 .search-frame__category.search-category::before {
   position: absolute;
@@ -65,7 +74,6 @@
   pointer-events: none;
 }
 .search-frame__category.search-category select {
-  padding: 8px 38px 8px 8px;
 }
 
 #search-category-btn{
