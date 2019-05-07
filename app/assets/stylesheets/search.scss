@@ -85,11 +85,8 @@
 }
 #search-frame__body{
   width: 100vmin;
-  margin: 11vh auto 0 auto;
-  height: 85vh;
+  margin: 15vh auto auto auto;
   position: fixed;
-  overflow-y: auto;
-  height: calc(100vh - 25vh);
   #search-frame__inner{
     height: 98%;
   }
