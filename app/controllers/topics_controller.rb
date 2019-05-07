@@ -4,7 +4,7 @@ class TopicsController < ApplicationController
   before_action :set_form_data, only: [:new, :edit, :search]
 
   def index
-    @topic = Topic.all.order(id: "DESC")
+    @topic = Topic.all.order(updated_at: "DESC")
   end
 
 
@@ -41,8 +41,7 @@ class TopicsController < ApplicationController
   end
 
   def search
-    @topics = Topic.where(category_id: params[:category_id]).limit(49).reverse_order
-  end
+    @topics = Topic.where(category_id: params[:category_id]).order(updated_at: "DESC").limit(50)
 
   protected
   def set_form_data

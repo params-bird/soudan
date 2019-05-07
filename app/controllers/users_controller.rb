@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def user_topics
     if Topic.where(user_id: current_user.id).present?
-      @topic = Topic.where(user_id: current_user.id).order(id: "DESC")
+      @topic = Topic.where(user_id: current_user.id).order(updated_at: "DESC")
     else
       @no_topics = "投稿はありません"
     end

@@ -16,6 +16,7 @@
     section{
       margin-top: 2px;
       overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
       width: 100vw;
       overflow-x: hidden;
       height: calc(100vh - 15vh);
@@ -26,6 +27,7 @@
       height: 85vh;
       position: fixed;
       overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
     &__inner__fixed{
       width: 100vmin;

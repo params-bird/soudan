@@ -3,6 +3,7 @@
   width: 100%;
   height: calc(100vh - 35px);
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   // height: 100vh;
   // padding: 20px;
   &__inner{
@@ -183,6 +184,7 @@
   cursor: pointer;
   outline-width: 2px;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   font-size: 1rem;
   letter-spacing: 0.1rem;
 }
@@ -198,6 +200,7 @@
   height: 85vh;
   position: fixed;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   P{
     font-size: 1rem;
   }
@@ -205,10 +208,13 @@
     display: flex;
     align-items: center;
     margin-bottom: 3px;
+    border-bottom: 1px solid lightgray;
+  }
   }
   &__inner{
     padding: 5px 20px 10px 20px;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     &__title{
       border-radius: 4px;
       padding: 7px;
@@ -218,10 +224,8 @@
     &__text{
       line-break: strict;
       color: black;
-      border: 1px solid gray;
       border-radius: 4px;
       padding: 2%;
-      height: 35vh;
       overflow: auto;
     }
     &__user-name{
