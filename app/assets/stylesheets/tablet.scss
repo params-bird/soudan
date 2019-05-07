@@ -12,7 +12,7 @@
   .mobile-body{
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
     section{
       margin-top: 2px;
       overflow-y: scroll;
@@ -28,8 +28,6 @@
     &__inner__fixed{
       width: 100vmin;
       margin: auto;
-      height: 86%;
-      overflow:hidden;
     }
   }
 
@@ -46,24 +44,10 @@
     position: relative;
     color: white;
     scroll-snap-align: start;
-    // &:before{
-    //   content: '';
-    //   background: inherit;
-    //   -webkit-filter: blur(5px);
-    //   -moz-filter: blur(5px);
-    //   -o-filter: blur(5px);
-    //   -ms-filter: blur(5px);
-    //   top: -5px;
-    //   left: -5px;
-    //   right: -5px;
-    //   bottom: -5px;
-    //   z-index: -1;
-    //   position: absolute;
-    // }
+
     &__inner{
       width: 100%;
       height: 100%;
-      // background-color: lightblue;
       p.service{
         font-size: 0.5rem;
         margin-bottom: 0px;

@@ -302,7 +302,9 @@
   color: white;
   font-size: 0.9rem;
   cursor: pointer;
-
+  input {
+    color: inherit;
+  }
   a{
     position: absolute;
   }
@@ -320,7 +322,12 @@
   color: white;
   font-size: 0.9rem;
   cursor: pointer;
-
+    input{
+    color: inherit;
+    background: none;
+    border: none;
+    font-size: inherit;
+    }
   a{
     position: absolute;
   }

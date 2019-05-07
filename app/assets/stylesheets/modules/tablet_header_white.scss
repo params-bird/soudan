@@ -11,6 +11,7 @@
 
   .mobile-body__headparts{
     width: 100vw;
+    position: sticky;
     .mobile-body__header{
       height: 6vh;
       width: 100vw;
@@ -79,6 +80,9 @@
     height: 100%;
     align-items: center;
     display: flex;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
     a{
       height: 30px;
       width: 30px;

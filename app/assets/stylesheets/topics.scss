@@ -28,7 +28,6 @@
       width: 25%;
       height: 100%;
       padding-top: 2px;
-      // border-right: 1px solid dimgray;
       text-align: center;
       font-size: 0.8rem;
       .status-now{
@@ -55,10 +54,11 @@
       }
       .status-mail{
         height: 30%;
-        padding-top:11px;
+        padding-top:10%;
       }
       .status-mail-count{
-        height: 30%;
+        height: 28%;
+        margin-top: 2%;
         display: flex;
         align-items: center;
         justify-content: center;
