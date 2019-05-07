@@ -216,7 +216,7 @@
       border: 1px solid gray;
       border-radius: 4px;
       padding: 2%;
-      height: 53vh;
+      height: 40vh;
       overflow: auto;
     }
     &__user-name{
@@ -267,4 +267,10 @@
   font-weight: bold;
   display: flex;
   align-items: center;
+}
+
+#topic-new__post-btn-flame{
+  position: fixed;
+  bottom: 6vh;
+  width: 100vmin;
 }

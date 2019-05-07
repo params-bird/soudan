@@ -16,7 +16,7 @@
           = f.label "内容"
           %br/
           = f.text_area :text, autofocus: true, autocomplete: "off", class: "topic_text"
-        .topic-new-box__inner
+        .topic-new-box__inner#topic-new__post-btn-flame
           .post-btn
             = f.submit :投稿
   =render 'shared/footer'
