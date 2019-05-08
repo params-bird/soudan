@@ -19,11 +19,11 @@
       -webkit-overflow-scrolling: touch;
       width: 100vw;
       overflow-x: hidden;
-      height: calc(100vh - 15vh);
+      height: calc(100% - 15%);
     }
     &__inner{
       width: 100vmin;
-      margin: 9vh auto 0 auto;
+      margin: 9% auto 0 auto;
       height: 84%;
       position: fixed;
       overflow-y: auto;

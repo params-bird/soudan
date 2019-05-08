@@ -1,15 +1,12 @@
 
 .mobile-body__main__topic{
   width: 100%;
-  height: calc(100vh - 35px);
+  height: calc(100% - 35px);
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
-  // height: 100vh;
-  // padding: 20px;
   &__inner{
     width: 100%;
     height: 100%;
-    // background-color: lightblue;
   }
 }
 
@@ -17,7 +14,7 @@
 .topic-box{
   width: 99%;
   margin: 10px auto 0px auto;
-  height:  11vh;
+  height:  11%;
   border-bottom: 1px solid dimgray;
   position: relative;
   .topic-box__inner{
@@ -174,7 +171,7 @@
 
 .topic_text{
   width: 100%;
-  height: 25vh;
+  height: 25%;
   margin: auto;
   padding: 1% 2%;
   border-radius: 4px;
@@ -196,8 +193,8 @@
 
 .topic-show-box{
   width: 100vmin;
-  margin: 9.5vh auto 0 auto;
-  height: 85vh;
+  margin: 9.5% auto 0 auto;
+  height: 85%;
   position: fixed;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -282,6 +279,6 @@
 
 #topic-new__post-btn-flame{
   position: fixed;
-  bottom: 8vh;
+  bottom: 8%;
   width: 100vmin;
 }

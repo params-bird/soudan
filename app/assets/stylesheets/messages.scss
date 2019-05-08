@@ -1,6 +1,6 @@
 .message-page {
   width: 90vmin;
-  margin: 9vh auto 1vh auto;
+  margin: 9% auto 1% auto;
     &__inner-left {
       height: 100%;
       width: 70px;
@@ -29,16 +29,16 @@
 
   .message-container{
     position: fixed;
-    top: 15.1vh;
+    top: 15.1%;
     width: 90%;
-    height: 47vh;
+    height: 47%;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     &__input{
       position: fixed;
       width: 90vmin;
       margin: auto;
-      bottom: 10vh;
+      bottom: 10%;
       &__message {
 
         &__area {
