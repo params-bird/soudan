@@ -12,14 +12,13 @@
 .mobile-body__main__top-page{
   width: 100vw;
   height: 100vh;
-  // height: calc(var(--vh, 1vh) * 100);
   background: image-url('top');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
   .top-page__headparts{
-    height: 8%;
+    height: 40px;
     .top-page__header{
       height: 100%;
       width: 100vw;
@@ -27,11 +26,7 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      border-bottom: 1px solid #0000000f;
-      font-size: 0.4rem;
-      font-weight: bold;
-      color: white;
-      // background-color: $darknavy;
+
       .top-page__logo{
         // background-image: url("triangles-1430105.svg");
         // background: url(chat-1873536_1280.png);
@@ -49,19 +44,24 @@
 
   .top-page__title{
   position: absolute;
-  left: 12vmin;
-  font-size: 1rem;
+  left: 30px;
   color: white;
   font-weight: bold;
   cursor: pointer;
-  font-family: Arial Bold;
+  h4{
+    height: 100%;
+    margin-block-start: 0px !important;
+    margin-block-end: 0 !important;
+    }
   }
   .index-page__top{
-    height:37%;
+    height: calc( 100vh - 400px);
     align-items: center;
     display: flex;
+    // padding-top: 10%;
+
     .service-title{
-      padding: 0 0 0 8vmin;
+      padding: 0 0 0 10%;
       color: white;
       font-weight: bold;
       h2{
@@ -69,7 +69,7 @@
       }
       P{
         font-size: 0.9rem;
-        line-height:2;
+        line-height:1.7;
       }
       a{
         font-size: 0.2rem;
@@ -78,6 +78,7 @@
     }
     #service-title{
       cursor: pointer;
+      font-size: 0.7rem;
     }
   }
 

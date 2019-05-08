@@ -3,21 +3,21 @@
   .mobile-body__inner__fixed
     .registration-box
       -# .ragistration-box__header
-      .space-5
+      -# .space-5
       .label-box
-        .space-y-sm2
+        -# .space-y-sm2
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .label-box__inner
             = f.label :email
             %br/
             = f.email_field :email, autofocus: true, autocomplete: "email", class:"input-default"
-          .space-2
+          -# .space-2
           .label-box__inner
             = f.label :password
             %br/
             = f.password_field :password, autocomplete: "current-password", class:"input-default"
           - if devise_mapping.rememberable?
-            .space-2
+            -# .space-2
             .label-box__inner
               = f.check_box :remember_me
               = f.label :remember_me
@@ -34,4 +34,5 @@
           .sns-select-signin__line
             .sns-select-signin__line_logo
             %a{href: "#"}LINE
-          = render "devise/shared/links"
+          .login-other-info
+            = render "devise/shared/links"

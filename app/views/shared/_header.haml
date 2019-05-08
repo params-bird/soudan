@@ -17,8 +17,9 @@
       -#     %i.fas.fa-edit.fa-4x
       -#     %a{href: new_topic_path}相談する
     - else
-      .nocolor-btn
-        %a{href: new_user_session_path}ログイン
+      - unless params[:controller] == 'users/sessions' && params[:action] == ''
+        .login-black-btn
+          %a{href: new_user_session_path}ログイン
   .bread-crumb
     =render 'shared/breadcrumbs'
 -# .header-hidden-space

@@ -3,5 +3,5 @@
   .mobile-body-fixe-flame
     .mobile-body__inner
       =render partial: 'topic-box', collection: @topic, as: :topic
-
-  =render 'shared/footer'
+  - if user_signed_in?
+    =render 'shared/footer'

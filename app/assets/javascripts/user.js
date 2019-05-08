@@ -22,7 +22,7 @@ $(function(){
   $('#what-soudan').on('click', function(){
       var targetTop = $('.what-soudan').offset().top;
       $('html,body').animate({
-          scrollTop: targetTop
+        scrollTop: targetTop
       }, 500);
       return false;
   });

@@ -1,18 +1,18 @@
 %section.mobile-body__main__top-page
   %section.top-page__headparts
     .top-page__header
-      .top-page__logo
+      -# .top-page__logo
       .top-page__title
         %a{href: root_path}
-          %h4 soudan
+          %h3 soudan
       - unless user_signed_in?
         .white-line-btn
           %a{href: new_user_registration_path}ユーザー登録
-        .nocolor-btn
+        .login-wihte-btn
           %a{href: new_user_session_path}ログイン
       - else
-        .nocolor-btn
-        .nocolor-btn
+        .login-wihte-btn
+        .login-wihte-btn
           %a{href: destroy_user_session_path}ログアウト
     .top-page__header__title
   %section.index-page__top

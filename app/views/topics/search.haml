@@ -10,4 +10,5 @@
   %section#search-frame__body
     #search-frame__inner
       =render partial: 'topic-box', collection: @topics, as: :topic
-  =render 'shared/footer'
+  - if user_signed_in?
+    =render 'shared/footer'
