@@ -1,9 +1,8 @@
 .search-frame{
   width: 100vmin;
-  padding: 1rem 0;
   margin: auto;
   position: fixed;
-  top: 6%;
+  top: 9%;
   form{
     width: 90vmin;
     margin: auto;
@@ -85,9 +84,10 @@
 }
 #search-frame__body{
   width: 100vmin;
-  height: 71%;
-  margin: 15% auto auto auto;
+  margin: auto;
   position: fixed;
+  top: 114px;
+  height: calc(100% - 160px);
   #search-frame__inner{
     height: 98%;
   }

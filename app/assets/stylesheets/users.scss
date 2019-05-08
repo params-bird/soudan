@@ -12,7 +12,7 @@
 
   .registration-box{
     width: 100vmin;
-    margin: auto;
+    margin: 61px auto 0 auto;
     padding: 0% 11%;
     .label-box{
       width:  100%;
@@ -41,6 +41,10 @@
       }
     }
   }
+}
+
+#user_remember_me{
+  -webkit-appearance: checkbox;
 }
 
 #edit_text{
@@ -90,8 +94,13 @@
 // }
 
 .my-page-flame{
-  margin: 9% auto 0 auto;
+  width: 100vmin;
+  margin: auto;
+  height: calc(100% - 128px);
   position: fixed;
+  top: 85px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .my-page {
   width: 100vw;

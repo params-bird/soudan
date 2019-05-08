@@ -193,9 +193,10 @@
 
 .topic-show-box{
   width: 100vmin;
-  margin: 9.5% auto 0 auto;
-  height: 85%;
+  margin: auto;
+  height: calc(100% - 160px);
   position: fixed;
+  top: 85px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   P{

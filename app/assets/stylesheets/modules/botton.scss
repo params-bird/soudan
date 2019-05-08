@@ -48,7 +48,7 @@
     margin-top: 25vmax;
     cursor: pointer;
     .start-btn{
-      height: 7.5%;
+      height: 50px;
       margin: 2vmin 0%;
       width: 100%;
       border-radius: 0.4rem;
@@ -67,7 +67,7 @@
     margin-right: auto;
     cursor: pointer;
     &__start-btn{
-      height: 7.5%;
+      height: 50px;
       margin: 8vmin 0%;
       width: 100%;
       border-radius: 2rem;
@@ -90,13 +90,13 @@
       /* justify-content: center; */
       /* height: 40%; */
       .sns-select{
-        width: 60vmin;
+        width: 70vmin;
         margin: 0 auto;
         font-family: 'Roboto', sans-serif;
         color: grey;
         .sns-select__mail{
-          height: 7%;
-          margin: 3vmin 0%;
+          height: 50px;
+          margin: 6px 0%;
           width: 100%;
           border-radius: 0.4rem;
           background-color: white;
@@ -118,8 +118,8 @@
           }
         }
         .sns-select__google{
-          height: 7%;
-          margin: 3vmin 0%;
+          height: 50px;
+          margin: 6px 0%;
           width: 100%;
           border-radius: 0.4rem;
           background-color: white;
@@ -140,8 +140,8 @@
           }
         }
         .sns-select__line{
-          height: 7%;
-          margin: 3vmin 0%;
+          height: 50px;
+          margin: 6px 0%;
           width: 100%;
           border-radius: 0.4rem;
           background-color: white;
@@ -161,8 +161,8 @@
           }
         }
         .sns-select__twitter{
-          height: 7%;
-          margin: 3vmin 0%;
+          height: 50px;
+          margin: 6px 0%;
           width: 100%;
           border-radius: 0.4rem;
           background-color:white;
@@ -186,14 +186,14 @@
     }
   }
   .sns-select-signin{
-    width: 60vmin;
+    width: 69vmin;
     margin: 2vmax auto;
     font-family: 'Roboto', sans-serif;
     color: grey;
     .sns-select-signin__google{
       border: 1px solid grey;
-      height: 7%;
-      margin: 3vmin 0%;
+      height: 50px;
+      margin: 6px 0%;
       width: 100%;
       border-radius: 0.4rem;
       background-color: white;
@@ -215,8 +215,8 @@
     }
     .sns-select-signin__line{
       border: 1px solid grey;
-      height: 7%;
-      margin: 3vmin 0%;
+      height: 50px;
+      margin: 6px 0%;
       width: 100%;
       border-radius: 0.4rem;
       background-color: white;
@@ -237,8 +237,8 @@
     }
     .sns-select-signin__twitter{
       border: 1px solid grey;
-      height: 7%;
-      margin: 3vmin 0%;
+      height: 50px;
+      margin: 6px 0%;
       width: 100%;
       border-radius: 0.4rem;
       background-color:white;
@@ -291,7 +291,7 @@
 
 .register-btn {
   width: 100%;
-  height: 6%;
+  height: 50px;
   border-radius: 0.5rem;
   margin: 3vmin 0%;
   background-color: #00a4bb;
@@ -312,7 +312,7 @@
 
 .post-btn {
   width: 100%;
-  height: 6%;
+  height: 50px;
   border-radius: 0.5rem;
   background-color: $red;
   border: none;

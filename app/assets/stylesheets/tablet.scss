@@ -23,9 +23,10 @@
     }
     &__inner{
       width: 100vmin;
-      margin: 9% auto 0 auto;
-      height: 84%;
+      margin: auto;
+      height: calc(100% - 128px);
       position: fixed;
+      top: 85px;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
     }
