@@ -13,10 +13,7 @@
                 = image_tag e.user.avater
             .mail-box__inner__right
               .mail-box__info
-                .mail-box__info__topic_title
-                  %p
-                    相談トッピック名 :
-                    = e.chat_room.topic.title
+                .mail-box__info__topic_title　相談トッピック名 : #{= e.chat_room.topic.title}
                 .mail-box__info__send-user-name
                   %strong
                     = e.user.name
