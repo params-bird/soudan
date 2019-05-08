@@ -4,7 +4,6 @@
     .no_message
       #{@no_topics}
   .mobile-body__inner
-      -# =render partial: 'topics/topic-box', collection: @topic, as: :topic
     =render partial: 'user-topics', collection: @topic, as: :topic
   =render 'shared/footer'
 
