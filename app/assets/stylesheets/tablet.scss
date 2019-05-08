@@ -8,6 +8,12 @@
 // ====================*/
 // @media screen and (max-width:639px) {
   /*スマホ用のcssを記述*/
+  .wrapper{
+    height: 100vh;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
 
   .mobile-body{
     width: 100vw;
@@ -25,7 +31,7 @@
       width: 100vmin;
       margin: 9vh auto 0 auto;
       height: 84%;
-      // position: fixed;
+      position: fixed;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
     }

@@ -1,9 +1,10 @@
-.mobile-body
-  =render 'shared/header'
-  - if @no_topics
-    .no_message
-      #{@no_topics}
-  %section
-    .mobile-body__inner
-      =render partial: 'user-topic_chat-rooms', collection: @chat_rooms, as: :chat_rooms
-  =render 'shared/footer'
+.wrapper
+  .mobile-body
+    =render 'shared/header'
+    - if @no_topics
+      .no_message
+        #{@no_topics}
+    %section
+      .mobile-body__inner
+        =render partial: 'user-topic_chat-rooms', collection: @chat_rooms, as: :chat_rooms
+    =render 'shared/footer'
