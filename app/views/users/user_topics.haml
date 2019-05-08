@@ -3,10 +3,9 @@
   - if @no_topics
     .no_message
       #{@no_topics}
-  %section
-    .mobile-body__inner
+  .mobile-body__inner
       -# =render partial: 'topics/topic-box', collection: @topic, as: :topic
-      =render partial: 'user-topics', collection: @topic, as: :topic
+    =render partial: 'user-topics', collection: @topic, as: :topic
   =render 'shared/footer'
 
 

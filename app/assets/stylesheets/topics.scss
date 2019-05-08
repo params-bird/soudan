@@ -208,7 +208,6 @@
     display: flex;
     align-items: center;
     margin-bottom: 3px;
-    border-bottom: 1px solid lightgray;
   }
   &__inner{
     padding: 5px 20px 10px 20px;
@@ -252,11 +251,11 @@
       background-repeat: no-repeat;
       overflow: hidden;
       white-space: nowrap;
+      text-indent: 100%;
       i{
         font-size: 1.5rem;
       }
       img{
-
       }
     }
     &__time{
@@ -264,6 +263,9 @@
     right: 2rem;
     color: gray;
     }
+  }
+  .border{
+    border-bottom: 1px solid lightgray;
   }
 }
 
