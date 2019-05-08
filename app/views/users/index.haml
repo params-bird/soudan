@@ -1,19 +1,18 @@
-.wrapper
-  =render 'shared/header'
-  -# =render 'shared/top-page-header'
-  .my-page
-    .my-card
-      .my-card__user-avater
-        .my-card__user-avater__inner
-          = image_tag @user.avater
-      .my-card__user-name
-        %strong #{@user.name}
-      .my-card__status
-        %p Record
-        .star-rating-box
-          .star-rating
-            .star-rating-front{:style => "width: #{star_rate}"} ★★★★★
-            .star-rating-back ★★★★★
-          %p #{@user.thanks.count}
-          %p #{@user.bads.count}
+=render 'shared/header'
+-# =render 'shared/top-page-header'
+.my-page
+  .my-card
+    .my-card__user-avater
+      .my-card__user-avater__inner
+        = image_tag @user.avater
+    .my-card__user-name
+      %strong #{@user.name}
+    .my-card__status
+      %p Record
+      .star-rating-box
+        .star-rating
+          .star-rating-front{:style => "width: #{star_rate}"} ★★★★★
+          .star-rating-back ★★★★★
+        %p #{@user.thanks.count}
+        %p #{@user.bads.count}
 =render 'shared/footer'

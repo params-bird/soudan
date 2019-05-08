@@ -1,12 +1,11 @@
-.wrapper
-  .mobile-body
-    =render 'shared/header'
-    - if @no_topics
-      .no_message
-        #{@no_topics}
-    .mobile-body__inner
-      =render partial: 'user-topics', collection: @topic, as: :topic
-    =render 'shared/footer'
+.mobile-body
+  =render 'shared/header'
+  - if @no_topics
+    .no_message
+      #{@no_topics}
+  .mobile-body__inner
+    =render partial: 'user-topics', collection: @topic, as: :topic
+  =render 'shared/footer'
 
 
 
