@@ -21,9 +21,8 @@
             .label-box__inner
               = f.check_box :remember_me
               = f.label :remember_me
-          .label-box__inner
-            .register-btn
-              = f.submit :ログイン
+            .label-box__inner
+              = f.submit "ログイン", class:"register-btn"
         .sns-select-signin
           %p.or SNSでログイン
           .sns-select-signin__google

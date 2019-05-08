@@ -30,6 +30,5 @@
             = form_with url:topic_chat_rooms_path(topic_id: @topic.id), local: true do |f|
               = fields_for @user_chat_room do |e|
                 = e.hidden_field :topic_create_user_id, value: @topic.user_id
-              .post-btn
-                = f.submit "相談相手になる"
+                = f.submit "相談相手になる", class:"post-btn"
   =render 'shared/footer'

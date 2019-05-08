@@ -6,8 +6,7 @@
         = f.label "カテゴリー"
         .search-frame__category.search-category
           = f.collection_select :category_id, @category, :id, :name, {prompt: "選択してください"}
-        .post-btn#search-category-btn
-          = f.submit '決定'
+        = f.submit '決定', class:"post-btn", id:"search-category-btn"
   %section#search-frame__body
     #search-frame__inner
       =render partial: 'topic-box', collection: @topics, as: :topic

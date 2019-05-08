@@ -26,8 +26,7 @@
           = f.label :password_confirmation
           = f.password_field :password_confirmation, autocomplete: "off", class:"input-default"
         .label-box__inner
-          .register-btn
-            = f.submit :アカウント登録
+          = f.submit :アカウント登録, class:"register-btn"
         .sns-select-signin
           %p.or SNSで新規登録
           .sns-select-signin__google

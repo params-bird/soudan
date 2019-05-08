@@ -362,11 +362,13 @@
 .button_to{
   color: white;
   #thanks-btn{
+    font-size:x-small;
     color: #00a4bb;
     border:1px solid  #00a4bb;
     cursor: pointer;
   }
   #thanks-btn-aledy{
+    font-size:x-small;
     color: white;
     background-color: #00a4bb;
     cursor: pointer;
@@ -385,6 +387,7 @@
     margin-left: 4px;
   }
   #bad-btn-aledy{
+    font-size:x-small;
     background-color:red;
     border:1px solid  red;
     color: white;
@@ -393,6 +396,7 @@
   }
 }
 .topic-close{
+  font-size:small;
   position: absolute;
   width: max-content;
   right: 0;
