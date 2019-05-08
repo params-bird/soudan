@@ -18,10 +18,12 @@
         .label-box__inner
           = f.label "プロフィール写真"
           %br/
-          .img_upload
-            .img_upload_wrap
-              .img_upload_wrap__inner
-                = f.file_field :avater, class: "image", id: "upicon", multipart: :true
+          .avater-upload-flame
+            %input#dummy_file{:type => "text", placeholder: "画像を選択してください"}
+              %label.filename
+                = f.file_field :avater, class: "image", id: "filename", multipart: :true
+                %span.hidden_btn
+
         .label-box__inner
           = f.label :email
           = f.email_field :email, autofocus: true, autocomplete: "off", placeholder: "例）abc@design.com",class:"input-default"

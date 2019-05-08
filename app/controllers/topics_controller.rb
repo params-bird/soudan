@@ -35,15 +35,15 @@ class TopicsController < ApplicationController
       redirect_to topics_path
       flash[:success] = "投稿が完了しました"
     else
-      render :new
-      flash[:danger] = "必須項目をすべて選択してください"
+      redirect_back(fallback_location: root_path)
+      flash[:alert] = "必須項目をすべて選択してください"
     end
   end
 
   def search
     @topics = Topic.where(category_id: params[:category_id]).limit(49).order(updated_at: "DESC")
   end
-  
+
   protected
   def set_form_data
     @category = Category.all

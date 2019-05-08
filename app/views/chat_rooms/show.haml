@@ -4,34 +4,35 @@
     .message-page__topic-title
       トピック：
       =@chat_room.topic.title
-    .message-container
-      - @messages.each do |m|
-        .message-container__message-box
-          .message-box__top
-            %a{href: user_index_path(id: m.user.id)}
-              .message-box__avater
-                = image_tag m.user.avater
-            .message-box__info
-              .message-box__send-user-name
-                %strong
-                  = m.user.name
-                  さん
-              .message-box__send-time
-                = time_ago_in_words(m.created_at)+"前"
-          .message-box__bottom
-            .message
-              = simple_format(m.content)
-          .message-box__evaluation-flame
-            - if m.thank.blank? && m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
-              = button_to 'ありがとう', user_message_thanks_path(user_id: m.user_id, message_id: m.id), id:"thanks-btn", method: :post
-            - elsif m.thank.present? && m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
-              = button_to 'ありがとう', user_message_thank_path(user_id: m.user_id, message_id: m.id), id:"thanks-btn-aledy", method: :delete
-            - if m.bad.blank? && m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
-              = button_to '不適切な返信', user_message_bads_path(user_id: m.user_id, message_id: m.id), id:"bad-btn", method: :post
-            - elsif m.bad.present? && m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
-              = button_to '不適切な返信', user_message_bad_path(user_id: m.user_id, message_id: m.id), id:"bad-btn-aledy", method: :delete
-          - if m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
-            %p.thanks-info ※ 評価は相手からは見えません　
+    .message-container-fixe-flame
+      .message-container
+        - @messages.each do |m|
+          .message-container__message-box
+            .message-box__top
+              %a{href: user_index_path(id: m.user.id)}
+                .message-box__avater
+                  = image_tag m.user.avater
+              .message-box__info
+                .message-box__send-user-name
+                  %strong
+                    = m.user.name
+                    さん
+                .message-box__send-time
+                  = time_ago_in_words(m.created_at)+"前"
+            .message-box__bottom
+              .message
+                = simple_format(m.content)
+            .message-box__evaluation-flame
+              - if m.thank.blank? && m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
+                = button_to 'ありがとう', user_message_thanks_path(user_id: m.user_id, message_id: m.id), id:"thanks-btn", method: :post
+              - elsif m.thank.present? && m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
+                = button_to 'ありがとう', user_message_thank_path(user_id: m.user_id, message_id: m.id), id:"thanks-btn-aledy", method: :delete
+              - if m.bad.blank? && m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
+                = button_to '不適切な返信', user_message_bads_path(user_id: m.user_id, message_id: m.id), id:"bad-btn", method: :post
+              - elsif m.bad.present? && m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
+                = button_to '不適切な返信', user_message_bad_path(user_id: m.user_id, message_id: m.id), id:"bad-btn-aledy", method: :delete
+            - if m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
+              %p.thanks-info ※ 評価は相手からは見えません　
     .message-container__input
       .message-container__input__message
         = form_with model: @message, url: user_messages_path(user_id: current_user.id), local: true do |f|

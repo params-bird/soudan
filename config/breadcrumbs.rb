@@ -50,12 +50,12 @@ crumb :user_edit do
 end
 
 crumb :user_signup do
-  link "ユーザー情報編集"
+  link "アカウント登録"
   parent :root
 end
 
 crumb :user_login do
-  link "ユーザー情報編集"
+  link "ログイン"
   parent :root
 end
 

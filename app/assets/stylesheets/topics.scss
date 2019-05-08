@@ -14,8 +14,8 @@
 .topic-box{
   width: 99%;
   margin: 10px auto 0px auto;
-  height:  11%;
-  border-bottom: 1px solid dimgray;
+  padding-bottom: 4px;
+  border-bottom: 1px solid lightgray;
   position: relative;
   .topic-box__inner{
     display: flex;
@@ -29,8 +29,7 @@
       text-align: center;
       font-size: 0.8rem;
       .status-now{
-        height: 30%;
-        width: 5rem;
+        width: 4rem;
         margin: auto;
         background-color:$red;
         color: white;
@@ -40,8 +39,7 @@
         justify-content: center;
       }
       .status-close{
-        height: 30%;
-        width: 5rem;
+        width: 4rem;
         margin: auto;
         background-color:gray;
         color: white;
@@ -51,12 +49,9 @@
         justify-content: center;
       }
       .status-mail{
-        height: 30%;
-        padding-top:5%;
       }
       .status-mail-count{
-        height: 28%;
-        margin-top: 2%;
+
         display: flex;
         align-items: center;
         justify-content: center;
@@ -70,12 +65,10 @@
     }
     #topic-box__inner__right{
       width: 50% !important;
-      height: 100%;
       padding-left: 2%;
     }
     .topic-box__inner__right,#topic-box__inner__right{
       width: 73%;
-      height: 100%;
       padding-left: 2%;
       .topic-box__inner__right__title{
         height: 65%;
@@ -89,7 +82,7 @@
         position: relative;
         .topic-box__inner__right__info__category{
           border-radius: 5px;
-          height: 20px;
+          height: 18px;
           width: fit-content;
           display: flex;
           align-items: center;
@@ -139,7 +132,7 @@
     text-align: center;
   }
   &__inner{
-    padding: 5px 20px 10px 20px;
+    padding: 5px 20px 0px 20px;
   }
 }
 
@@ -190,7 +183,7 @@
 .topic_text::-webkit-scrollbar-thumb{background:lightseagreen;}/*バーの色*/
 
 #topic_text{
-  height: 250px;
+  height: calc(90vh - 360px);
 }
 
 .topic-show-box{

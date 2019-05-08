@@ -24,9 +24,9 @@
     &__inner{
       width: 100vmin;
       margin: auto;
-      height: calc(100% - 128px);
-      position: fixed;
-      top: 85px;
+      height: 100%;
+      // position: fixed;
+      // top: 60px;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
     }
@@ -35,6 +35,15 @@
       margin: auto;
     }
   }
+
+  .mobile-body-fixe-flame{
+    width: 100vmin;
+    margin: auto;
+    height: calc(100% - 100px);
+    position: fixed;
+    top: 60px;
+  }
+
 
 
   .mobile-body__main__index{
