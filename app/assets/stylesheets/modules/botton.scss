@@ -385,9 +385,9 @@
 
 .post-btn {
   width: 100%;
-  height: 50px;
+  height: 40px;
   border-radius: 0.5rem;
-  background-color: $red;
+  background-color: $madgreen;
   border: none;
   display: flex;
   align-items: center;
@@ -466,7 +466,7 @@
   #bad-btn-aledy{
     font-size:x-small;
     background-color:red;
-    border:1px solid  red;
+    border: none;
     color: white;
     cursor: pointer;
     margin-left: 4px;
