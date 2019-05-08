@@ -3,7 +3,7 @@
   - if @no_rooms
     .no_message
       #{@no_rooms}
-  .message-page
+  .mobile-body__inner
     - @another_rooms.each do |e|
       .mail-box
         = link_to topic_chat_room_path(topic_id: e.chat_room.topic.id, id: e.chat_room.id) do
