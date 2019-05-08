@@ -145,8 +145,6 @@
   }
   &__info {
     position: relative;
-    padding: 1px 0px 5px 0px;
-    margin-bottom: 15px;
     font-size: 0.9rem;
     &__topic_title{
       display: flex;
@@ -160,8 +158,6 @@
     }
     &__send-user-name {
       width: 70%;
-      position: absolute;
-      left: 0%;
       color: royalblue;
       // text-decoration: underline;
     }
