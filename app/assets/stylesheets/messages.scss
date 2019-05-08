@@ -25,10 +25,11 @@
 
   .message-container{
     position: fixed;
-    top: 15vh;
+    top: 15.1vh;
     width: 90%;
-    height: 50vh;
+    height: 47vh;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     &__input{
       position: fixed;
       width: 90vmin;
@@ -144,7 +145,7 @@
   }
   &__info {
     position: relative;
-    padding: 5px 0px 10px 0px;
+    padding: 1px 0px 5px 0px;
     margin-bottom: 15px;
     font-size: 0.9rem;
     &__topic_title{

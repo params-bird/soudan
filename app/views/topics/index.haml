@@ -1,7 +1,6 @@
 .mobile-body
   =render 'shared/header'
-  %section
-    .mobile-body__inner
-      =render partial: 'topic-box', collection: @topic, as: :topic
+  .mobile-body__inner
+    =render partial: 'topic-box', collection: @topic, as: :topic
 
   =render 'shared/footer'
