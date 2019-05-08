@@ -44,6 +44,21 @@ crumb :user_mypage do
   parent :root
 end
 
+crumb :user_edit do
+  link "ユーザー情報編集"
+  parent :user_mypage
+end
+
+crumb :user_signup do
+  link "ユーザー情報編集"
+  parent :root
+end
+
+crumb :user_login do
+  link "ユーザー情報編集"
+  parent :root
+end
+
 crumb :users_topic_chat_rooms do
   @topic = Topic.find(params[:topic_id])
   link "#{@topic.title}の返信一覧"

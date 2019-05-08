@@ -21,6 +21,15 @@
 - when ['users', 'mypage']
   - breadcrumb :user_mypage
 
+- when ['users/registrations', 'edit']
+  - breadcrumb :user_edit
+
+- when ['users/registrations', 'new']
+  - breadcrumb :user_signup
+
+- when ['users/sessions', 'new']
+  - breadcrumb :user_login
+
 - when ['users', 'user_topics']
   - breadcrumb :user_topics
 

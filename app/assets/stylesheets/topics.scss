@@ -189,7 +189,9 @@
 .topic_text::-webkit-scrollbar-track{background:#dddddd;}/*バーの背景色*/
 .topic_text::-webkit-scrollbar-thumb{background:lightseagreen;}/*バーの色*/
 
-
+#topic_text{
+  height: 250px;
+}
 
 .topic-show-box{
   width: 100vmin;
