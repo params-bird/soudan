@@ -1,4 +1,27 @@
 
+.question-btn-frame{
+  position: fixed;
+  right: 43px;
+  display: flex;
+  justify-content: center;
+  height: 24px;
+  background-color: limegreen;
+  color: white;
+  align-items: center;
+  padding: 0 4px 0 7px;
+  font-size: 3px;
+  border-radius: 5px;
+  width: 45px;
+  .question-btn{
+    a{
+      font-size: 12px;
+    }
+  }
+}
+
+
+
+
   .white-line-btn{
     display: flex;
     // width: 23%;
@@ -409,7 +432,7 @@
   }
 }
 
-.question-btn{
+#question-btn{
   display: flex;
   width:max-content;
   height: 70%;

@@ -29,6 +29,8 @@ Rails.application.routes.draw do
     resources :chat_rooms
   end
 
+
+  get 'test', to: 'soudan#test', as: 'test'
   get 'user/index', to: 'users#index', as: 'user_index'
   get 'user/:id', to: 'users#mypage', as: 'user_mypage'
   get 'users/:id/topics', to: 'users#user_topics', as: 'user_topics'

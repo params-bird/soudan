@@ -25,8 +25,7 @@
       width: 100vmin;
       margin: auto;
       height: 100%;
-      // position: fixed;
-      // top: 60px;
+      padding-top: 60px;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
     }
@@ -36,13 +35,11 @@
     }
   }
 
-  .mobile-body-fixe-flame{
-    width: 100vmin;
-    margin: auto;
-    height: calc(100% - 100px);
-    position: fixed;
-    top: 60px;
-  }
+  // .mobile-body-fixe-flame{
+  //   width: 100vmin;
+  //   margin: auto;
+  //   padding-top: 60px;
+  // }
 
 
 

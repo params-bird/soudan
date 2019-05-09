@@ -1,0 +1,91 @@
+%nav.global-nav
+  %ul.global-nav__list
+    %li.user-infomation
+      .my-card
+        .my-card__user-avater
+          .my-card__user-avater__inner
+            = image_tag @user.avater
+        .my-card__name-and-status
+          .my-card__user-name
+            %p #{@user.name}
+          .my-card__status
+            良い評価　
+            %p #{@user.thanks.count}
+          .my-card__status
+            悪い評価　
+            %p #{@user.bads.count}
+
+
+    %li.global-nav__item
+      %a{href: topics_search_path}
+        %i.material-icons.md-dark.md-inactive#material-icons-custom
+          search
+          %p カテゴリー検索
+
+    %li.global-nav__item
+      %a{href: topics_path}
+        %i.material-icons.md-dark.md-inactive#material-icons-custom
+          format_list_bulleted
+          %p 一覧
+
+    %li.global-nav__item
+      %a{href: user_chat_rooms_path(user_id: current_user.id)}
+        %i.material-icons.md-dark.md-inactive#material-icons-custom
+          message
+          %p チャットルーム
+
+    %li.global-nav__item
+      %a{href: user_topics_path(current_user.id)}
+        %i.material-icons.md-dark.md-inactive#material-icons-custom
+          list_alt
+          %p あなたの投稿
+
+    %li.global-nav__item
+      %a{href: edit_user_registration_path}
+        %i.material-icons#material-icons-custom
+          settings
+          %p 各種設定
+
+    %li.global-nav__item
+      %a{href: destroy_user_session_path,  method: :delete}
+        %i.material-icons#material-icons-custom
+          exit_to_app
+          %p ログアウト
+
+    %li.global-nav__item#soudan-btn
+      %a{href: new_topic_path}
+        %i.material-icons.md-dark.md-inactive#material-icons-custom-soudan
+          border_color
+          %p 相談する
+
+#js-hamburger.hamburger
+  %span.hamburger__line.hamburger__line--1
+  %span.hamburger__line.hamburger__line--2
+  %span.hamburger__line.hamburger__line--3
+#js-black-bg.black-bg
+
+
+
+
+  -# .mobile-body__footer
+  -#   .mobile-body__footer__inner
+  -#     .mobile-body__footer__inner__icon-box
+  -#       %i.material-icons.md-dark.md-inactive.soudan
+  -#         %a{href: new_topic_path} border_color
+  -#       %span.icon-item-title 相談する
+  -#     .mobile-body__footer__inner__icon-box
+  -#       %i.material-icons.md-dark.md-inactive
+  -#         %a{href: topics_search_path} search
+  -#       %span.icon-item-title カテゴリー
+  -#     .mobile-body__footer__inner__icon-box
+  -#       %i.material-icons.md-dark.md-inactive
+  -#         %a{href: topics_path} format_list_bulleted
+  -#       %span.icon-item-title 一覧
+  -#     .mobile-body__footer__inner__icon-box
+  -#       %i.material-icons.md-dark.md-inactive
+  -#         %a{href: user_chat_rooms_path(user_id: current_user.id)}mail
+  -#       %span.icon-item-title メッセージ
+  -#     .mobile-body__footer__inner__icon-box
+  -#       %i.material-icons.md-dark.md-inactive
+  -#         %a{href: user_mypage_path(current_user.id)} perm_identity
+  -#       %span.icon-item-title メニュー
