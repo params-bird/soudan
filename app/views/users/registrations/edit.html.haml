@@ -47,8 +47,8 @@
         .label-box__inner
           = f.submit "更新", class:"post-btn"
         .label-box__inner#delete-account
-          %a= link_to 'アカウント削除', href="/users", method: :delete, data: { confirm: 'Are you sure?' }
-=render 'shared/footer'
+          %a= link_to 'アカウント削除', href="/users", method: :delete, data: { confirm: 'アカウントを削除しますか?' }
+-# =render 'shared/footer'
 
 .overlay{:style => "display:none;"}
   .crop_modal

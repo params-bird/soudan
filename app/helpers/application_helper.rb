@@ -66,17 +66,19 @@ module ApplicationHelper
 
 end
 
-    # if params[:controller] == 'chat_rooms' && params[:action] == 'index'
-    #   "メッセージ一覧"
-    # elsif params[:controller] == 'chat_rooms' && params[:action] == 'show'
-    #   "メッセージルーム"
-    # elsif params[:controller] == 'topics' && params[:action] == 'index'
-    #   "投稿一覧"
-    # elsif params[:controller] == 'topics' && params[:action] == 'new'
-    #   "相談"
-    # elsif params[:controller] == 'users/registrations' && params[:action] == 'new'
-    #   "新規登録"
-    # elsif params[:controller] == 'users/sessions' && params[:action] == 'new'
-    #   "ログイン"
-    # elsif params[:controller] == 'users' && params[:action] == 'user_topics'
-    #   "ユーザー投稿一覧"
+
+
+  # デバイスのエラーメッセージ出力メソッド
+  def devise_error_messages
+    return "" if resource.errors.empty?
+    html = ""
+    # エラーメッセージ用のHTMLを生成
+    messages = resource.errors.full_messages.each do |msg|
+      html += <<-EOF
+        <div class="devise_error_messages" role="alert">
+          <p class="error_msg">・#{msg}</p>
+        </div>
+      EOF
+    end
+    html.html_safe
+  end

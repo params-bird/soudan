@@ -1,4 +1,4 @@
-.top-page__headparts
+%section.top-page__headparts
   .top-page__header
     .top-page__logo
     .top-page__title
@@ -10,5 +10,6 @@
       .login-wihte-btn
         %a{href: new_user_session_path}ログイン
     - else
-      .login-wihte-btn
-        %a{href: destroy_user_session_path,  method: :delete}ログアウト
+      =render 'shared/hamburger'
+
+=render 'shared/toggleNav'

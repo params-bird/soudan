@@ -1,7 +1,7 @@
 .topic-box
   .topic-box__inner
     .topic-box__inner__left
-      = link_to topic_chat_rooms_path(topic_id: params[:id]) do
+      = link_to topic_chat_rooms_path(topic_id: topic.id) do
         - if topic.close.blank?
           .status-now 受付中
         - else

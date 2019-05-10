@@ -19,9 +19,8 @@
                     %strong
                       = e.user.name
                       さん
-                  .mail-box__info__send-time
-                    = time_ago_in_words(e.chat_room.messages.last.created_at)+"前"
-                    -# = l(e.chat_room.messages.last.created_at, format: :long)
                 .mail-last-message
                   = e.chat_room.messages.last.content
+                .mail-box__info__send-time
+                  = time_ago_in_words(e.chat_room.messages.last.created_at)+"前"
   -# =render 'shared/footer'

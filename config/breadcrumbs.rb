@@ -40,7 +40,7 @@ crumb :user_topics do
 end
 
 crumb :user_mypage do
-  link "マイページ",user_mypage_path(id:current_user.id)
+  link "マイページ"
   parent :root
 end
 

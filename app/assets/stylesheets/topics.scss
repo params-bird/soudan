@@ -240,7 +240,6 @@
       background-repeat: no-repeat;
       overflow: hidden;
       white-space: nowrap;
-      text-indent: 100%;
       i{
         font-size: 1.5rem;
       }
@@ -253,7 +252,7 @@
     color: gray;
     }
   }
-  .border{
+  .border-bottom{
     border-bottom: 1px solid lightgray;
   }
 }
@@ -269,7 +268,7 @@
 }
 
 #topic-new__post-btn-flame{
-  position: fixed;
-  bottom: 8%;
+  // position: fixed;
+  // bottom: 8%;
   width: 100vmin;
 }

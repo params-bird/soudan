@@ -1,7 +1,7 @@
 = form_with(model: user, local: true) do |form|
   - if user.errors.any?
     #error_explanation
-      %h2
+      %p
         = pluralize(user.errors.count, "error")
         prohibited this user from being saved:
       %ul

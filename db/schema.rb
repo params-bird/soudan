@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 11) do
     t.string "message_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_bads_on_user_id"
   end
 
   create_table "blocks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -54,8 +53,6 @@ ActiveRecord::Schema.define(version: 11) do
     t.text "content", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "thanks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -63,7 +60,6 @@ ActiveRecord::Schema.define(version: 11) do
     t.string "message_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_thanks_on_user_id"
   end
 
   create_table "topics", id: :string, limit: 36, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -81,7 +77,6 @@ ActiveRecord::Schema.define(version: 11) do
     t.string "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["chat_room_id"], name: "index_user_chat_rooms_on_chat_room_id"
   end
 
   create_table "users", id: :string, limit: 36, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -112,11 +107,6 @@ ActiveRecord::Schema.define(version: 11) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
-  add_foreign_key "bads", "users"
   add_foreign_key "chat_rooms", "topics"
-  add_foreign_key "messages", "chat_rooms"
-  add_foreign_key "messages", "users"
-  add_foreign_key "thanks", "users"
   add_foreign_key "topics", "users"
-  add_foreign_key "user_chat_rooms", "chat_rooms"
 end

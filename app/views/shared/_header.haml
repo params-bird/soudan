@@ -7,7 +7,7 @@
   .mobile-body__header
     .mobile-body__header__service__name
       %a{href: root_path}
-        %h4 soudan
+        %h5 soudan
     .mobile-body__header__title
       = header_title
     -# - if user_signed_in?
@@ -26,20 +26,5 @@
           %a{href: new_user_session_path}ログイン
   .bread-crumb
     =render 'shared/breadcrumbs'
--# .header-hidden-space
 
-
-:javascript
-  function toggleNav() {
-    var body = document.body;
-    var hamburger = document.getElementById('js-hamburger');
-    var blackBg = document.getElementById('js-black-bg');
-
-    hamburger.addEventListener('click', function() {
-      body.classList.toggle('nav-open');
-    });
-    blackBg.addEventListener('click', function() {
-      body.classList.remove('nav-open');
-    });
-  }
-  toggleNav();
+=render 'shared/toggleNav'

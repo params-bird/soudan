@@ -7,10 +7,10 @@ class Users::PasswordsController < Devise::PasswordsController
   # end
 
   # POST /resource/password
-  # def create
-  #   super
-  # end
-
+  def create
+    super
+    # UserMailer.send_message_to_user(@entry.user).deliver_now
+  end
   # GET /resource/password/edit?reset_password_token=abcdef
   # def edit
   #   super

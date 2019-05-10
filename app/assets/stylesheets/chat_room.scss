@@ -17,6 +17,7 @@
       text-indent: 100%;
       img {
         border-radius: 50%;
+        text-indent: 100%;
       }
     }
   &__topic-title{
@@ -32,9 +33,9 @@
   .message-container-fixe-flame{
     position: fixed;
     top: 106px;
-    width: 90%;
-    height: calc(100% - 287px);
+    width: 90vmin;
     margin: 1px 5vmin;
+    height: calc(100% - 250px);
   }
   .message-container{
 
@@ -78,6 +79,7 @@
     }
     &__message-box {
       width: 100%;
+      margin: auto;
       overflow-y:auto;
       padding: 15px 0px;
       border-block-end: 1px solid lightgray;
@@ -92,19 +94,18 @@
           background-repeat: no-repeat;
           overflow: hidden;
           white-space: nowrap;
-          text-indent: 100%;
           border-radius: 50%;
         }
         .message-box__avater {
           width: 3rem;
+          height: 100%;
           border-radius: 50%;
           object-fit: cover;
           margin-right: 0.5rem;
           overflow: hidden;
           white-space: nowrap;
-          text-indent: 100%;
           img {
-            border-radius: 50%;
+            text-indent: 100%;
           }
         }
         .message-box__info {
@@ -138,7 +139,8 @@
 }
 
 .mail-box{
-  width: 100%;
+  width: 90vmin;
+  margin: auto;
   &__inner{
     display: flex;
     margin-top: 10px;
@@ -174,7 +176,7 @@
       // text-decoration: underline;
     }
     &__send-time {
-      position: absolute;
+      // position: absolute;
       display: flex;
       right: 1%;
       font-size: 0.8rem;
@@ -246,6 +248,7 @@
         object-fit: cover;
         img {
           border-radius: 50%;
+          text-indent: 100%;
         }
       }
     }

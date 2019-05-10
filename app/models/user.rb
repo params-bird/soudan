@@ -4,11 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :messages, dependent: :destroy
-
-  has_many :topics, dependent: :destroy
-  has_many :chat_rooms, through: :user_chat_rooms
-  has_many :user_chat_rooms, dependent: :destroy
+  has_many :messages
+  has_many :topics
+  has_many :chat_rooms
+  has_many :user_chat_rooms
   has_many :thanks
   has_many :bads
 

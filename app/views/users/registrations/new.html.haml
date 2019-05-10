@@ -4,7 +4,7 @@
     .label-box
       .space-y-sm2
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        = render "devise/shared/error_messages", resource: resource
+        = devise_error_messages
         .space-y-sm2
         .label-box__inner
           = f.label "ニックネーム"
@@ -28,7 +28,7 @@
         .label-box__inner
           = f.submit :アカウント登録, class:"register-btn"
         .sns-select-signin
-          %p.or SNSで新規登録
+          -# %p.or SNSで新規登録
           .sns-select-signin__google
             .sns-select-signin__google_logo
             %a{href: "#"}Google

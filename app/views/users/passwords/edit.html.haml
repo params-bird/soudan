@@ -1,19 +1,30 @@
-%h2 Change your password
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  = f.hidden_field :reset_password_token
-  .field
-    = f.label :password, "New password"
-    %br/
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
+.mobile-body
+=render 'shared/header'
+= devise_error_messages!
+
+%section
+  .title_background
+    .page-header
+      %h4 パスワード再設定
+    %p
+      パスワードを再設定します。
       %br/
-    = f.password_field :password, autofocus: true, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation, "Confirm new password"
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .actions
-    = f.submit "Change my password"
-= render "devise/shared/links"
+      新しいパスワードを入力してください。
+  .registrations_background
+    .registrations
+      = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+        = f.hidden_field :reset_password_token
+        .email
+          = f.label :password, "新しいパスワード"
+          %br/
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} 文字以上)
+            %br/
+          %p.in_field= f.password_field :password, autofocus: true, autocomplete: "new-password"
+        .password_confirmation
+          = f.label :password_confirmation, "新しいパスワード再入力"
+          %br/
+          %p.in_field= f.password_field :password_confirmation, autocomplete: "off"
+        .actions
+          %p.in_field= f.submit "パスワード再設定",:class=>"form_login_btn col-xs-12"

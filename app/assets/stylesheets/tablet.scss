@@ -24,7 +24,7 @@
     &__inner{
       width: 100vmin;
       margin: auto;
-      height: 100%;
+      height: calc(100% - 110px);
       padding-top: 60px;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;

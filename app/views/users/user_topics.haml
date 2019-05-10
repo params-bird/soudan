@@ -1,10 +1,10 @@
 .mobile-body
   =render 'shared/header'
-  - if @no_topics
-    .no_message
-      #{@no_topics}
   .mobile-body-fixe-flame
     .mobile-body__inner
+      - if @no_topics
+        .no_message
+          #{@no_topics}
       =render partial: 'user-topics', collection: @topic, as: :topic
   -# =render 'shared/footer'
 

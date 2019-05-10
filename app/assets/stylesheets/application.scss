@@ -1,6 +1,7 @@
 $madgreen: #00a4bb;
 $red:#e91e63;
-$darknavy: #01105f;
+$darknavy: #000040;
+$madnavy: #243148;
 $linecolor: #00C300;
 $linecolor-hover: #00E000;
 
@@ -25,6 +26,7 @@ p {
   margin-block-end: 0em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
+  margin-bottom: 0rem;
 }
 
 a {
@@ -56,6 +58,7 @@ input , textarea , select {
 @import 'chat_room';
 @import 'search';
 
+@import 'modules/reset';
 @import 'modules/flash';
 @import 'modules/breadcrumbs';
 @import 'modules/tablet_header_white';
@@ -67,4 +70,5 @@ input , textarea , select {
 @import 'modules/product-show-box';
 @import 'modules/soudan';
 @import 'modules/hamburger';
+@import 'modules/edit_password';
 

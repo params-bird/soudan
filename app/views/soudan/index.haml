@@ -1,23 +1,8 @@
 %section.mobile-body__main__top-page
-  %section.top-page__headparts
-    .top-page__header
-      -# .top-page__logo
-      .top-page__title
-        %a{href: root_path}
-          %h3 soudan
-      - unless user_signed_in?
-        .white-line-btn
-          %a{href: new_user_registration_path}ユーザー登録
-        .login-wihte-btn
-          %a{href: new_user_session_path}ログイン
-      - else
-        .login-wihte-btn
-        .login-wihte-btn
-          %a{href: destroy_user_session_path}ログアウト
-    .top-page__header__title
+  =render 'shared/top-page-header'
   %section.index-page__top
     .service-title
-      %h2 もっと気軽に相談しよう！
+      %h4 もっと気軽に相談しよう！
       %p あなたの周りに相談相手はいますか？
       %p soudanは相談しやすい人を見つけて相談できる
       %p 相談に特化したSNSサービスです。
@@ -32,7 +17,7 @@
       .sns-select
         .sns-select__mail
           .sns-select__mail_logo
-          %a{href: new_user_registration_path}メールアドレス
+          %a{href: new_user_session_path}メールアドレス
         .sns-select__google
           .sns-select__google_logo
           %a{href: "#"}Google
@@ -131,6 +116,7 @@
     %h5 soudan
   %ul.footer-nav_ul
     %li.footer-nav_ul_li
+    %li.footer-nav_ul_li
       %a{href: "#",id:"what-soudan"}soudan とは？
     %li.footer-nav_ul_li
       %a{href: new_user_registration_path}新規登録・ログイン
@@ -139,10 +125,10 @@
       %a{href: new_topic_path}相談を投稿する
     %li.footer-nav_ul_li
       %a{href: topics_path}相談相手になる
-    %li.footer-nav_ul_li
-      %a{href: "#"}ありがとうの多いユーザー
-    %li.footer-nav_ul_li
-      %a{href: "#"}相談の多いカテゴリー
+    -# %li.footer-nav_ul_li
+    -#   %a{href: "#"}ありがとうの多いユーザー
+    -# %li.footer-nav_ul_li
+    -#   %a{href: "#"}相談の多いカテゴリー
     %li.footer-nav_ul_li
     %li.footer-nav_ul_li
       %a{href: "#"}運営会社
