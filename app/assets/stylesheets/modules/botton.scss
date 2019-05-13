@@ -434,6 +434,11 @@
     }
   a{
     position: absolute;
+    color: white;
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
   }
 }
 

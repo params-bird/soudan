@@ -28,6 +28,10 @@ module ApplicationHelper
       "ログイン"
     when ['users', 'user_topics']
       "ユーザー投稿一覧"
+    when ['soudan', 'kiyaku']
+      "利用規約"
+    when ['soudan', 'privacy_policy']
+      "プライバシーポリシー"
     else
 
     end

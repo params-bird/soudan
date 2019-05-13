@@ -28,9 +28,9 @@
               - elsif m.thank.present? && m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
                 = button_to '&#10003; ありがとう'.html_safe, user_message_thank_path(user_id: m.user_id, message_id: m.id), id:"thanks-btn-aledy", method: :delete
               - if m.bad.blank? && m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
-                = button_to '不適切な返信', user_message_bads_path(user_id: m.user_id, message_id: m.id), id:"bad-btn", method: :post
+                = button_to '不適切な返信', user_message_bads_path(user_id: m.user_id, message_id: m.id), id:"bad-btn", method: :post, data: { confirm: '本当によろしいですか?' }
               - elsif m.bad.present? && m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
-                = button_to '&#10003; 不適切な返信'.html_safe, user_message_bad_path(user_id: m.user_id, message_id: m.id), id:"bad-btn-aledy", method: :delete
+                = button_to '&#10003; 不適切な返信'.html_safe, user_message_bad_path(user_id: m.user_id, message_id: m.id), id:"bad-btn-aledy", method: :delete, data: { confirm: '不適切な返信を解除します' }
             - if m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
               %p.thanks-info ※ 評価は相手からは見えません　
     .message-container__input

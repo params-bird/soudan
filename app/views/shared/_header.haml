@@ -1,5 +1,3 @@
-- if user_signed_in?
-  =render 'shared/hamburger'
 .mobile-body__headparts
   - flash.each do |key, value|
     = content_tag(:div, value, class: "#{key}", id: "#{key}")
@@ -24,7 +22,8 @@
       - unless params[:controller] == 'users/sessions' && params[:action] == 'new'
         .login-black-btn
           %a{href: new_user_session_path}ログイン
+    - else
+      =render 'shared/hamburger'
+      =render 'shared/toggleNav'
   .bread-crumb
     =render 'shared/breadcrumbs'
-
-=render 'shared/toggleNav'

@@ -51,24 +51,89 @@ input , textarea , select {
   -webkit-appearance: none;
   }
 
-@import 'tablet';
-@import 'soudan-top';
-@import 'users';
-@import 'topics';
-@import 'chat_room';
-@import 'search';
 
-@import 'modules/reset';
-@import 'modules/flash';
-@import 'modules/breadcrumbs';
-@import 'modules/tablet_header_white';
-@import 'modules/tablet_footer';
-@import 'modules/chat';
-@import 'modules/input-message';
-@import 'modules/botton';
-@import 'modules/error';
-@import 'modules/product-show-box';
-@import 'modules/soudan';
-@import 'modules/hamburger';
-@import 'modules/edit_password';
 
+// /*====================
+// スマホを基本設計にする
+// vertical（縦）画面
+//  - 〜479px：スマートフォン縦
+//  - 600px〜959px：タブレット
+
+// side（横）画面
+//  - 480px〜599px：スマートフォン横
+//  - 960px〜1279px：小型side
+//  - 1280px〜：大型side
+// ====================*/
+
+
+// @media screen and (orientation: portrait) {/* 縦向き */}
+// @media screen and (orientation: landscape) {/* 横向き */}
+
+
+// スマホ縦
+@media screen and (orientation: portrait) {
+  @import 'vertical/tablet';
+  @import 'vertical/soudan-top';
+  @import 'vertical/users';
+  @import 'vertical/topics';
+  @import 'vertical/chat_room';
+  @import 'vertical/search';
+  @import 'vertical/modules/reset';
+  @import 'vertical/modules/flash';
+  @import 'vertical/modules/breadcrumbs';
+  @import 'vertical/modules/tablet_header_white';
+  @import 'vertical/modules/tablet_footer';
+  @import 'vertical/modules/chat';
+  @import 'vertical/modules/input-message';
+  @import 'vertical/modules/botton';
+  @import 'vertical/modules/error';
+  @import 'vertical/modules/product-show-box';
+  @import 'vertical/modules/soudan';
+  @import 'vertical/modules/hamburger';
+  @import 'vertical/modules/edit_password';
+}
+
+
+// スマホ横
+@media screen and (orientation: landscape)  {
+  @import 'side/tablet';
+  @import 'side/soudan-top';
+  @import 'side/users';
+  @import 'side/topics';
+  @import 'side/chat_room';
+  @import 'side/search';
+  @import 'side/modules/reset';
+  @import 'side/modules/flash';
+  @import 'side/modules/breadcrumbs';
+  @import 'side/modules/tablet_header_white';
+  @import 'side/modules/tablet_footer';
+  @import 'side/modules/chat';
+  @import 'side/modules/input-message';
+  @import 'side/modules/botton';
+  @import 'side/modules/error';
+  @import 'side/modules/product-show-box';
+  @import 'side/modules/soudan';
+  @import 'side/modules/hamburger';
+  @import 'side/modules/edit_password';
+}
+
+// @import 'tablet';
+// @import 'soudan-top';
+// @import 'users';
+// @import 'topics';
+// @import 'chat_room';
+// @import 'search';
+
+// @import 'modules/reset';
+// @import 'modules/flash';
+// @import 'modules/breadcrumbs';
+// @import 'modules/tablet_header_white';
+// @import 'modules/tablet_footer';
+// @import 'modules/chat';
+// @import 'modules/input-message';
+// @import 'modules/botton';
+// @import 'modules/error';
+// @import 'modules/product-show-box';
+// @import 'modules/soudan';
+// @import 'modules/hamburger';
+// @import 'modules/edit_password';

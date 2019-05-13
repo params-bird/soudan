@@ -8,8 +8,8 @@ class User < ApplicationRecord
   has_many :topics
   has_many :chat_rooms
   has_many :user_chat_rooms
-  has_many :thanks
-  has_many :bads
+  has_many :thanks, dependent: :delete_all
+  has_many :bads, dependent: :delete_all
 
   mount_uploader :avater, ImageUploader
 

@@ -1,0 +1,11 @@
+.mobile-body__headparts
+  - flash.each do |key, value|
+    = content_tag(:div, value, class: "#{key}", id: "#{key}")
+  .mobile-body__header
+    .mobile-body__header__service__name
+      %a{href: root_path}
+        %h5 soudan
+    .mobile-body__header__title
+      = header_title
+    .login-black-btn
+      %a{href: new_user_session_path}ログイン

@@ -1,37 +1,37 @@
 %section.mobile-body__main__top-page
   =render 'shared/top-page-header'
-  %section.index-page__top
-    .service-title
-      %h4 もっと気軽に相談しよう！
-      %p あなたの周りに相談相手はいますか？
-      %p soudanは相談しやすい人を見つけて相談できる
-      %p 相談に特化したSNSサービスです。
-      %a#service-title もっと詳しく　＞＞
+  .mobile-body__main__top-page__inner
+    %section.index-page__top
+      .service-title
+        %h3 もっと気軽に相談しよう！
+        %p あなたの周りに相談相手はいますか？
+        %p soudanは相談しやすい人を見つけて相談できる
+        %p 相談に特化したSNSサービスです。
+        %a#service-title もっと詳しく　＞＞
 
+    -# %section.index-page__bottom
+    -#   .sns-select-flame
+    -#     .sns-select
+    -#       .sns-select__mail
+    -#         .sns-select__mail_logo
+    -#         %a{href: new_user_session_path}メールアドレス
+    -#       .sns-select__google
+    -#         .sns-select__google_logo
+    -#         %a{href: "#"}Google
+    -#       .sns-select__twitter
+    -#         .sns-select__twitter_logo
+    -#         %a{href: "#"}Twitter
+    -#       .sns-select__line
+    -#         .sns-select__line_logo
+    -#         %a{href: "#"}LINE
+    %section.index-page__bottom
+      - unless user_signed_in?
+        =render 'shared/togle-signup'
 
-  -# %section.start-soudan
-  -#   .start-btn
-  -#     %a{href: "#"}相談する
-  %section.index-page__bottom
-    .sns-select-flame
-      .sns-select
-        .sns-select__mail
-          .sns-select__mail_logo
-          %a{href: new_user_session_path}メールアドレス
-        .sns-select__google
-          .sns-select__google_logo
-          %a{href: "#"}Google
-        .sns-select__twitter
-          .sns-select__twitter_logo
-          %a{href: "#"}Twitter
-        .sns-select__line
-          .sns-select__line_logo
-          %a{href: "#"}LINE
-
-    %section.topic-nav
-      %a{href: new_topic_path}相談する
-      %a{href: topics_path}新着一覧
-      .topic-nav__border
+      %section.topic-nav
+        %a{href: new_topic_path}相談する
+        %a{href: topics_path}新着一覧
+        .topic-nav__border
 
 %section.what-soudan
   .what-soudan__center
@@ -43,21 +43,21 @@
         %p 相談しているけど伝わっていない気がする、本当に言いたいことはそうじゃない。
 
       %h3 どうして？
-      .what-soudan__image
+      .what-soudan__image#what-soudan__image_1
         .what-soudan__image__inner
         = image_tag 'communication-4141527_1920'
       .what-soudan__text
         %p それぞれが経験してきたこと、タイミング、その時の環境が違うので価値観が合わないのは当然です。十人十色の言葉通り、それぞれ違う声を持っています。
 
       %h3 話の合う相談相手とは
-      .what-soudan__image
+      .what-soudan__image#what-soudan__image_2
         .what-soudan__image__inner
         = image_tag 'team-2651913_1920'
       .what-soudan__text
         %p 近い経験、近い価値観を持った近い色の人
 
       %h3 でもどうすれば？
-      .what-soudan__image
+      .what-soudan__image#what-soudan__image_3
         .what-soudan__image__inner
         = image_tag 'feedback-3653368_1920'
       .what-soudan__text
@@ -70,28 +70,28 @@
     %section
       %h1 HOW TO
       %h3 #1 相談を投稿する
-      .what-soudan__image
+      .what-soudan__image#what-soudan__image_4
         .what-soudan__image__inner
         = image_tag 'aerial-3644077_1920'
 
       %h3 #2 受信メッセージの中から選んで返信する
-      .what-soudan__image
+      .what-soudan__image#what-soudan__image_5
         .what-soudan__image__inner
         = image_tag 'whatsapp-3012138_1920'
 
       %h3 #3 ありがとうを伝えよう
-      .what-soudan__image
+      .what-soudan__image#what-soudan__image_6
         .what-soudan__image__inner
         = image_tag 'feedback-3677258_1920'
 
       %h3 #4 解決済みにして受付を終了する
-      .what-soudan__image
+      .what-soudan__image#what-soudan__image_7
         .what-soudan__image__inner
         = image_tag 'checkbox-152187_1280'
 
     %section
       %h3 #お願い
-      .what-soudan__image
+      .what-soudan__image#what-soudan__image_8
         .what-soudan__image__inner
         = image_tag 'thank-you-3690116_1920'
       .what-soudan__text
@@ -103,7 +103,7 @@
         %p 質問感覚でお気軽に投稿ください。
         %p 仕事、付き合い、買い物、子育て、家選び、旅行、勉強、進路、将来、就職、留学、その他いろいろな相談をお気軽に投稿ください。
       .start-soudan-sm
-        .start-soudan-sm__start-btn
+        .start-soudan-sm__start-btn#start-btn__toppage-bottom
           %a{href: new_topic_path}相談する
       .what-soudan__image
         .what-soudan__image__inner

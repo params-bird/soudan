@@ -6,8 +6,7 @@
 //  - 960px〜1279px：小型PC
 //  - 1280px〜：大型PC
 // ====================*/
-// @media screen and (max-width:639px) {
-  /*スマホ用のcssを記述*/
+
 
 .mobile-body__main__top-page{
   width: 100vw;
@@ -181,8 +180,46 @@
   }
 
 
+
+  #what-soudan{
+    &__image_1{
+
+    }
+    &__image_2{
+      width: 80%;
+      margin: auto;
+      text-align: center;
+    }
+    &__image_3{
+
+    }
+    &__image_4{
+
+    }
+    &__image_5{
+
+    }
+    &__image_6{
+
+    }
+    &__image_7{
+      width: 60%;
+      margin: auto;
+      text-align: center;
+    }
+    &__image_8{
+
+    }
+  }
+
+
+
+
+
+
+
+
   .topic-nav{
-    width: 100vw;
     margin: auto;
     display: flex;
     a{

@@ -56,6 +56,12 @@
   }
 }
 
+#modal-title{
+  width: 100%;
+  padding-left: 10%;
+  text-align: center;
+}
+
 #registration-box{
   width: 100vmin;
   margin: 0 auto;
@@ -64,6 +70,12 @@
   top: 85px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+#registration-box-modal{
+  width: inherit;
+  margin: inherit;
+  padding: unset;
 }
 
 #user_remember_me{
@@ -91,6 +103,7 @@
 }
 
 .login-other-info{
+  position: relative;
   a{
     font-size: small;
   }

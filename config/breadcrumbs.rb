@@ -40,7 +40,7 @@ crumb :user_topics do
 end
 
 crumb :user_mypage do
-  link "マイページ"
+  link "#{current_user.name}"
   parent :root
 end
 
@@ -63,6 +63,11 @@ crumb :users_topic_chat_rooms do
   @topic = Topic.find(params[:topic_id])
   link "#{@topic.title}の返信一覧"
   parent :user_topics
+end
+
+crumb :topics_search do
+  link "カテゴリー検索"
+  parent :root
 end
 
 # crumb :logout do

@@ -26,19 +26,19 @@
       %a{href: topics_path}
         %i.material-icons.md-dark.md-inactive#material-icons-custom
           format_list_bulleted
-          %p 一覧
+          %p 投稿一覧
 
     %li.global-nav__item
       %a{href: user_chat_rooms_path(user_id: current_user.id)}
         %i.material-icons.md-dark.md-inactive#material-icons-custom
           message
-          %p チャットルーム
+          %p 受信メッセージ一覧
 
     %li.global-nav__item
       %a{href: user_topics_path(current_user.id)}
         %i.material-icons.md-dark.md-inactive#material-icons-custom
           list_alt
-          %p あなたの投稿
+          %p あなたの投稿一覧
 
     %li.global-nav__item
       %a{href: edit_user_registration_path}
