@@ -6,7 +6,4 @@ $(document).ready(function(){
   document.getElementById("dummy_file").value = file.name;
   }
   });
-  if (document.form.filename.value == "") {
-  document.getElementById("dummy_file").value = "";
-  }
 });
