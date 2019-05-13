@@ -1,9 +1,8 @@
 //= require jquery
-//= require rails-ujs
 //= require popper
 //= require bootstrap-sprockets
+//= require rails-ujs
 //= require_tree .
-
 
 $(function(){
   setTimeout(function() {
