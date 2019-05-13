@@ -1,8 +1,11 @@
 // = require jquery
-// = require rails-ujs
-// = require_tree .
 //= require popper
 //= require bootstrap-sprockets
+// = require rails-ujs
+//= require activestorage
+//= require turbolinks
+//= require_tree .
+
 
 $(function(){
   setTimeout(function() {
