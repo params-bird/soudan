@@ -5,6 +5,7 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
   config.assets.compile = true
+  config.serve_static_assets = true
   config.serve_static_files = true
   config.assets.css_compressor = :scss
 
