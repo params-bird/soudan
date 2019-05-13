@@ -44,7 +44,7 @@ Rails.application.configure do
     :authentication => :plain,
     :user_name      => ENV['SENDGRID_USERNAME'],
     :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => 'soudan-app.herokuapp.com',
+    :domain         => 'soudan-sns.herokuapp.com',
     :enable_starttls_auto => true
   }
 
