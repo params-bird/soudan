@@ -49,6 +49,12 @@ test:
 #
 production:
   <<: *default
-  database: soudan_production
-  username: soudan
-  password: <%= ENV['SOUDAN_DATABASE_PASSWORD'] %>
+  # database: soudan_production
+  # username: soudan
+  # password: <%= ENV['SOUDAN_DATABASE_PASSWORD'] %>
+
+
+  adapter: postgresql
+  database: db/production.postgresql
+  url: <%= ENV['DATABASE_URL'] %>
+  # 環境変数DATABASE_URLを参照するよう設定する。

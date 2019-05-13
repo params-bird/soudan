@@ -2,6 +2,7 @@
   # リサイズしたり画像形式を変更するのに必要
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
+  include Cloudinary::CarrierWave
   #画像が回転してしまう問題を解消
   process :fix_rotate
 

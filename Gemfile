@@ -9,7 +9,8 @@ ruby '2.5.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6', '>= 5.1.6.2'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.18', '< 0.6.0'
+gem 'mysql2', '>= 0.3.18', '< 0.6.0', group: [:development, :test]
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -68,3 +69,4 @@ gem 'seed-fu'
 gem 'gretel'
 gem 'friendly_id'
 gem 'bootstrap', '~> 4.3.1'
+gem 'pg', group: :production
