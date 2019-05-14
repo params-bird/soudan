@@ -7,6 +7,7 @@ CarrierWave.configure do |config|
     config.storage = :file
   elsif Rails.env.production?
     CarrierWave.configure do |config|
+      config.cache_dir = "#{Rails.root}/tmp/uploads"
       config.fog_provider = 'fog/aws'
       config.fog_credentials = {
       provider: 'AWS',
