@@ -111,7 +111,7 @@ build-iPhoneSimulator/
 /.vscode/
 
 # アップロードされたテスト画像を無視する
-/public/
+# /public/
 
 /db/fixtures/development
 
