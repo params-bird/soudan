@@ -18,7 +18,7 @@
               settings
         .my-card__name-and-status
           .my-card__user-name
-            = f.text_field :name, autofocus: true, autocomplete: "off", placeholder: "", class:"input-default"
+            = f.text_field :name, autofocus: true, autocomplete: "off", class:"edit-user-name"
           .my-card__status
             良い評価　
             %p #{@user.thanks.count}
@@ -27,19 +27,19 @@
             %p #{@user.bads.count}
       .my-page-flame__innner
         .label-box__inner
-          = f.label " メールアドレス "
+          = f.label " メールアドレス ", class:"label-box__label"
           %br/
-          = f.email_field :email, autofocus: true, autocomplete: "off", placeholder: "例）abc@design.com",class:"input-default"
+          = f.email_field :email, autofocus: true, autocomplete: "off", class:"input-default"
         .label-box__inner
-          = f.label "変更パスワード"
+          = f.label "変更パスワード", class:"label-box__label"
           %br/
           = f.password_field :password, autocomplete: "off", class:"input-default",placeholder: "半角英数字６文字以上"
         .label-box__inner
-          = f.label "パスワード確認用 "
+          = f.label "パスワード確認用 ", class:"label-box__label"
           %br/
           = f.password_field :password_confirmation, autocomplete: "off", class:"input-default"
         .label-box__inner
-          = f.label :current_password
+          = f.label :current_password, class:"label-box__label"
           = f.password_field :current_password, autocomplete: "off", class:"input-default"
           %br/
           %i#edit_text (変更を反映するには現在のパスワードを入力してください)

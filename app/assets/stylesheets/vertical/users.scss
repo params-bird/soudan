@@ -9,8 +9,11 @@
     P{
       text-align: center;
     }
-    label{
-      margin-bottom: 0rem;
+    &__label{
+      margin-bottom: 0rem !important;
+      label{
+        margin-bottom: 0rem !important;
+      }
     }
     &__inner{
       padding: 5px 20px 5px 20px;
@@ -120,6 +123,12 @@
   &__innner{
     color: gray;
     width: 98%;
+    .label-box__label{
+      margin-bottom: 0rem !important;
+      label{
+        margin-bottom: 0rem !important;
+      }
+    }
     i{
       color: gray;
     }
@@ -133,13 +142,19 @@
   }
 }
 
+.edit-user-name{
+  width: 100%;
+  padding: 3px 5px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  border: solid 0px;
+}
 
 #input-avater{
   display: flex;
   align-items: center;
 }
-
-
 
 .star-rating-box{
   width: 100%;
