@@ -1,56 +1,45 @@
-// /*====================
-// スマホを基本設計にする
-//  - 〜479px：スマートフォン縦
-//  - 480px〜599px：スマートフォン横
-//  - 600px〜959px：タブレット
-//  - 960px〜1279px：小型PC
-//  - 1280px〜：大型PC
-// ====================*/
-// @media screen and (max-width:639px) {
-  /*スマホ用のcssを記述*/
-
-  .mobile-body__bottom-parts{
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    height: 41px;
-  }
+.mobile-body__bottom-parts{
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 41px;
+}
 
 
-  .mobile-body__footer{
-    height: 7%;
-    width: 100%;
-    border-top: 1px solid dimgray;
-    background-color: white;
-    display: inline-grid;
-    align-items: center;
-    .mobile-body__footer__inner{
-      display: flex;
-      padding-top: 1px;
-      &__icon-box{
-        width: 25%;
-        height: 100%;
-        font-weight: lighter;
-        color:dimgrey;
-        font-size: 0.6rem;
-        display: inline-grid;
-        text-align: center;
-        justify-content: center;
-        &:hover .material-icons.md-dark.md-inactive{
-          color: $red;
-        }
-        &:hover .icon-item-title{
-          color: $red;
-        }
-        .material-icons.md-dark.md-inactive{
-          color: rgba(0, 0, 0, 0.26);
-        }
+.mobile-body__footer{
+  height: 7%;
+  width: 100%;
+  border-top: 1px solid dimgray;
+  background-color: white;
+  display: inline-grid;
+  align-items: center;
+  .mobile-body__footer__inner{
+    display: flex;
+    padding-top: 1px;
+    &__icon-box{
+      width: 25%;
+      height: 100%;
+      font-weight: lighter;
+      color:dimgrey;
+      font-size: 0.6rem;
+      display: inline-grid;
+      text-align: center;
+      justify-content: center;
+      &:hover .material-icons.md-dark.md-inactive{
+        color: $red;
+      }
+      &:hover .icon-item-title{
+        color: $red;
+      }
+      .material-icons.md-dark.md-inactive{
+        color: rgba(0, 0, 0, 0.26);
       }
     }
   }
+}
 
 
-  .material-icons.md-dark.md-inactive.soudan{
-    padding-top: 1px;
-  }
+.material-icons.md-dark.md-inactive.soudan{
+  padding-top: 1px;
+}
 

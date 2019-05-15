@@ -33,7 +33,6 @@
         margin: auto;
         background-color:$red;
         color: white;
-        border-radius: 4px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -49,9 +48,12 @@
         justify-content: center;
       }
       .status-mail{
+        color: $red;
       }
       .status-mail-count{
-
+        color: $red;
+        font-size: 1rem;
+        font-weight: bold;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -78,18 +80,17 @@
       .topic-box__inner__right__info{
         display: flex;
         height: 30%;
-        font-size: 0.5rem;
+        font-size: 0.7rem;
         .topic-box__inner__right__info__category{
-          border-radius: 5px;
           height: 18px;
           width: fit-content;
           display: flex;
           align-items: center;
           justify-content: center;
           padding: 2%;
-          color: white;
-          background-color: $red;
-          font-weight: bold;
+          color: dimgray;
+          font-weight: bolder;
+          background-image: linear-gradient(180deg,#cae2f0 0,#c3d9e7);
           p{
             text-align: center;
             margin: 0px 4px;
@@ -219,17 +220,16 @@
       margin-left: 1rem;
     }
     &__category-name{
-      border-radius: 5px;
       height: 20px;
-      width: fit-content;
-      margin-top:0.5rem;
+      background-color: #e91e63;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 2%;
-      color: white;
-      background-color: #e91e63;
-      font-weight: bold;
+      color: dimgray;
+      font-weight: bolder;
+      background-image: linear-gradient(180deg, #cae2f0 0, #c3d9e7);
+      font-size: small;
     }
     &__user-icon{
       border-radius: 50%;
@@ -245,12 +245,15 @@
       }
       img{
         text-indent:100%;
+        object-fit: cover;
+        height: 100%;
       }
     }
     &__time{
-    font-size: 0.8rem;
-    right: 2rem;
-    color: gray;
+      font-size: 0.8rem;
+      right: 2rem;
+      color: gray;
+      position: absolute;
     }
   }
   .border-bottom{

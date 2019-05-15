@@ -3,13 +3,16 @@
   width: 100%;
   margin: auto;
   padding: 0% 5%;
-  color: red;
   text-align: left;
   h2{
-    font-size: 0.8rem;
+    font-size: 0rem;
+    margin-bottom: 1rem;
+    // color: white;
   }
   ul{
     font-size: 0.8rem;
+    padding-left: 1rem;
+    color: red;
   }
 }
 

@@ -2,55 +2,53 @@
 = hidden_field_tag "action", params[:action]
 = hidden_field_tag "route", "users"
 = hidden_field_tag "idParams", current_user.id
-.mobile-body
+
+.my-page
   =render 'shared/header'
-  .space-5
-  .registration-box#registration-box
-    .label-box
-      .space-y-sm2
-      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        = render "devise/shared/error_messages", resource: resource
-        .space-y-sm2
-
+  .space-10
+  .my-page-flame
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      .my-card
+        .my-card__user-avater
+          %label.my-card__user-avater__inner
+            = image_tag @user.avater
+            = f.file_field :avater, class: "image", id: "filename", multipart: :true
+            %span.hidden_btn
+            %i.material-icons#material-icons-edit
+              settings
+        .my-card__name-and-status
+          .my-card__user-name
+            = f.text_field :name, autofocus: true, autocomplete: "off", placeholder: "", class:"input-default"
+          .my-card__status
+            良い評価　
+            %p #{@user.thanks.count}
+          .my-card__status
+            悪い評価　
+            %p #{@user.bads.count}
+      .my-page-flame__innner
         .label-box__inner
-          = f.label "ニックネーム"
-          = f.text_field :name, autofocus: true, autocomplete: "off", placeholder: "", class:"input-default"
-
-        .label-box__inner
-          = f.label "プロフィール写真"
+          = f.label " メールアドレス "
           %br/
-          .avater-upload-flame
-            %input#dummy_file{:type => "text", placeholder: "画像を選択してください"}
-              %label.filename
-                = f.file_field :avater, class: "image", id: "filename", multipart: :true
-                %span.hidden_btn
-
-
-        .label-box__inner
-          = f.label :email
           = f.email_field :email, autofocus: true, autocomplete: "off", placeholder: "例）abc@design.com",class:"input-default"
-
         .label-box__inner
-          = f.label "変更後パスワード (変更しない場合は空欄)"
+          = f.label "変更パスワード"
+          %br/
           = f.password_field :password, autocomplete: "off", class:"input-default",placeholder: "半角英数字６文字以上"
-
         .label-box__inner
-          = f.label "変更後パスワード確認用 "
+          = f.label "パスワード確認用 "
           %br/
           = f.password_field :password_confirmation, autocomplete: "off", class:"input-default"
-
         .label-box__inner
           = f.label :current_password
           = f.password_field :current_password, autocomplete: "off", class:"input-default"
           %br/
           %i#edit_text (変更を反映するには現在のパスワードを入力してください)
           %br/
-
         .label-box__inner
-          = f.submit "更新", class:"post-btn"
-        .label-box__inner#delete-account
-          %a= link_to 'アカウント削除', href="/users", method: :delete, data: { confirm: 'アカウントを削除しますか?' }
--# =render 'shared/footer'
+          .label-box__inner
+            = f.submit "更新", class:"post-btn"
+          .label-box__inner#delete-account
+            %a= link_to 'アカウント削除', href="/users", method: :delete, data: { confirm: 'アカウントを削除しますか?' }
 
 .overlay{:style => "display:none;"}
   .crop_modal

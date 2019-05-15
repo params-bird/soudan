@@ -24,14 +24,16 @@
     -#       .sns-select__line
     -#         .sns-select__line_logo
     -#         %a{href: "#"}LINE
-    %section.index-page__bottom
-      - unless user_signed_in?
+    - unless user_signed_in?
+      %section.index-page__bottom
         =render 'shared/togle-signup'
-
-      %section.topic-nav
-        %a{href: new_topic_path}相談する
-        %a{href: topics_path}新着一覧
-        .topic-nav__border
+    - else
+      %section.index-page__bottom#top-page__service-flame
+        %section.topic-nav#top-page__service-flame__inner
+          .start-soudan-sm__start-btn#start-soudan-sm__start-btn__toppage
+            %a{href: new_topic_path}相談する
+          .start-soudan-sm__start-btn#start-soudan-sm__start-btn__toppage
+            %a{href: topics_path}新着一覧
 
 %section.what-soudan
   .what-soudan__center
@@ -131,7 +133,7 @@
     -#   %a{href: "#"}相談の多いカテゴリー
     %li.footer-nav_ul_li
     %li.footer-nav_ul_li
-      %a{href: "#"}運営会社
+      %a{href: contact_path}お問い合わせ
     %li.footer-nav_ul_li
       %a{href: kiyaku_path}利用規約
     %li.footer-nav_ul_li

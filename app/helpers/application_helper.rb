@@ -37,43 +37,9 @@ module ApplicationHelper
     end
   end
 
-
-  def star_rate
-    case
-    when @user.thanks.count < 1
-      "0%"
-    when @user.thanks.count < 5
-      "5%"
-    when @user.thanks.count < 10
-      "10%"
-    when @user.thanks.count < 20
-      "20%"
-    when @user.thanks.count < 30
-      "30%"
-    when @user.thanks.count < 40
-      "40%"
-    when @user.thanks.count < 50
-      "50%"
-    when @user.thanks.count < 60
-      "60%"
-    when @user.thanks.count < 70
-      "70%"
-    when @user.thanks.count < 80
-      "80%"
-    when @user.thanks.count < 90
-      "90%"
-    when @user.thanks.count < 100
-      "100%"
-    end
-  end
-
-
-end
-
-
-
   # デバイスのエラーメッセージ出力メソッド
   def devise_error_messages
+
     return "" if resource.errors.empty?
     html = ""
     # エラーメッセージ用のHTMLを生成
@@ -85,4 +51,5 @@ end
       EOF
     end
     html.html_safe
-  end
+    end
+end

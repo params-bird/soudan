@@ -8,18 +8,16 @@
             = image_tag @topic.user.avater
           .topic-show-box__inner__user-name
             #{@topic.user.name}
-            .topic-show-box__inner__time
-              = time_ago_in_words(@topic.created_at)+"前"
         .topic-show-box__inner__title
           #{@topic.title}
-        .topic-show-box__inner__category-name
-          #{@topic.category.name}
-
       .topic-show-box__inner__bottom
         .space-1
         .topic-show-box__flex-box.border-bottom
           .icon-text 相談内容
-
+          .topic-show-box__inner__category-name
+            #{@topic.category.name}
+          .topic-show-box__inner__time
+            = time_ago_in_words(@topic.created_at)+"前"
         .topic-show-box__inner__text
           = simple_format @topic.text
         .space-3

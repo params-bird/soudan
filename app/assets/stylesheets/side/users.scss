@@ -1,18 +1,6 @@
-
-  // /*====================
-  // スマホを基本設計にする
-  //  - 〜479px：スマートフォン縦
-  //  - 480px〜599px：スマートフォン横
-  //  - 600px〜959px：タブレット
-  //  - 960px〜1279px：小型PC
-  //  - 1280px〜：大型PC
-  // ====================*/
-  // @media screen and (max-width:639px) {
-    /*スマホ用のcssを記述*/
-
 .registration-box{
   width: 100vmin;
-  margin: 61px auto 0 auto;
+  margin: 100px auto 0 auto;
   padding: 0% 11%;
   .label-box{
     width:  100%;
@@ -107,55 +95,39 @@
     font-size: small;
   }
 }
-
-// .my-page__background-img{
-//   height: 100vh;
-//   width: 100vw;
-//   // background-image: url(color-2174045_1280);
-//   background-size: cover;
-//   position: relative;
-//   z-index: 0;
-//   overflow: hidden;
-//   &:before {
-//     content: '';
-//     background: inherit;
-//     -webkit-filter: blur(5px);
-//     -moz-filter: blur(5px);
-//     -o-filter: blur(5px);
-//     -ms-filter: blur(5px);
-//     filter: blur(5px);
-//     position: absolute;
-//     top: -5px;
-//     left: -5px;
-//     right: -5px;
-//     bottom: -5px;
-//     z-index: -1;
-//   }
-// }
+.my-page {
+  overflow: hidden
+}
 
 .my-page-flame{
-  width: 100vmin;
-  margin: auto;
-  height: calc(100% - 128px);
-  position: fixed;
   top: 85px;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.my-page {
-  width: 100vw;
-  // color: white;
+  width: 300px;
+  padding-left: 7px;
+  margin: 100px auto;
+  border: 1px solid gray;
+  border-radius: 10px;
+  box-shadow: 3px 7px 10px 1px lightgrey;
+  overflow: hidden;
+  color: gray;
+  &__innner{
+    width: 98%;
+    color: gray;
+    i{
+      color: gray;
+    }
+    p{
+      color: black;
+    }
+  }
+  .mypage-soudan{
 
-  &_other-info {
-    height: 50px;
-    width: 55%;
-    margin: auto;
-    padding: 4%;
-    text-align: center;
-    border-block-end: 1px dotted gray;
-    // color: white;
+    a{
+
+    }
   }
 }
+
+
 
 #input-avater{
   display: flex;
@@ -200,9 +172,6 @@
 }
 @media screen { #filename { display: none; } }
 .filename{
-  position: absolute;
-  top: 0px;
-  width: 70%;
   height: 100%;
 }
 

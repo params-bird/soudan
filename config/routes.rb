@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   get 'search', to: 'topics#search', as: 'topics_search'
   get 'kiyaku', to: 'soudan#kiyaku', as: 'kiyaku'
   get 'privacy_policy', to: 'soudan#privacy_policy', as: 'privacy_policy'
+  get 'contact', to: 'soudan#contact', as: 'contact'
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end

@@ -1,5 +1,5 @@
 $madgreen: #00a4bb;
-$red:#e91e63;
+$red:#e9606d;
 $darknavy: #000040;
 $madnavy: #243148;
 $linecolor: #00C300;
@@ -13,6 +13,7 @@ $linecolor-hover: #00E000;
 
 body{
   font-family: -apple-system-body, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans Japanese", "游ゴシック  Medium", "Yu Gothic Medium", "メイリオ", meiryo, sans-serif;
+  // font-family: -apple-system-body, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans Japanese", "游ゴシック  Medium", "Yu Gothic Medium", "メイリオ", meiryo, sans-serif;
   margin: 0px !important;
   width: 100vw;
   overflow-x: hidden;
@@ -65,7 +66,6 @@ input , textarea , select {
 //  - 1280px〜：大型side
 // ====================*/
 
-
 // @media screen and (orientation: portrait) {/* 縦向き */}
 // @media screen and (orientation: landscape) {/* 横向き */}
 
@@ -83,7 +83,6 @@ input , textarea , select {
   @import 'vertical/modules/breadcrumbs';
   @import 'vertical/modules/tablet_header_white';
   @import 'vertical/modules/tablet_footer';
-  @import 'vertical/modules/chat';
   @import 'vertical/modules/input-message';
   @import 'vertical/modules/botton';
   @import 'vertical/modules/error';
@@ -107,7 +106,6 @@ input , textarea , select {
   @import 'side/modules/breadcrumbs';
   @import 'side/modules/tablet_header_white';
   @import 'side/modules/tablet_footer';
-  @import 'side/modules/chat';
   @import 'side/modules/input-message';
   @import 'side/modules/botton';
   @import 'side/modules/error';
@@ -116,24 +114,3 @@ input , textarea , select {
   @import 'side/modules/hamburger';
   @import 'side/modules/edit_password';
 }
-
-// @import 'tablet';
-// @import 'soudan-top';
-// @import 'users';
-// @import 'topics';
-// @import 'chat_room';
-// @import 'search';
-
-// @import 'modules/reset';
-// @import 'modules/flash';
-// @import 'modules/breadcrumbs';
-// @import 'modules/tablet_header_white';
-// @import 'modules/tablet_footer';
-// @import 'modules/chat';
-// @import 'modules/input-message';
-// @import 'modules/botton';
-// @import 'modules/error';
-// @import 'modules/product-show-box';
-// @import 'modules/soudan';
-// @import 'modules/hamburger';
-// @import 'modules/edit_password';
