@@ -19,27 +19,23 @@ class User < ApplicationRecord
 
   mount_uploader :avater, ImageUploader
 
+  def set_values(omniauth)
+    return if provider.to_s != omniauth['provider'].to_s || uid != omniauth['uid']
+    credentials = omniauth['credentials']
+    info = omniauth['info']
 
-  def self.create_oauth(auth)
-    user = User.where(uid: auth.uid, provider: auth.provider).first
+    self.access_token = credentials['refresh_token']
+    self.access_secret = credentials['secret']
+    self.credentials = credentials.to_json
+    self.name = info['name']
+    self.avater = info['pictureUrl']
 
-    unless user
-      user = User.create(
-        name: auth.displayName,
-        avater: auth.pictureUrl,
-        uid:      auth.uid,
-        provider: auth.provider,
-        email:    User.dummy_email(auth),
-        password: Devise.friendly_token[0, 20],
-      )
-    end
-    user
+    self.set_values_by_raw_info(omniauth['extra']['raw_info'])
   end
 
-  private
-
-  def self.dummy_email(auth)
-    "#{auth.uid}-#{auth.provider}@example.com"
+  def set_values_by_raw_info(raw_info)
+    self.raw_info = raw_info.to_json
+    self.save!
   end
 
 end
