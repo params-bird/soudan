@@ -4,4 +4,5 @@ class ApplicationController < ActionController::Base
   def set_form_data
     @category = Category.all
   end
+
 end

@@ -2,9 +2,6 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:show, :edit, :update, :destroy, :user_topics, :mypage]
   before_action :set_user, only: [:show, :update, :destroy, :user_topics, :mypage]
 
-  def mypage
-  end
-
   def index
     @user = User.new
     @users = User.all
