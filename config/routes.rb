@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   root 'soudan#index'
 
   devise_for :users, controllers: {
+  omniauth_callbacks: 'users/omniauth_callbacks',
   confirmations: 'users/confirmations',
   passwords:     'users/passwords',
   registrations: 'users/registrations',
   sessions:      'users/sessions',
   }
+
   devise_scope :user do
     get '/users/sign_out' => 'users/sessions#destroy'
   end
@@ -28,7 +30,6 @@ Rails.application.routes.draw do
     resource :closes, only: [:create]
     resources :chat_rooms
   end
-
 
   get 'test', to: 'soudan#test', as: 'test'
   get 'user/index', to: 'users#index', as: 'user_index'

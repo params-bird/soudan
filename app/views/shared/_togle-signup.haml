@@ -35,13 +35,13 @@
                 -# %p.or SNSで新規登録
                 .sns-select-signin__google
                   .sns-select-signin__google_logo
-                  %a{href: "#"}Google
-                .sns-select-signin__twitter
-                  .sns-select-signin__twitter_logo
-                  %a{href: "#"}Twitter
+                  %a{href: user_google_oauth2_omniauth_authorize_path} Google
+                -# .sns-select-signin__twitter
+                -#   .sns-select-signin__twitter_logo
+                -#   %a{href: "#"}Twitter
                 .sns-select-signin__line
                   .sns-select-signin__line_logo
-                  %a{href: "#"}LINE
+                  %a{href: user_line_omniauth_authorize_path} LINE
                 %small アカウントを作成することにより、利用規約およびプライバシーポリシーに同意されたものとさせていただきます。
       .modal-footer
         =button_to 'ログイン', new_user_session_path,class:"btn btn-danger"
