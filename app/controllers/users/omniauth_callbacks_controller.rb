@@ -18,9 +18,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         @user = current_user || User.create!(provider: @omniauth['provider'], uid: @omniauth['uid'], email: email, name: @omniauth['info']['name'], avater: @omniauth['info']['image'], password: Devise.friendly_token[0, 20])
         # @user.set_values(@omniauth)
         bypass_sign_in(@user)
+        redirect_to user_path(@user.id)
       end
     end
-    flash[:notice] = "ログインしました"
+    redirect_to root_path, notice: 'ログインしました'
   end
 
   def fake_email(uid,provider)
