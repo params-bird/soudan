@@ -8,17 +8,17 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def basic_action
     @omniauth = request.env['omniauth.auth']
     if @omniauth.present?
-      @profile = User.where(provider: @omniauth['provider'], uid: @omniauth['uid']).first
-      if @profile
-        @profile.set_values(@omniauth)
-        bypass_sign_in(:user, @profile)
+      @user = User.where(provider: @omniauth['provider'], uid: @omniauth['uid']).first
+      if @user
+        @user.set_values(@omniauth)
+        bypass_sign_in(@user)
       else
-        @profile = User.new(provider: @omniauth['provider'], uid: @omniauth['uid'])
+        @user = User.new(provider: @omniauth['provider'], uid: @omniauth['uid'])
         email = @omniauth['info']['email'] ? @omniauth['info']['email'] : "#{@omniauth['uid']}-#{@omniauth['provider']}@example.com"
-        @profile = current_user || User.create!(provider: @omniauth['provider'], uid: @omniauth['uid'], email: email, name: @omniauth['info']['name'], avater: @omniauth['info']['image'], password: Devise.friendly_token[0, 20])
-        @profile.set_values(@omniauth)
-        bypass_sign_in(:user, @profile)
-        redirect_to user_path(@profile.user.id)
+        @user = current_user || User.create!(provider: @omniauth['provider'], uid: @omniauth['uid'], email: email, name: @omniauth['info']['name'], avater: @omniauth['info']['image'], password: Devise.friendly_token[0, 20])
+        # @user.set_values(@omniauth)
+        bypass_sign_in(@user)
+        redirect_to user_path(@user.id)
       end
     end
     flash[:notice] = "ログインしました"

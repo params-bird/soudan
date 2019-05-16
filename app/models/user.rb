@@ -19,19 +19,19 @@ class User < ApplicationRecord
 
   mount_uploader :avater, ImageUploader
 
-  def set_values(omniauth)
-    return if provider.to_s != omniauth['provider'].to_s || uid != omniauth['uid']
-    credentials = omniauth['credentials']
-    info = omniauth['info']
+  # def set_values(omniauth)
+  #   return if provider.to_s != omniauth['provider'].to_s || uid != omniauth['uid']
+  #   credentials = omniauth['credentials']
+  #   info = omniauth['info']
 
-    # self.token = credentials['token']
-    # self.secret = credentials['secret']
-    # self.credentials = credentials.to_json
-    self.name = info.name
-    self.avater = info.image
+  #   # self.token = credentials['token']
+  #   # self.secret = credentials['secret']
+  #   # self.credentials = credentials.to_json
+  #   self.name = info.name
+  #   self.avater = info.image
 
-    # self.set_values_by_raw_info(omniauth['extra']['raw_info'])
-  end
+  #   # self.set_values_by_raw_info(omniauth['extra']['raw_info'])
+  # end
 
   # def set_values_by_raw_info(raw_info)
   #   self.raw_info = raw_info.to_json
