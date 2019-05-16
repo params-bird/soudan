@@ -24,8 +24,8 @@ class User < ApplicationRecord
     credentials = omniauth['credentials']
     info = omniauth['info']
 
-    self.access_token = credentials['token']
-    self.access_secret = credentials['secret']
+    self.token = credentials['token']
+    self.secret = credentials['secret']
     self.credentials = credentials.to_json
     self.name = info.name
     self.image = info.image
