@@ -20,11 +20,26 @@ class User < ApplicationRecord
   mount_uploader :avater, ImageUploader
 
 
+  def self.create_oauth(auth)
+    user = User.where(uid: auth.uid, provider: auth.provider).first
 
-# いいねメソッド定義　ーーーーーーーーーーーーーー
-  def already_liked?(product)
-    self.likes.exists?(product_id: product.id)
+    unless user
+      user = User.create(
+        name: auth.displayName,
+        avater: auth.pictureUrl
+        uid:      auth.uid,
+        provider: auth.provider,
+        email:    User.dummy_email(auth),
+        password: Devise.friendly_token[0, 20]
+      )
+    end
+    user
   end
 
+  private
+
+  def self.dummy_email(auth)
+    "#{auth.uid}-#{auth.provider}@example.com"
+  end
 
 end
