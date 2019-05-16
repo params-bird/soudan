@@ -27,13 +27,13 @@
           -# %p.or SNSでログイン
           .sns-select-signin__google
             .sns-select-signin__google_logo
-            %a{href: "#"}Google
+            %a{href: user_google_oauth2_omniauth_authorize_path}Google
           .sns-select-signin__twitter
             .sns-select-signin__twitter_logo
             %a{href: "#"}Twitter
           .sns-select-signin__line
             .sns-select-signin__line_logo
-            %a{href: "#"}LINE
+            %a{href: user_line_omniauth_authorize_path}LINE
           .login-other-info
             = render "devise/shared/links"
             = link_to '戻る', root_path

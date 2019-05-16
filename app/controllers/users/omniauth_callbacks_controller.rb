@@ -10,7 +10,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if @omniauth.present?
       @user = User.where(provider: @omniauth['provider'], uid: @omniauth['uid']).first
       if @user
-        @user.set_values(@omniauth)
         bypass_sign_in(@user)
       else
         @user = User.new(provider: @omniauth['provider'], uid: @omniauth['uid'])
