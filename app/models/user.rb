@@ -22,7 +22,7 @@ class User < ApplicationRecord
 
   protected
   def self.find_for_sns(auth)
-    user = User.where(provider: @omniauth['provider'], uid: @omniauth['uid']).first
+    user = User.find_by(email: auth.info.email)
     unless user
       user = User.create(
         name:     auth.info.name,
@@ -35,4 +35,21 @@ class User < ApplicationRecord
     end
     user
   end
+end
+
+# protected
+# def self.find_for_sns(auth)
+#   user = User.where(provider: @omniauth['provider'], uid: @omniauth['uid']).first
+#   unless user
+#     user = User.create(
+#       name:     auth.info.name,
+#       email: auth.info.email,
+#       provider: auth.provider,
+#       uid:      auth.uid,
+#       avater:   auth.info.image,
+#       password: Devise.friendly_token[0, 20],
+#     )
+#   end
+#   user
+# end
 end
