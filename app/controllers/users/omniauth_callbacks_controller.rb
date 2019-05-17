@@ -16,7 +16,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
           image: ＠auth.info.image,
           email: email,
           name: @auth['info']['name'],
-          avater: @auth['info']['image'],
+          avater:   auth.info.image.gsub('http', 'https'),
           password: Devise.friendly_token[0, 20]
         )
         bypass_sign_in(@user)
@@ -37,7 +37,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         @user = User.create(
           name:     @auth.info.name,
           email:    @auth.info.email,
-          image:    ＠auth.info.image,
+          avater:   auth.info.image.gsub('http', 'https'),
           provider: @auth.provider,
           uid:      @auth.uid,
           password: Devise.friendly_token[0, 20],
