@@ -5,7 +5,7 @@
       .topic-show-box__inner__top
         .topic-show-box__flex-box
           .topic-show-box__inner__user-icon
-            = image_tag @topic.user.avater
+            = image_tag @topic.user.image_url
           .topic-show-box__inner__user-name
             #{@topic.user.name}
         .topic-show-box__inner__title

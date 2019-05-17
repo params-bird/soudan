@@ -10,8 +10,8 @@
       .my-card
         .my-card__user-avater
           %label.my-card__user-avater__inner
-            = image_tag @user.avater
-            = f.file_field :avater, class: "image", id: "filename", multipart: :true
+            = image_tag @user.image_url
+            = f.file_field :image_url, class: "image", id: "filename", multipart: :true
             %span.hidden_btn
             %i.material-icons#material-icons-edit
               settings

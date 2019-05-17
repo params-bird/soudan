@@ -13,7 +13,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         @user = current_user || User.create!(
           provider: @auth['provider'],
           uid:      @auth['uid'],
-          avater_url: @auth['info']['image'],
+          image_url: @auth['info']['image'],
           name:     @auth['info']['name'],
           email:     email,
           password: Devise.friendly_token[0, 20],
@@ -36,7 +36,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         @user = User.create(
           provider: @auth.provider,
           uid:      @auth.uid,
-          avater_url: @auth.info.image,
+          image_url: @auth.info.image,
           name:     @auth.info.name,
           email:    @auth.info.email,
           password: Devise.friendly_token[0, 20],
@@ -51,7 +51,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   private
   def oauth_params
-    params.require(:user).permit(:provider, :uid, :image, :email, :name, :avater, :password)
+    params.require(:user).permit(:provider, :uid, :image, :email, :name, :image_url, :password)
   end
 
 end
