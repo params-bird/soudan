@@ -13,7 +13,7 @@
     end
   end
 
-  # S3-----------------------
+  # S3にアップロードする場合
   if Rails.env.development?
     storage :file
   elsif Rails.env.test?
@@ -27,17 +27,22 @@
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  # 画像の上限を700pxにする
+  # デフォルト画像は400x400に収まるようリサイズ
   process :resize_to_limit => [400, 400]
+
+  # サムネイル画像
+  version :thumb do
+    process resize_to_fill: [100, 100]
+  end
 
   # 保存形式をJPGにする
   process :convert => 'png'
 
-  # アップロードできる拡張子を制限
+# 許可する画像の拡張子
   def extension_whitelist
     %w(jpg jpeg gif png)
   end
-
+  # 保存するファイルの命名規則
   def filename
     "#{secure_token}.#{file.extension}" if original_filename.present?
   end

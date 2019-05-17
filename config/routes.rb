@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users, path: '/', only: [:user_topics]
+
 
   resources :topics do
     resource :closes, only: [:create]

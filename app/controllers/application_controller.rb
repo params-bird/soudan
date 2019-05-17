@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
     @category = Category.all
   end
 
+
+
+
+
 end
