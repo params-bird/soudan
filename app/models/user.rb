@@ -22,7 +22,7 @@ class User < ApplicationRecord
 
   protected
   def self.find_for_sns(auth)
-    @user = User.where(provider: @omniauth['provider'], uid: @omniauth['uid']).first
+    user = User.where(provider: @omniauth['provider'], uid: @omniauth['uid']).first
     unless user
       user = User.create(
         name:     auth.info.name,
