@@ -29,18 +29,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def google_oauth2
     @auth = request.env['omniauth.auth']
     if @auth.present?
-      @user = User.find_by(provider: @auth[:provider], uid: @auth[:uid])
+      @user = User.find_for_google_oauth2(request.env["omniauth.auth"])
       if @user
-        bypass_sign_in(@user)
-      else
-        @user = User.create(
-          provider: @auth[:provider],
-          uid:      @auth[:uid],
-          remote_image_url: @auth[:info][:image],
-          name:     @auth[:info][:name],
-          email:    @auth[:email],
-          password: Devise.friendly_token[0, 20],
-        )
         bypass_sign_in(@user)
         redirect_to user_mypage_path(@user.id) and return
       end
