@@ -9,7 +9,7 @@ class User < ApplicationRecord
          :rememberable,
          :validatable,
          :omniauthable,
-         omniauth_providers: %i[line google]
+         omniauth_providers: %i[line google_oauth2]
 
 
   has_many :messages
