@@ -1,11 +1,7 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
-  def line
-    basic_action
-  end
 
-  private
-  def basic_action
+  def line
     @omniauth = request.env['omniauth.auth']
     if @omniauth.present?
       @user = User.where(provider: @omniauth['provider'], uid: @omniauth['uid']).first
@@ -25,10 +21,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
 
   def google_oauth2
-    callback_for(:google)
-  end
-
-  def callback_for(provider)
     @auth = request.env["omniauth.auth"]
     if @auth.present?
       @user = User.find_by(email: @auth.info.email)
