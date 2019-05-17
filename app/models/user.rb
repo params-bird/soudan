@@ -19,18 +19,16 @@ class User < ApplicationRecord
   has_many :thanks, dependent: :delete_all
   has_many :bads, dependent: :delete_all
 
-  def self.find_for_google_oauth2
-    @user = User.where(email: auth.info.email).first
+  def self.find_for_google_oauth2(auth)
+    user = User.where(email: auth.info.email).first
     unless user
-      @user = User.create(name:     auth.info.name,
+      user = User.create(name:     auth.info.name,
                          provider: auth.provider,
                          uid:      auth.uid,
                          email:    auth.info.email,
-                         remote_image_url: auth.info.image,
-                         password: Devise.friendly_token[0, 20]
-                         )
+                         password: Devise.friendly_token[0, 20])
     end
-    @user
+    user
   end
 
 end
