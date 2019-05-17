@@ -7,7 +7,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
 
   def google_oauth2
-    callback_for(:line)
+    callback_for(:google)
   end
 
 
@@ -19,7 +19,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       # userテーブルに登録があるか検索
       @user = User.where(provider: @omniauth['provider'], uid: @omniauth['uid']).first
       # ユーザー登録済みであればそのままログイン
-      if @user
+      if @user.present?
         bypass_sign_in(@user)
       else
         # ユーザー登録なければ新規にアカウント作成
@@ -32,11 +32,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_user_registration_path and return
     end
   end
-
-
-
-
-
 
 
   # def google_oauth2
