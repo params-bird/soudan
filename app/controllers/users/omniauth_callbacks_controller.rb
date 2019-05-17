@@ -35,13 +35,15 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       if @user
         bypass_sign_in(@user)
       else
-        user = User.create(
+        @user = User.create(
           name:     @auth.info.name,
           email:    @auth.info.email,
           provider: @auth.provider,
           uid:      @auth.uid,
           password: Devise.friendly_token[0, 20],
         )
+        bypass_sign_in(@user)
+        redirect_to user_mypage_path(@user.id) and return
       end
     else
       redirect_to new_user_registration_path and return
