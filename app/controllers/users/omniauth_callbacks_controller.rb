@@ -10,7 +10,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       else
         @user = User.new(provider: @auth['provider'], uid: @auth['uid'])
         email = @auth['info']['email'] ? @auth['info']['email'] : "#{@auth['uid']}-#{@auth['provider']}@example.com"
-        remote_image_url = @auth.info.image
         @user = current_user || User.create!(
           provider: @auth['provider'],
           uid:      @auth['uid'],
@@ -18,7 +17,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
           email:     email,
           name:     @auth['info']['name'],
           avater:   remote_image_url,
-          password: Devise.friendly_token[0, 20]
+          password: Devise.friendly_token[0, 20],
+          @user.remote_avater_url = ＠auth['info']['image']
         )
         bypass_sign_in(@user)
         redirect_to user_mypage_path(@user.id) and return
@@ -35,7 +35,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       if @user
         bypass_sign_in(@user)
       else
-        remote_image_url = @auth.info.image.gsub('http', 'https'),
         @user = User.create(
           name:     @auth.info.name,
           email:    @auth.info.email,
@@ -43,6 +42,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
           provider: @auth.provider,
           uid:      @auth.uid,
           password: Devise.friendly_token[0, 20],
+          @user.remote_avater_url = @auth.info.image
         )
         bypass_sign_in(@user)
         redirect_to user_mypage_path(@user.id) and return

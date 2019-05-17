@@ -2,7 +2,7 @@ class User < ApplicationRecord
   include IdGenerator
 
   mount_uploader :avater, ImageUploader
-
+  # remote_avater_url
   devise :database_authenticatable,
          :registerable,
          :recoverable,
