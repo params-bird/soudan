@@ -4,6 +4,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     basic_action
   end
 
+  def google_oauth2
+    basic_action
+  end
+
   private
   def basic_action
     @omniauth = request.env['omniauth.auth']
