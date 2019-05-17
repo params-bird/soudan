@@ -1,16 +1,14 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
 
-  def google
+  def google_oauth2
     @user = User.find_for_google(request.env['omniauth.auth'])
-
     if @user.persisted?
       flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
-      sign_in_and_redirect @user, event: :authentication
-      session[:user_id] = @user.id #add
+      bypass_sign_in(@user)
+      redirect_to user_mypage_path(@user.id) and return
     else
-      session['devise.google_data'] = request.env['omniauth.auth']
-      redirect_to new_user_registration_url
+      redirect_to user_mypage_path(@user.id) and return
     end
   end
 
