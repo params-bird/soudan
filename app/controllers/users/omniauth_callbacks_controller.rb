@@ -23,7 +23,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def google_oauth2
     @auth = request.env["omniauth.auth"]
     if @auth.present?
-      @user = User.find_by(email: @auth.info.email)
+      @user = User.where(provider: @omniauth['provider'], uid: @omniauth['uid']).first
       if @user
         bypass_sign_in(@user)
       else
