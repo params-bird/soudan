@@ -10,13 +10,14 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       else
         @user = User.new(provider: @auth['provider'], uid: @auth['uid'])
         email = @auth['info']['email'] ? @auth['info']['email'] : "#{@auth['uid']}-#{@auth['provider']}@example.com"
+        remote_image_url = @auth.info.image
         @user = current_user || User.create!(
           provider: @auth['provider'],
-          uid: @auth['uid'],
-          image: ＠auth.info.image,
-          email: email,
-          name: @auth['info']['name'],
-          avater:   @auth.info.image.gsub('http', 'https'),
+          uid:      @auth['uid'],
+          image:    ＠auth.info.image,
+          email:     email,
+          name:     @auth['info']['name'],
+          avater:   remote_image_url,
           password: Devise.friendly_token[0, 20]
         )
         bypass_sign_in(@user)
@@ -34,7 +35,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       if @user
         bypass_sign_in(@user)
       else
-        remote_image_url = @auth.info.image
+        remote_image_url = @auth.info.image.gsub('http', 'https'),
         @user = User.create(
           name:     @auth.info.name,
           email:    @auth.info.email,
