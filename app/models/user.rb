@@ -19,16 +19,15 @@ class User < ApplicationRecord
   has_many :bads, dependent: :delete_all
 
 
-  def self.from_omniauth(access_token)
-    data = access_token.info
-    user = User.where(email: data['email']).first
+  def self.from_omniauth(auth)
+    user = User.where(email: auth['email']).first
     unless user
         user = User.create(
-          name: data['name'],
-          email: data['email'],
-          provider: data['provider'],
-          uid:      data['uid'],
-          remote_image_url: data['image'],
+          name: auth['info']['name'],
+          email: auth['info']['email'],
+          provider: auth['provider'],
+          uid:      auth['uid'],
+          remote_image_url: auth['info']['image'],
           password: Devise.friendly_token[0,20]
         )
     end
