@@ -8,7 +8,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       if @user
         bypass_sign_in(@user)
       else
-        @user = User.new(oauth_params)
+        @user = User.new
         @user.remote_avater_url = @auth.info.image
         email = @auth['info']['email'] ? @auth['info']['email'] : "#{@auth['uid']}-#{@auth['provider']}@example.com"
         @user = current_user || User.create!(
@@ -33,7 +33,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       if @user
         bypass_sign_in(@user)
       else
-        @user = User.new(oauth_params)
+        @user = User.new
         @user.remote_avater_url = @auth.info.image
         @user = User.create(
           provider: @auth.provider,
