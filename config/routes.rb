@@ -41,6 +41,6 @@ Rails.application.routes.draw do
   get 'kiyaku', to: 'soudan#kiyaku', as: 'kiyaku'
   get 'privacy_policy', to: 'soudan#privacy_policy', as: 'privacy_policy'
   get 'contact', to: 'soudan#contact', as: 'contact'
-
+  get 'google24691b576cdb2e10.html', to: 'google24691b576cdb2e10.html'
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end
