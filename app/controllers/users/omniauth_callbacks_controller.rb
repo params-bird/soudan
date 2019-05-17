@@ -34,11 +34,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       if @user
         bypass_sign_in(@user)
       else
-        remote_avater_image_url = @auth.info.image
+        image_url = @auth.info.image
         @user = User.create(
           name:     @auth.info.name,
           email:    @auth.info.email,
-          avater:   remote_avater_image_url,
+          avater:   image_url,
           provider: @auth.provider,
           uid:      @auth.uid,
           password: Devise.friendly_token[0, 20],
