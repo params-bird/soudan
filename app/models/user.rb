@@ -21,8 +21,8 @@ class User < ApplicationRecord
 
 
   protected
-  def self.find_for_google(auth)
-    user = User.find_by(email: auth.info.email)
+  def self.find_for_sns(auth)
+    @user = User.where(provider: @omniauth['provider'], uid: @omniauth['uid']).first
     unless user
       user = User.create(
         name:     auth.info.name,
