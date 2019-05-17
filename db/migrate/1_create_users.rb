@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :uid
       t.string :provider
       t.string :name, null: false
-      t.binary :image_url
+      t.binary :image
       t.timestamps
     end
   end

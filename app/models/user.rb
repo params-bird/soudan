@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   include IdGenerator
 
-  mount_uploader :image_url, ImageUploader
+  mount_uploader :image, ImageUploader
   # remote_avater_url
   devise :database_authenticatable,
          :registerable,
@@ -20,19 +20,4 @@ class User < ApplicationRecord
   has_many :bads, dependent: :delete_all
 
 
-  protected
-  def self.find_for_google(auth)
-    user = User.find_by(email: auth.info.email)
-    unless user
-      user = User.create(
-        name:     auth.info.name,
-        email: auth.info.email,
-        provider: auth.provider,
-        uid:      auth.uid,
-        image_url:   auth.info.image,
-        password: Devise.friendly_token[0, 20],
-      )
-    end
-    user
-  end
 end

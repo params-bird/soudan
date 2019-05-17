@@ -51,7 +51,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   private
   def oauth_params
-    params.require(:user).permit(:provider, :uid, :image, :email, :name, :image_url, :password)
+    params.require(:user).permit(:provider, :uid, :image, :email, :name, :image, :password)
   end
 
 end
