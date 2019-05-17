@@ -14,7 +14,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def callback_for(provider)
     @user = User.find_for_sns(request.env['omniauth.auth'])
     if @user.persisted?
-      flash[:notice] = I18n.t 'devise.omniauth_callbacks.success'
       bypass_sign_in(@user)
       redirect_to user_mypage_path(@user.id) and return
     else

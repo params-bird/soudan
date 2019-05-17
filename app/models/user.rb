@@ -22,7 +22,7 @@ class User < ApplicationRecord
 
   protected
   def self.find_for_sns(auth)
-    user = User.find_by(email: auth.info.email)
+    user = User.find_by(provider: @omniauth['provider'], uid: @omniauth['uid']))
     unless user
       user = User.create(
         name:     auth.info.name,
