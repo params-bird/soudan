@@ -28,7 +28,7 @@ class User < ApplicationRecord
           email: data['email'],
           provider: data['provider'],
           uid:      data['uid'],
-          remote_image_url: data['info.image'],
+          remote_image_url: data['image'],
           password: Devise.friendly_token[0,20]
         )
     end
