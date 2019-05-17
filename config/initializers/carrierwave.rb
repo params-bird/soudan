@@ -16,6 +16,7 @@ if Rails.env.production?
     config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
   end
 
+
   # 日本語ファイル名の設定
   CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
 end

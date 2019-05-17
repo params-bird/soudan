@@ -40,7 +40,7 @@
 
 # 許可する画像の拡張子
   def extension_whitelist
-    %w(jpg jpeg gif png)
+    %w(jpg jpeg gif png url)
   end
   # 保存するファイルの命名規則
   def filename
