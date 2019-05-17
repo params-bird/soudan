@@ -123,6 +123,9 @@
   &__innner{
     color: gray;
     width: 98%;
+    input{
+      width: 100%;
+    }
     .label-box__label{
       margin-bottom: 0rem !important;
       label{
