@@ -19,7 +19,7 @@ class User < ApplicationRecord
   has_many :thanks, dependent: :delete_all
   has_many :bads, dependent: :delete_all
 
-  def self.find_for_google_oauth2(auth)
+  def self.find_for_google_oauth2
     user = User.where(email: auth.info.email).first
     unless user
       user = User.create(name:     auth.info.name,

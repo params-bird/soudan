@@ -26,7 +26,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
 
 
-  def google_oauth2(auth)
+  def google_oauth2
     @auth = request.env['omniauth.auth']
     if @auth.present?
       @user = User.find_for_google_oauth2(request.env["omniauth.auth"])
