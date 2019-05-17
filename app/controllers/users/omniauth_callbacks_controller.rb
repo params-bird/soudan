@@ -4,16 +4,16 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def line
     @auth = request.env['omniauth.auth']
     if @auth.present?
-      @user = User.where(provider: @auth['provider'], uid: @auth['uid']).first
+      @user = User.where(provider: @auth[:provider], uid: @auth[:uid]).first
       if @user
         bypass_sign_in(@user)
       else
-        email = @auth['info']['email'] ? @auth['info']['email'] : "#{@auth['uid']}-#{@auth['provider']}@example.com"
+        email = @auth[:info][:email] ? @auth[:info][:email] : "#{@auth[:uid]}-#{@auth[:provider]}@example.com"
         @user = current_user || User.create!(
-          provider: @auth['provider'],
-          uid:      @auth['uid'],
-          remote_image_url: @auth['info']['image'],
-          name:     @auth['info']['name'],
+          provider: @auth[:provider],
+          uid:      @auth[:uid],
+          remote_image_url: @auth[:info][:image],
+          name:     @auth[:info][:name],
           email:     email,
           password: Devise.friendly_token[0, 20],
         )
@@ -27,18 +27,18 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
 
   def google_oauth2
-    @auth = request.env["omniauth.auth"]
+    @auth = request.env['omniauth.auth']
     if @auth.present?
-      @user = User.find_by(provider: @auth['provider'], uid: @auth['uid'])
+      @user = User.find_by(provider: @auth[:provider], uid: @auth[:uid])
       if @user
         bypass_sign_in(@user)
       else
         @user = User.create(
-          provider: @auth['provider'],
-          uid:      @auth['uid'],
-          remote_image_url: @auth['info']['image'],
-          name:     @auth['info']['name'],
-          email:    @auth['email'],
+          provider: @auth[:provider],
+          uid:      @auth[:uid],
+          remote_image_url: @auth[:info][:image],
+          name:     @auth[:info][:name],
+          email:    @auth[:email],
           password: Devise.friendly_token[0, 20],
         )
         bypass_sign_in(@user)
