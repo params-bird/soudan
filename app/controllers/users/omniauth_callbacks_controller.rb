@@ -9,14 +9,13 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         bypass_sign_in(@user)
       else
         @user = User.new
-        @user.remote_avater_url = @auth.info.image
         email = @auth['info']['email'] ? @auth['info']['email'] : "#{@auth['uid']}-#{@auth['provider']}@example.com"
         @user = current_user || User.create!(
           provider: @auth['provider'],
           uid:      @auth['uid'],
+          avater_url: @auth['info']['image'],
           name:     @auth['info']['name'],
           email:     email,
-          avater:   @user.remote_avater_url,
           password: Devise.friendly_token[0, 20],
         )
         bypass_sign_in(@user)
@@ -34,13 +33,12 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         bypass_sign_in(@user)
       else
         @user = User.new
-        @user.remote_avater_url = @auth.info.image
         @user = User.create(
           provider: @auth.provider,
           uid:      @auth.uid,
+          avater_url: @auth.info.image,
           name:     @auth.info.name,
           email:    @auth.info.email,
-          avater:   @user.remote_avater_url,
           password: Devise.friendly_token[0, 20],
         )
         bypass_sign_in(@user)
