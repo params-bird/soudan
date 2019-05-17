@@ -8,15 +8,15 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       if @user
         bypass_sign_in(@user)
       else
-        @user = User.new
         email = @auth['info']['email'] ? @auth['info']['email'] : "#{@auth['uid']}-#{@auth['provider']}@example.com"
+        user = User.new
         @user = current_user || User.create!(
-          provider: @auth['provider'],
-          uid:      @auth['uid'],
-          image_url: @auth['info']['image'],
-          name:     @auth['info']['name'],
-          email:     email,
-          password: Devise.friendly_token[0, 20],
+          user.provider: @auth['provider'],
+          user.uid:      @auth['uid'],
+          user.image_url: @auth['info']['image'],
+          user.name:     @auth['info']['name'],
+          user.email:     email,
+          user.password: Devise.friendly_token[0, 20],
         )
         bypass_sign_in(@user)
         redirect_to user_mypage_path(@user.id) and return
@@ -32,14 +32,14 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       if @user
         bypass_sign_in(@user)
       else
-        @user = User.new
+        user = User.new
         @user = User.create(
-          provider: @auth.provider,
-          uid:      @auth.uid,
-          image_url: @auth.info.image,
-          name:     @auth.info.name,
-          email:    @auth.info.email,
-          password: Devise.friendly_token[0, 20],
+          user.provider: @auth.provider,
+          user.uid:      @auth.uid,
+          user.image_url: @auth.info.image,
+          user.name:     @auth.info.name,
+          user.email:    @auth.info.email,
+          user.password: Devise.friendly_token[0, 20],
         )
         bypass_sign_in(@user)
         redirect_to user_mypage_path(@user.id) and return
