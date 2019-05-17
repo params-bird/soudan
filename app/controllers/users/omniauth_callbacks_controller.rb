@@ -24,10 +24,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     redirect_to new_user_registration_path and return
   end
 
+
   def google_oauth2
     @auth = request.env["omniauth.auth"]
     if @auth.present?
-      @user = User.find_by(email: @auth.info.email)
+      @user = User.find_by(email: @auth['info']['email'])
       if @user
         bypass_sign_in(@user)
       else
