@@ -2,7 +2,7 @@ Devise.setup do |config|
   config.secret_key = 'faf69589ab4854c061ffaec8c2324e5fc67b2821034336b15ea8f5b221623715bce3139b7b8c6ec7a8309b976adaefecc2f7a41f59e0d36f879f3aaefdc6d414'
   config.mailer_sender = 'info@soudan-app.herokuapp.com'
   config.omniauth :line, ENV['LINE_KEY'], ENV['LINE_SECRET']
-  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'],
+  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET']
 
   require 'devise/orm/active_record'
 
