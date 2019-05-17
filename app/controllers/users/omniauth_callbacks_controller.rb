@@ -37,7 +37,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         @user = User.create(
           name:     @auth.info.name,
           email:    @auth.info.email,
-          remote_avater_image_url: auth.info.image,
+          remote_avater_image_url: @auth.info.image,
           provider: @auth.provider,
           uid:      @auth.uid,
           password: Devise.friendly_token[0, 20],
