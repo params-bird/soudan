@@ -1,0 +1,5 @@
+<%# ERBタグを用いることでコントローラにて定義した@receiving_userの値を取得できます %>
+<%# また同様にERBタグを用いて部分テンプレートも適用できます(jを用いてエスケープ処理を行う必要あり) %>
+$("#like-button-zone_<%= @receiving_user.id %>").html("<%= j(render partial: 'likes/like', locals: { user: @receiving_user }) %>");
+<%# いいね残高をコントローラにて定義した@sending_userを用いて表示します %>
+$(".like_balance").html("<%= @sending_user.like_balance %>")

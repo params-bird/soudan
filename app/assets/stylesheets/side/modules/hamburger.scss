@@ -137,7 +137,6 @@
     }
   }
   p{
-    // font-size: 20px;
     color: DimGray;
    }
 
@@ -151,15 +150,11 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
+    position: relative;
     &__inner{
-      background-image: url('no-photo-icon-22');
-      background-size: cover;
-      background-repeat: no-repeat;
-      overflow: hidden;
-      white-space: nowrap;
+      background-image: url('no-image');
       height: 80px;
       width: 80px;
-      position: relative;
       img {
         border-radius: 5px;
         height:100%;
@@ -210,6 +205,11 @@
 }
 
 #material-icons-edit{
+  position: absolute;
+  font-size: 1rem;
+  top: 3px;
+  right: 15px;
+  color: gray;
 }
 
 

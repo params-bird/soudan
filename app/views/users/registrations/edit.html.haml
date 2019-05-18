@@ -6,15 +6,30 @@
   =render 'shared/header'
   .space-10
   .my-page-flame
+    -# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    -#   .my-card
+    -#     .my-card__user-avater
+    -#       %label.my-card__user-avater__inner
+    -#         = image_tag @user.image
+    -#         = f.file_field :image, class: "image", id: "filename", multipart: :true
+    -#         %span.hidden_btn
+    -#         %i.material-icons#material-icons-edit
+    -#           settings
+
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       .my-card
         .my-card__user-avater
-          %label.my-card__user-avater__inner
-            = image_tag @user.image
-            = f.file_field :image, class: "image", id: "filename", multipart: :true
-            %span.hidden_btn
+          .my-card__user-avater__inner
+            .img_field#img_field{:onclick => "$('#file').click()"}
+              - if @user.image.url.present?
+                = image_tag(@user.image.url)
+              - else
+                = image_tag('no-image')
+            = f.file_field :image, class: "image", style: "display:none;", id: "file"
             %i.material-icons#material-icons-edit
               settings
+
+
         .my-card__name-and-status
           .my-card__user-name
             = f.text_field :name, autofocus: true, autocomplete: "off", class:"edit-user-name"

@@ -224,7 +224,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2%;
+    padding: 1%;
     color: dimgray;
     font-weight: bolder;
     background-image: linear-gradient(180deg, #cae2f0 0, #c3d9e7);
@@ -234,7 +234,7 @@
       border-radius: 50%;
       height: 40px;
       width: 40px;
-      background-image: url(no-photo-icon-22);
+      background-image: url(no-image);
       background-size: cover;
       background-repeat: no-repeat;
       overflow: hidden;
@@ -257,6 +257,7 @@
   }
   .border-bottom{
     border-bottom: 1px solid lightgray;
+    position: relative;
   }
 }
 

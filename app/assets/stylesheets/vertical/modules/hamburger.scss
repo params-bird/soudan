@@ -151,8 +151,9 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
+    position: relative;
     &__inner{
-      // background-image: url('no-photo-icon-22');
+      // background-image: url('no-image');
       background-size: cover;
       background-repeat: no-repeat;
       overflow: hidden;
@@ -207,7 +208,13 @@
     padding-left:10px;
   }
 }
-
+#material-icons-edit{
+  position: absolute;
+  font-size: 1rem;
+  top: 3px;
+  right: 15px;
+  color: gray;
+}
 #material-icons-custom-soudan{
 display: flex;
 align-items: center;

@@ -1,0 +1,2 @@
+console.log("hello");
+$("#thank-link-<%= message.id %>").html('<%= escape_javascript(render("thanks/thank"), message: message) %>');
