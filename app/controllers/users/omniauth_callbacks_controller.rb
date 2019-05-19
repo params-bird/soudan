@@ -10,7 +10,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     else
       # サービスに登録していなければSNS情報を基に新規に登録
       # LINEユーザーはmailアドレス持っておらずnull制約で登録できなくなるのでフェイクアドレスを作る
-      email = @auth[:info][:email] ? @auth[:info][:email] : "Dummy-#{@auth[:provider]}@example.com"
+      email = @auth[:info][:email] ? @auth[:info][:email] : "#{@auth[:uid]}-#{@auth[:provider]}@example.com"
       # 下記のよりcreateメソッド
       @user = current_user || User.create!(
         provider: @auth[:provider],
