@@ -41,7 +41,15 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @auth = request.env['omniauth.auth']
     # authサーバーから取得したメールアドレスがUserテーブルにあるかチェック
     if User.find_by(email: @auth[:info][:email]).blank?
-      @user = User.from_omniauth(request.env["omniauth.auth"])
+      # @user = User.from_omniauth(request.env["omniauth.auth"])
+      @user = User.create(
+        name: @auth[:info][:name],
+        email: @auth[:info][:email],
+        provider: @auth[:provider],
+        uid:      @auth[:uid],
+        remote_image_url: @auth[:info][:image],
+        password: Devise.friendly_token[0,20]
+      )
       if @user.persisted?
       bypass_sign_in(@user)
       flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
@@ -51,10 +59,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_user_registration_path, alert: @user.errors.full_messages
       end
     else
-      # authサーバーから取得したメールアドレスがUserテーブルにあった場合
+      # authサーバーから取得したメールアドレスがUserテーブルにあった場合@userに持たせてログインメソッドへ
       @user = User.find_by(email: @auth[:info][:email])
       bypass_sign_in(@user)
-      flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'LINE'
+      flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
       redirect_to user_path(@user.id) and return
     end
   end
