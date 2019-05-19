@@ -3,7 +3,7 @@ class UserChatRoomsController < ApplicationController
   before_action :set_user, only: [:index]
 
   def index
-    if current_user.user_chat_rooms.nil?
+    if current_user.user_chat_rooms.blank?
       @no_rooms = "メッセージはありません"
     else
     @current_chat_rooms = current_user.user_chat_rooms.pluck(:chat_room_id) #pluckで指定したカラムのみ
