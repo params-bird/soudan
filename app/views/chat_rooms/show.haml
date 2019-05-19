@@ -23,7 +23,7 @@
               .message
                 = simple_format(message.content)
             .message-box__evaluation-flame
-              %div{:id => "thanks_buttons_#{message.id}"}
+              #thanks_buttons
                 = render partial: 'thanks/thank', locals: { message: message, thanks: @thanks}
               -# - if m.thank.blank? && m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
               -#   #thanks-btn

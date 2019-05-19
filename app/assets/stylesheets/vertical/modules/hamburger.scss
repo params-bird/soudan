@@ -146,14 +146,15 @@
     height: 40%;
   }
   &__user-avater{
-    width: 35%;
-    height: 100%;
+    width: 80px;
+    height: 80px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     position: relative;
+    margin: 0 10px;
     &__inner{
-      // background-image: url('no-image');
+      background-image: url('no-image');
       background-size: cover;
       background-repeat: no-repeat;
       overflow: hidden;

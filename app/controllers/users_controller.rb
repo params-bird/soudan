@@ -7,6 +7,12 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+
+
+  def show
+        @user = User.find(params[:id])
+  end
+
   def user_topics
     if Topic.where(user_id: current_user.id).present?
       @topic = Topic.where(user_id: current_user.id).order(updated_at: "DESC")

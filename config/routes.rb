@@ -35,7 +35,6 @@ Rails.application.routes.draw do
 
   get 'test', to: 'soudan#test', as: 'test'
   get 'user/index', to: 'users#index', as: 'user_index'
-  get 'user/:id', to: 'users#mypage', as: 'user_mypage'
   get 'users/:id/topics', to: 'users#user_topics', as: 'user_topics'
   get 'search', to: 'topics#search', as: 'topics_search'
   get 'kiyaku', to: 'soudan#kiyaku', as: 'kiyaku'

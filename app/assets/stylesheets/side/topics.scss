@@ -22,6 +22,7 @@
     width: 96%;
     margin: auto;
     height: 100%;
+    position: relative;
     .topic-box__inner__left{
       width: 10%;
       height: 100%;
@@ -86,7 +87,7 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 2%;
+          padding: 1%;
           color: dimgray;
           font-weight: bolder;
           background-image: linear-gradient(180deg,#cae2f0 0,#c3d9e7);

@@ -1,1 +1,1 @@
-$('#thanks_buttons_<%= @message.id %>').html("<%= j(render partial: 'thanks/thank', locals: {message: @message}) %>");
+$("#thanks_buttons").html("<%= escape_javascript(render partial: 'thanks/thank', locals: {message: @message}) %>");

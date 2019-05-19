@@ -5,14 +5,14 @@ class ThanksController < ApplicationController
   def create
     @thank = Thank.create(user_id: params[:user_id], message_id: params[:message_id])
     @thanks = Thank.where(message_id: params[:message_id])
-    @message.reload
+    render 'create.js.erb'
   end
 
   def destroy
-    thank = Thank.find_by(message_id: params[:message_id])
+    thank = Thank.find(params[:id])
     thank.destroy
     @thanks = Thank.where(message_id: params[:message_id])
-    @message.reload
+    render 'destroy.js.erb'
   end
 
   private
