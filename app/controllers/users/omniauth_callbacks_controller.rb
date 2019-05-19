@@ -31,33 +31,29 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       else
         # 失敗の際はアカウン登録画面に遷移
         session['devise.line_data'] = request.env['omniauth.auth'].except(:extra) # Removing extra as it can overflow   some session stores
-        redirect_to new_user_registration_url, alert: @user.errors.full_messages.join("\n")
+        redirect_to new_user_registration_path, alert: @user.errors.full_messages
       end
     end
   end
 
-
   def google_oauth2
     @auth = request.env['omniauth.auth']
-    ＠user = User.where(email: @auth[:info][:email]).first
-    if ＠user
-      # 既にサービスに登録していればログイン処理
+    if User.where(email: @auth[:info][:email]).blank?
+      @user = User.from_omniauth(request.env["omniauth.auth"])
+      if @user.persisted?
       bypass_sign_in(@user)
       flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
       redirect_to user_path(@user.id) and return
+      else
+      session["devise.#{provider}_data"] = oauth.except("extra")
+      redirect_to new_user_registration_path, alert: @user.errors.full_messages
+      end
     else
-      @user = User.create(
-        provider: @auth[:provider],
-        uid:      @auth[:uid],
-        remote_image_url: @auth[:info][:image],
-        name:     @auth[:info][:name],
-        email:    @auth[:info][:email],
-        password: Devise.friendly_token[0, 20],
-      )
+      @user = User.where(email: @auth[:info][:email])
       bypass_sign_in(@user)
-      flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
-      # ログインさせマイページに遷移
+      flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'LINE'
       redirect_to user_path(@user.id) and return
     end
   end
+
 end
