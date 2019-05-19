@@ -37,7 +37,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def google_oauth2
+    # authサーバーからSNS情報を取得
     @auth = request.env['omniauth.auth']
+    # authサーバーから取得したメールアドレスがUserテーブルにあるかチェック
     if User.where(email: @auth[:info][:email]).blank?
       @user = User.from_omniauth(request.env["omniauth.auth"])
       if @user.persisted?
@@ -49,7 +51,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_user_registration_path, alert: @user.errors.full_messages
       end
     else
-      @user = User.where(email: @auth[:info][:email]).first
+      # authサーバーから取得したメールアドレスがUserテーブルにあった場合、whereで
+      @user = User.find_by(email: @auth[:info][:email])
       bypass_sign_in(@user)
       flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'LINE'
       redirect_to user_path(@user.id) and return

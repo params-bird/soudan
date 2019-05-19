@@ -27,19 +27,6 @@
                 = render partial: 'thanks/thank', locals: { message: message }
               #bad_button
                 = render partial: 'bads/bad', locals: { message: message }
-              -# - if m.thank.blank? && m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
-              -#   #thanks-btn
-              -#     = link_to 'ありがとう', user_message_thanks_path(user_id: m.user_id, message_id: m.id), method: :post, remote: true
-              -# - elsif m.thank.present? && m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
-              -#   #thanks-btn-aledy
-              -#     = link_to '&#10003; ありがとう'.html_safe, user_message_thank_path(user_id: m.user_id, message_id: m.id), method: :delete, remote: true
-              -# - if m.bad.blank? && m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
-              -#   #bad-btn
-              -#     = link_to '不適切な返信', user_message_bads_path(user_id: m.user_id, message_id: m.id), method: :post, data: { confirm: '本当によろしいですか?' }, remote: true
-              -# - elsif m.bad.present? && m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
-              -#   #bad-btn-aledy
-              -#     = link_to '&#10003; 不適切な返信'.html_safe, user_message_bad_path(user_id: m.user_id, message_id: m.id), method: :delete, data: { confirm: '不適切な返信を解除します' }, remote: true
-
             - if message.user_id != current_user.id && message.chat_room.topic_create_user_id != message.user_id
               %p.thanks-info ※ 評価は相手からは見えません　
     .message-container__input
