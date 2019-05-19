@@ -7,6 +7,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if @user
       # 既にサービスに登録していればログイン処理
       bypass_sign_in(@user)
+      redirect_to user_mypage_path(@user.id) and return
     else
       # サービスに登録していなければSNS情報を基に新規に登録
       # LINEユーザーはmailアドレス持っておらずnull制約で登録できなくなるのでフェイクアドレスを作る
