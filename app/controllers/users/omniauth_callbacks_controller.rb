@@ -38,7 +38,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
 
   def google_oauth2
-    auth = User.from_omniauth(request.env['omniauth.auth'])
+    auth = request.env['omniauth.auth']
+    # auth = User.from_omniauth(request.env['omniauth.auth'])
     ＠user = User.where(email: auth['email']).first
     if ＠user
       # 既にサービスに登録していればログイン処理
