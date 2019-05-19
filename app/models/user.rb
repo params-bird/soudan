@@ -2,7 +2,7 @@ class User < ApplicationRecord
   include IdGenerator
 
   mount_uploader :image, ImageUploader
-  
+
   devise :database_authenticatable,
          :registerable,
          :recoverable,
