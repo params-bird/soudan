@@ -40,14 +40,14 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def google_oauth2
     @auth = request.env['omniauth.auth']
     # auth = User.from_omniauth(request.env['omniauth.auth'])
-    ＠user = User.where(provider: @auth[:provider], email: @auth[:email]).first
+    ＠user = User.where(email: @auth[:email]).first
     if ＠user
       # 既にサービスに登録していればログイン処理
       bypass_sign_in(@user)
       flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
       redirect_to user_mypage_path(@user.id) and return
     else
-      @user = User.create!(
+      @user = User.create(
         provider: @auth[:provider],
         uid:      @auth[:uid],
         remote_image_url: @auth[:info][:image],
