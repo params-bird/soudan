@@ -23,7 +23,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       if @user.persisted?
         # 新たにレコードが作られたか
         flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'LINE'
-        bypass_sign_in(@user), event: :authentication
+        bypass_sign_in(@user)
         # ログインさせマイページに遷移
         redirect_to user_mypage_path(@user.id) and return
       else
