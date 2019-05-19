@@ -23,8 +23,10 @@
               .message
                 = simple_format(message.content)
             .message-box__evaluation-flame
-              #thanks_buttons
-                = render partial: 'thanks/thank', locals: { message: message, thanks: @thanks}
+              #thanks_button
+                = render partial: 'thanks/thank', locals: { message: message }
+              #bad_button
+                = render partial: 'bads/bad', locals: { message: message }
               -# - if m.thank.blank? && m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
               -#   #thanks-btn
               -#     = link_to 'ありがとう', user_message_thanks_path(user_id: m.user_id, message_id: m.id), method: :post, remote: true

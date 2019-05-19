@@ -20,8 +20,6 @@
 }
 
 
-
-
 .white-line-btn{
   display: flex;
   // width: 23%;
@@ -481,44 +479,39 @@
   }
 }
 
-.button_to{
+#thanks-btn{
+  font-size:x-small;
+  color: #00a4bb;
+  background-color: white;
+  border:1px solid  #00a4bb;
+  cursor: pointer;
+}
+#thanks-btn-aledy{
+  font-size:x-small;
   color: white;
-  #thanks-btn{
-    font-size:x-small;
-    color: #00a4bb;
-    background-color: white;
-    border:1px solid  #00a4bb;
-    cursor: pointer;
-  }
-  #thanks-btn-aledy{
-    font-size:x-small;
-    color: white;
-    background-color: #00a4bb;
-    cursor: pointer;
-    border: none;
-  }
+  background-color: #00a4bb;
+  cursor: pointer;
+  border: none;
 }
 
-.button_to{
-  // color: white;
-  #bad-btn{
-    border: none !important;
-    color: gray;
-    background-color: inherit;
-    font-size:x-small;
-    justify-content: flex-end;
-    cursor: pointer;
-    margin-left: 4px;
-  }
-  #bad-btn-aledy{
-    font-size:x-small;
-    background-color:red;
-    border: none;
-    color: white;
-    cursor: pointer;
-    margin-left: 4px;
-  }
+#bad-btn{
+  border: none !important;
+  color: gray;
+  background-color: inherit;
+  font-size:x-small;
+  justify-content: flex-end;
+  cursor: pointer;
+  margin-left: 4px;
 }
+#bad-btn-aledy{
+  font-size:x-small;
+  background-color:red;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
 .topic-close{
   font-size:small;
   position: absolute;

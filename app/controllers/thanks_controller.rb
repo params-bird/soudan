@@ -3,15 +3,13 @@ class ThanksController < ApplicationController
   before_action :set_message
 
   def create
-    @thank = Thank.create(user_id: params[:user_id], message_id: params[:message_id])
-    @thanks = Thank.where(message_id: params[:message_id])
+    Thank.create(user_id: params[:user_id], message_id: params[:message_id])
     render 'create.js.erb'
   end
 
   def destroy
     thank = Thank.find(params[:id])
     thank.destroy
-    @thanks = Thank.where(message_id: params[:message_id])
     render 'destroy.js.erb'
   end
 
