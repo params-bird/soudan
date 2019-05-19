@@ -55,12 +55,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         remote_image_url: auth['info']['image'],
         password: Devise.friendly_token[0,20]
       )
-      if @user.save
-        # 新たにレコードが作られたか
-        flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
-        bypass_sign_in(@user)
-        # ログインさせマイページに遷移
-        redirect_to user_mypage_path(@user.id) and return
+      bypass_sign_in(@user)
+      flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
+      # ログインさせマイページに遷移
+      redirect_to user_mypage_path(@user.id) and return
       else
         # 失敗の際はアカウン登録画面に遷移
         session['devise.line_data'] = request.env['omniauth.auth'].except(:extra) # Removing extra as it can overflow   some session stores
