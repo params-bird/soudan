@@ -49,7 +49,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_user_registration_path, alert: @user.errors.full_messages
       end
     else
-      @user = User.where(email: @auth[:info][:email])
+      @user = User.find_by(email: @auth[:email])
       bypass_sign_in(@user)
       flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'LINE'
       redirect_to user_path(@user.id) and return
