@@ -55,7 +55,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         remote_image_url: auth['info']['image'],
         password: Devise.friendly_token[0,20]
       )
-      if @user.persisted?
+      if @user.save
         # 新たにレコードが作られたか
         flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
         bypass_sign_in(@user)
