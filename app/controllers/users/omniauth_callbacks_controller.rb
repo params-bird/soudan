@@ -8,7 +8,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       # 既にサービスに登録していればログイン処理
       bypass_sign_in(@user)
       flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'LINE'
-      redirect_to user_mypage_path(@user.id) and return
+      redirect_to user_path(@user.id) and return
     else
       # サービスに登録していなければSNS情報を基に新規に登録
       # LINEユーザーはmailアドレス持っておらずnull制約で登録できなくなるのでフェイクアドレスを作る
@@ -27,7 +27,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'LINE'
         bypass_sign_in(@user)
         # ログインさせマイページに遷移
-        redirect_to user_mypage_path(@user.id) and return
+        redirect_to user_path(@user.id) and return
       else
         # 失敗の際はアカウン登録画面に遷移
         session['devise.line_data'] = request.env['omniauth.auth'].except(:extra) # Removing extra as it can overflow   some session stores
@@ -44,7 +44,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       # 既にサービスに登録していればログイン処理
       bypass_sign_in(@user)
       flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
-      redirect_to user_mypage_path(@user.id) and return
+      redirect_to user_path(@user.id) and return
     else
       @user = User.create(
         provider: @auth[:provider],
@@ -57,7 +57,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       bypass_sign_in(@user)
       flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
       # ログインさせマイページに遷移
-      redirect_to user_mypage_path(@user.id) and return
+      redirect_to user_path(@user.id) and return
     end
   end
 end
