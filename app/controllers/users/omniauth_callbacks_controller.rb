@@ -40,7 +40,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def google_oauth2
     @auth = request.env['omniauth.auth']
     # auth = User.from_omniauth(request.env['omniauth.auth'])
-    ＠user = User.where(email: @auth[:email]).first
+    ＠user = User.where(email: @auth[:info][:email]).first
     if ＠user
       # 既にサービスに登録していればログイン処理
       bypass_sign_in(@user)
@@ -52,7 +52,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         uid:      @auth[:uid],
         remote_image_url: @auth[:info][:image],
         name:     @auth[:info][:name],
-        email:    @auth[:email],
+        email:    @auth[:info][:email],
         password: Devise.friendly_token[0, 20],
       )
       bypass_sign_in(@user)
