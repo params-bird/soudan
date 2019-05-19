@@ -47,7 +47,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
       redirect_to user_mypage_path(@user.id) and return
     else
-      @user = current_user || User.create!(
+      @user = User.create!(
         provider: @auth[:provider],
         uid:      @auth[:uid],
         remote_image_url: @auth[:info][:image],
