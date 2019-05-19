@@ -15,6 +15,7 @@ class ChatRoomsController < ApplicationController
       @messages = @chat_room.messages.order(created_at: :desc)
       @message = Message.new
       @user_chat_rooms = @chat_room.user_chat_rooms
+      
     else
       redirect_back(fallback_location: root_path)
     end

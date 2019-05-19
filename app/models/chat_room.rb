@@ -4,4 +4,6 @@ class ChatRoom < ApplicationRecord
   has_many :user_chat_rooms
   belongs_to :topic
   has_many :messages
+
+
 end

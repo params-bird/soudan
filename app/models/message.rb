@@ -6,4 +6,5 @@ class Message < ApplicationRecord
   has_one :bad
 
   validates :content, presence: true
+
 end

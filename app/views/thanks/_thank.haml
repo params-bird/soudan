@@ -1,4 +1,4 @@
-.thank-link{id: "thank-link-#{message.id}"}
+%div{"data-message-id" => message.id, :id => "#{message.id}"}
   - if message.thank.blank? && message.user_id != current_user.id && message.chat_room.topic_create_user_id != message.user_id
     #thanks-btn
       = link_to 'ありがとう', user_message_thanks_path(user_id: message.user_id, message_id: message.id), method: :post, remote: true

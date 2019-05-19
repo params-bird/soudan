@@ -23,7 +23,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       if @user.persisted?
         # 新たにレコードが作られたか
         flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'LINE'
-        bypass_sign_in(@user)
+        bypass_sign_in(@user), event: :authentication
         # ログインさせマイページに遷移
         redirect_to user_mypage_path(@user.id) and return
       else
@@ -39,7 +39,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.from_omniauth(request.env['omniauth.auth'])
     if @user.persisted?
       flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
-      bypass_sign_in(@user)
+      bypass_sign_in(@user), event: :authentication
       redirect_to user_mypage_path(@user.id)
     else
       session['devise.google_data'] = request.env['omniauth.auth'].except(:extra) # Removing extra as it can overflow some session stores

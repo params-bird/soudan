@@ -23,14 +23,14 @@
               .message
                 = simple_format(message.content)
             .message-box__evaluation-flame
-              =render 'thanks/thank' , message: message
+              %div{:id => "thanks_buttons_#{message.id}"}
+                = render partial: 'thanks/thank', locals: { message: message, thanks: @thanks}
               -# - if m.thank.blank? && m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
               -#   #thanks-btn
               -#     = link_to 'ありがとう', user_message_thanks_path(user_id: m.user_id, message_id: m.id), method: :post, remote: true
               -# - elsif m.thank.present? && m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
               -#   #thanks-btn-aledy
               -#     = link_to '&#10003; ありがとう'.html_safe, user_message_thank_path(user_id: m.user_id, message_id: m.id), method: :delete, remote: true
-              =render 'bad' , message: message
               -# - if m.bad.blank? && m.user_id != current_user.id && m.chat_room.topic_create_user_id != m.user_id
               -#   #bad-btn
               -#     = link_to '不適切な返信', user_message_bads_path(user_id: m.user_id, message_id: m.id), method: :post, data: { confirm: '本当によろしいですか?' }, remote: true
