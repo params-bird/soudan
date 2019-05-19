@@ -4,13 +4,13 @@ class BadsController < ApplicationController
 
   def create
     Bad.create(user_id: params[:user_id], message_id: params[:message_id])
-    render 'create.js.erb'
+    render 'bad_ajax.js.erb'
   end
 
   def destroy
     bad = Bad.find(params[:id])
     bad.destroy
-    render 'destroy.js.erb'
+    render 'bad_ajax.js.erb'
   end
 
   private
