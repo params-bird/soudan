@@ -1,37 +1,44 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-- 基本機能
-  - devise ユーザー登録
-    - User
-    - Campany (Userの子モデルとしてCampanyテーブルに同時登録)
-    - ユーザー登録の際にカテゴリー選択できる様にseedファイル作成済み
-  -投稿機能
-  - いいね機能
-    - UserがUserのproductionに対していいねできる
-  - フォロー機能実装
-    - UserがUserのproductionに対していいねできる
-  - メッセージ機能
-    - UserがUsernにDMを送れる。モデルはRoom、Entery(中間テーブル)、Message
+####環境
+Ruby 2.5.1
+Rails 5.1.7
+####本番環境
+Heroku
+####サーバー
+ClearDB MySQL(mysql2)
+S3(amazon aws)
+####使用言語
+バッグエンド　=> Ruby
+フロントエンド　=> Haml, Scss, Javascript
+####実装
+- バッグエンド
+  - DB設計
+  - DBアソシエーション設定
+  - 本番環境設定
+  - 画像アップロードサーバー設定
+  - 環境変数設定
+  - ユーザー登録
+  - ユーザー情報編集
+  - コメント投稿機能
+  - メッセージ機能（チャット機能）
+  - Good評価機能
+  - Bad評価機能
+  - メール送信機能（SendGrid使用）
+- フロントエンド
+  - レスポンシブ対応（縦と横で変更）
+  - 非登録ユーザーと既登録ユーザーの画面切り替え
+  - マイページ作成
+  - カテゴリー検索
+  - いいね機能非同期通信
+  - ハンバーガーメニュー
+  - 画像アップロード即時プレビュー
+  - パンくず表示(gretel使用)
+  - フラッシュメッセージ表示
+####できること
+- ユーザー登録
+- SNS認証（LINE、GOOGLE)
+- 画像アップロード
+- 投稿機能
+- カテゴリー設定
+- 投稿に対するコメント送信
+- ダイレクトチャット機能
+- いいね機能
