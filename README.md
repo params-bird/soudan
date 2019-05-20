@@ -1,20 +1,21 @@
 ***
 ### 環境
-Ruby 2.5.1
-Rails 5.1.7
+    Ruby 2.5.1
+    Rails 5.1.7
 ***
 ### 本番環境
-Heroku
+    Heroku
 ***
 ### サーバー
-ClearDB MySQL(mysql2)
-S3(amazon aws)
+    ClearDB MySQL(mysql2)
+    S3(amazon aws)
 ***
 ### 使用言語
-バッグエンド　=> Ruby
-フロントエンド　=> Haml, Scss, Javascript
+    バッグエンド　=> Ruby
+    フロントエンド　=> Haml, Scss, Javascript
 ***
 ### 実装
+
 - バッグエンド
   - DB設計
   - DBアソシエーション設定
