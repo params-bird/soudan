@@ -57,3 +57,4 @@ build-iPhoneSimulator/
 .vscode/
 /db/fixtures/development
 /config/secrets.yml
+sample.md/
