@@ -56,5 +56,4 @@ build-iPhoneSimulator/
 /lib/bundler/man/
 .vscode/
 /db/fixtures/development
-/config/secrets.yml
 sample.md/
