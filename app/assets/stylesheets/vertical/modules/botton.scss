@@ -110,6 +110,21 @@
   }
 }
 
+#start-btn__toppage-bottom{
+  height: 50px;
+  margin: 8vmin 0%;
+  width: 100%;
+  border-radius: 2rem;
+  background-color: #e91e63b3;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  border: none;
+}
+
 .index-page__bottom{
   width: 80%;
   margin: auto;
