@@ -26,7 +26,7 @@ end
 
 crumb :user_chat_rooms_index do
   link "メッセージ一覧",user_chat_rooms_path(user_id:current_user.id)
-  parent :user_mypage
+  parent :user_show
 end
 
 crumb :chat_rooms_show do
@@ -36,17 +36,17 @@ end
 
 crumb :user_topics do
   link "ユーザー投稿一覧",user_topics_path(id:current_user.id)
-  parent :user_mypage
+  parent :user_show
 end
 
-crumb :user_mypage do
+crumb :user_show do
   link "#{current_user.name}"
   parent :root
 end
 
 crumb :user_edit do
   link "ユーザー情報編集"
-  parent :user_mypage
+  parent :user_show
 end
 
 crumb :user_signup do

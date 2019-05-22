@@ -21,8 +21,8 @@
 - when ['chat_rooms', 'show']
   - breadcrumb :chat_rooms_show
 
-- when ['users', 'mypage']
-  - breadcrumb :user_mypage
+- when ['users', 'show']
+  - breadcrumb :user_show
 
 - when ['users/registrations', 'edit']
   - breadcrumb :user_edit
@@ -38,22 +38,3 @@
 
 
 = breadcrumbs separator: " &nbsp;&nbsp;&#12297;&nbsp; "
-
--# - when ['users', 'show']
--#   - breadcrumb 'users_show'
-
--# - elsif params[:controller] == 'rooms' && params[:action] == 'index'
--#   - breadcrumb 'mail_box'
-
--# - elsif params[:controller] == 'rooms' && params[:action] == 'show'
--#   - breadcrumb 'message_room'
-
--# -# - elsif params[:controller] == 'products' && params[:action] == 'search'
--# -#   - breadcrumb 'search'.to_sym
-
--# -# - elsif params[:controller] == 'users/registrations' && params[:action] == 'edit'
--# -#   - breadcrumb 'users_edit'.to_sym
-
--# -# - elsif params[:controller] == 'users' && params[:action] == 'logout'
--# -#   - breadcrumb 'logout'.to_sym
-
