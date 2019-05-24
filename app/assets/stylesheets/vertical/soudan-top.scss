@@ -9,7 +9,7 @@
     height: 30%;
     background: image-url('candy');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     position: absolute;
     bottom: 0%;
     background-position: center;
@@ -85,7 +85,7 @@
     }
     #service-title{
       cursor: pointer;
-      font-size: 2vw;
+      font-size: 2.5vw;
     }
   }
 
