@@ -32,5 +32,8 @@
             .sns-select-signin__line_logo
             %a{href: user_line_omniauth_authorize_path}LINE
           .login-other-info
-            = render "devise/shared/links"
+            %a{href: new_user_registration_path}アカウント登録
+          .login-other-info
+            %a{href: new_user_password_path}パスワードを忘れましたか?
+          .login-other-info
             = link_to '戻る', root_path
