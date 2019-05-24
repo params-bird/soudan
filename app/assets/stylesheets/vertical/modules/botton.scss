@@ -87,9 +87,9 @@
   cursor: pointer;
   &__start-btn{
     height: 50px;
-    margin: 8vmin 0%;
+    // margin: 8vmin 0%;
     width: 100%;
-    border-radius: 2rem;
+    // border-radius: 2rem;
     background-color: #e91e63;
     color: white;
     display: flex;
@@ -126,12 +126,10 @@
 }
 
 .index-page__bottom{
-  width: 80%;
+  width: 100%;
   margin: auto;
   position: absolute;
   bottom: 0%;
-  margin-left: 10%;
-  margin-right: 10%;
   .sns-select-flame{
     margin-bottom: 1rem;
     /* display: flex; */

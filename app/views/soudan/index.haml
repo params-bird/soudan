@@ -1,29 +1,15 @@
 %section.mobile-body__main__top-page
   =render 'shared/top-page-header'
+  -# .mobile-body__main__top-page__img-candy
   .mobile-body__main__top-page__inner
     %section.index-page__top
       .service-title
-        %h3 もっと気軽に相談しよう！
+        -# %h3 相談しよう！
         %p あなたの周りに相談相手はいますか？
-        %p soudanは相談しやすい人を見つけて相談できる
+        %p soudanはチャットで相談できる
         %p 相談に特化したSNSサービスです。
         %a#service-title もっと詳しく　＞＞
 
-    -# %section.index-page__bottom
-    -#   .sns-select-flame
-    -#     .sns-select
-    -#       .sns-select__mail
-    -#         .sns-select__mail_logo
-    -#         %a{href: new_user_session_path}メールアドレス
-    -#       .sns-select__google
-    -#         .sns-select__google_logo
-    -#         %a{href: "#"}Google
-    -#       .sns-select__twitter
-    -#         .sns-select__twitter_logo
-    -#         %a{href: "#"}Twitter
-    -#       .sns-select__line
-    -#         .sns-select__line_logo
-    -#         %a{href: "#"}LINE
     - unless user_signed_in?
       %section.index-page__bottom
         =render 'shared/togle-signup'
