@@ -47,8 +47,24 @@
   }
 }
 
+.modal-body{
+  padding: 0rem;
+}
+
+
 #myModal{
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal-dialog{
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal-header{
+  padding: 0.5rem 1rem;
+
 }
 
 
