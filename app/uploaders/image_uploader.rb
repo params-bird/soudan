@@ -35,7 +35,7 @@
     process resize_to_fill: [100, 100]
   end
 
-  # 保存形式をJPGにする
+  # 保存形式をpngにする
   process :convert => 'png'
 
 # 許可する画像の拡張子

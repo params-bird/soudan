@@ -1,15 +1,5 @@
 .mobile-body
   =render 'shared/header'
   .mobile-body__inner
-    .search-frame
-      = form_with url: topics_search_path, method: :get, local: true do |f|
-        .search-frame__flex
-          = f.label "カテゴリー"
-          .search-frame__category.search-category
-            = f.collection_select :category_id, @category, :id, :name, {prompt: "選択してください"}
-          = f.submit '決定', class:"post-btn", id:"search-category-btn"
-    %section#search-frame__body
-      #search-frame__inner
-        =render partial: 'topic-box', collection: @topics, as: :topic
-    - if user_signed_in?
-      -# =render 'shared/footer'
+    .category-wrap
+      =render partial: 'category-img', collection: @category, as: :category

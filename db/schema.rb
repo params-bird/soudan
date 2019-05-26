@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20190519034508) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
+    t.binary "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

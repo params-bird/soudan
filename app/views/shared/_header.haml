@@ -8,16 +8,9 @@
         %h5 soudan
     .mobile-body__header__title
       = header_title
-    -# - if user_signed_in?
-    -#   .icon-frame
-    -#     .user_icon
-    -#       %a{href: user_mypage_path(current_user.id)}
-    -#         = image_tag @user.avater
-    -# .question-btn-frame
-    -#   %a{href: new_topic_path}
-    -#     .question-btn
-    -#       %i.fas.fa-edit.fa-4x
-
+    .top-page__search-icon.black-color
+      %i.material-icons.md-dark.md-inactive
+        %a{href: topics_search_path} search
     - unless user_signed_in?
       - unless params[:controller] == 'users/sessions' && params[:action] == 'new'
         .login-black-btn

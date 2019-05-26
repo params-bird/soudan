@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   get 'user/index', to: 'users#index', as: 'user_index'
   get 'users/:id/topics', to: 'users#user_topics', as: 'user_topics'
   get 'search', to: 'topics#search', as: 'topics_search'
+  get 'category', to: 'topics#category', as: 'category_search'
   get 'kiyaku', to: 'soudan#kiyaku', as: 'kiyaku'
   get 'privacy_policy', to: 'soudan#privacy_policy', as: 'privacy_policy'
   get 'contact', to: 'soudan#contact', as: 'contact'

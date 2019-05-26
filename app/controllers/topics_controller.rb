@@ -1,7 +1,7 @@
 class TopicsController < ApplicationController
   before_action :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy]
-  before_action :set_user, only: [:index, :new, :create, :show, :edit, :update, :destroy, :search]
-  before_action :set_form_data, only: [:new, :edit, :search]
+  before_action :set_user, only: [:index, :new, :create, :show, :edit, :update, :destroy, :search, :category]
+  before_action :set_form_data, only: [:new, :edit, :search, :category]
 
   def index
     @topic = Topic.all.order(updated_at: "DESC")
@@ -41,7 +41,10 @@ class TopicsController < ApplicationController
   end
 
   def search
-    @topics = Topic.where(category_id: params[:category_id]).limit(49).order(updated_at: "DESC")
+  end
+
+  def category
+    @topics = Topic.where(category_id: params[:format]).limit(49).order(updated_at: "DESC")
   end
 
   protected

@@ -34,6 +34,21 @@
   font-size: 0.8rem;
 }
 
+.red-btn{
+  display: flex;
+  height: 70%;
+  padding: 0px 4px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e91e63;
+  background-color: #e91e63;
+  color: white;
+  margin-right: 11px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
 .login-wihte-btn{
   display: flex;
   // width: 23%;

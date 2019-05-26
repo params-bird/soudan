@@ -4,12 +4,11 @@
     .top-page__title
       %a{href: root_path}
         %h4 soudan
-    .top-page__search-icon
-      %i.material-icons.md-dark.md-inactive
-        %a{href: topics_search_path} search
+    .red-btn
+      今すぐ検索
     - unless user_signed_in?
-      .white-line-btn
-        %a{href: new_user_registration_path}ユーザー登録
+      -# .white-line-btn
+      -#   %a{href: new_user_registration_path}ユーザー登録
       .login-wihte-btn
         %a{href: new_user_session_path}ログイン
     - else
