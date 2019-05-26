@@ -57,3 +57,4 @@ build-iPhoneSimulator/
 .vscode/
 /db/fixtures/development
 sample.md/
+public/uploads
