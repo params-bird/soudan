@@ -4,13 +4,17 @@
     .top-page__title
       %a{href: root_path}
         %h4 soudan
-    .red-btn
-      今すぐ検索
+    -# .red-btn
+    -#   今すぐ検索
     - unless user_signed_in?
       -# .white-line-btn
       -#   %a{href: new_user_registration_path}ユーザー登録
+      .red-btn.top-page
+        今すぐ検索
       .login-wihte-btn
         %a{href: new_user_session_path}ログイン
     - else
+      .red-btn
+        今すぐ検索
       =render 'shared/hamburger'
       =render 'shared/toggleNav'

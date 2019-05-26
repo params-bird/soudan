@@ -37,17 +37,21 @@
 .red-btn{
   display: flex;
   height: 70%;
-  padding: 0px 4px;
+  padding: 0px 10px;
   border-radius: 5px;
   align-items: center;
   justify-content: center;
   border: 1px solid #e91e63;
   background-color: #e91e63;
   color: white;
-  margin-right: 11px;
+  margin-right: 60px;
   cursor: pointer;
   font-size: 0.8rem;
+  &.top-page{
+    margin-right: 20px;
+  }
 }
+
 
 .login-wihte-btn{
   display: flex;
