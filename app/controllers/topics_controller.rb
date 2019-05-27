@@ -44,7 +44,7 @@ class TopicsController < ApplicationController
   end
 
   def category
-    @topics = Topic.where(category_id: params[:format]).limit(49).order(updated_at: "DESC")
+    @topics = Topic.where(category_id: params[:id]).limit(50).order(updated_at: "DESC")
   end
 
   protected
@@ -55,7 +55,6 @@ class TopicsController < ApplicationController
   def set_user
     @user = User.find(current_user.id) if user_signed_in?
   end
-
 
 
   private
