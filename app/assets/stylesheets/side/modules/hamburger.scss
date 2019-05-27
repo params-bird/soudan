@@ -30,11 +30,13 @@
 .hamburger {
   position: fixed;
   right: 2%;
-  top: 0;
   width: 40px; /* クリックしやすいようにちゃんと幅を指定する */
   height: 40px; /* クリックしやすいようにちゃんと高さを指定する */
   cursor: pointer;
   z-index: 300;
+  &.toppage{
+  top:4px;
+  }
 }
 .global-nav__list {
   margin: 0;

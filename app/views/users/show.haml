@@ -33,7 +33,9 @@
         %a{href: user_chat_rooms_path(user_id: current_user.id)}
           %i.material-icons.md-dark.md-inactive#material-icons-custom
             message
-            %p 受信メッセージ一覧
+            %p 送受信メッセージ一覧
+        .new_message_badge.users-show
+          %p= new_message_badge
 
       %li.global-nav__item
         %a{href: user_topics_path(current_user.id)}
