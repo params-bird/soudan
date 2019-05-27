@@ -1,5 +1,5 @@
 .category-wrap__img
-  = link_to category_search_path(category.id) do
+  = link_to category_search_path(id:category.id) do
     = image_tag category.image
     .category-wrap__img__text
       = category.name

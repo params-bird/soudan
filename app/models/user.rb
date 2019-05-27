@@ -18,17 +18,4 @@ class User < ApplicationRecord
   has_many :thanks, dependent: :delete_all
   has_many :bads, dependent: :delete_all
 
-
-  # def self.from_omniauth(auth)
-  #     user = User.create(
-  #       name: auth['info']['name'],
-  #       email: auth['info']['email'],
-  #       provider: auth['provider'],
-  #       uid:      auth['uid'],
-  #       remote_image_url: auth['info']['image'],
-  #       password: Devise.friendly_token[0,20]
-  #     )
-  #   return user
-  # end
-
 end

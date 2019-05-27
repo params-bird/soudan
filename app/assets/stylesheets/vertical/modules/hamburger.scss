@@ -206,6 +206,7 @@
     height: 24px;
     padding: 0px 0px;
     padding-left:10px;
+    padding-top: 2px;
   }
 }
 #material-icons-edit{
@@ -233,3 +234,19 @@ font-size: 24px;
   }
 }
 
+.new-message-badge{
+  background-color: red;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 103px;
+  height: inherit;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 72%;
+  font-size: 14px;
+  font-weight: bold;
+}
