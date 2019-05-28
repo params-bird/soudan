@@ -24,9 +24,11 @@
                 = simple_format(message.content)
             .message-box__evaluation-flame
               #thanks_button
-                = render partial: 'thanks/thank', locals: { message: message }
+                = render 'thanks/thank', message: message
+                -# = render partial: 'thanks/thank', locals: { message: message }
               #bad_button
-                = render partial: 'bads/bad', locals: { message: message }
+                = render 'bads/bad', message: message
+                -# = render partial: 'bads/bad', locals: { message: message }
             - if message.user_id != current_user.id && message.chat_room.topic_create_user_id != message.user_id
               %p.thanks-info ※ 評価は相手からは見えません　
     .message-container__input

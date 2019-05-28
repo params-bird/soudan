@@ -1,6 +1,6 @@
 class BadsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_message
+  before_action :set_variables
 
   def create
     Bad.create(user_id: params[:user_id], message_id: params[:message_id])
@@ -14,8 +14,9 @@ class BadsController < ApplicationController
   end
 
   private
-  def set_message
+  def set_variables
     @message = Message.find(params[:message_id])
+    @id_name = "#bad-btn-#{@message.id}"
   end
 
 end

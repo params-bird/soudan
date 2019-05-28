@@ -58,3 +58,4 @@ build-iPhoneSimulator/
 /db/fixtures/development
 sample.md/
 public/uploads/category/image
+public/uploads/user/image/
