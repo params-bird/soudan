@@ -5,9 +5,13 @@
       .topic-show-box__inner__top
         .topic-show-box__flex-box
           .topic-show-box__inner__user-icon
-            = image_tag @topic.user.image
+            - if @topic.user.present?
+              = image_tag @topic.user.image
           .topic-show-box__inner__user-name
-            #{@topic.user.name}
+            - if @topic.user.present?
+              #{@topic.user.name}
+            - else
+              退会済みユーザー
         .topic-show-box__inner__title
           #{@topic.title}
       .topic-show-box__inner__bottom
