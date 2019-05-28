@@ -24,7 +24,7 @@
     height: 100%;
     position: relative;
     .topic-box__inner__left{
-      width: 10%;
+      width: 13%;
       height: 100%;
       padding-top: 2px;
       text-align: center;
@@ -83,7 +83,7 @@
         font-size: 0.5rem;
         .topic-box__inner__right__info__category{
           height: 18px;
-          width: fit-content;
+          width: 72px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -102,16 +102,16 @@
           right: 0;
           width: 85%;
           &__user{
-            text-align: right;
-            width: 70%;
+            position: absolute;
+            right: 25%;
             p{
 
             }
           }
           &__time{
-            width: 40%;
+            position: absolute;
+            right: 10%;
             text-align: right;
-            margin-left: 0.5rem;
             text{
               text-align: right;
             }
@@ -215,7 +215,7 @@
     }
     &__text{
       line-break: strict;
-      color: black;
+      color: dimgray;
       border-radius: 4px;
       padding: 2%;
       overflow: auto;

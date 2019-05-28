@@ -84,7 +84,7 @@
         font-size: 0.7rem;
         .topic-box__inner__right__info__category{
           height: 18px;
-          width: fit-content;
+          width: 72px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -95,7 +95,6 @@
           p{
             text-align: center;
             margin: 0px 4px;
-
           }
         }
         .topic-box__inner__right__info__messanger{
@@ -103,16 +102,16 @@
           right: 0;
           width: 85%;
           &__user{
-            text-align: right;
-            width: 70%;
+            position: absolute;
+            right: 25%;
             p{
 
             }
           }
           &__time{
-            width: 40%;
+            position: absolute;
+            right: 5%;
             text-align: right;
-            margin-left: 0.5rem;
             text{
               text-align: right;
             }
@@ -216,7 +215,7 @@
     }
     &__text{
       line-break: strict;
-      color: black;
+      color:dimgray;
       border-radius: 4px;
       padding: 2%;
       overflow: auto;
