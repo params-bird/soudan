@@ -17,6 +17,9 @@
             #{topic.category.name}
           .topic-box__inner__right__info__messanger
             .topic-box__inner__right__info__messanger__user
-              #{topic.user.name}
+              - if topic.user.nil?
+                退会済みユーザー
+              - else
+                #{topic.user.name}
             .topic-box__inner__right__info__messanger__time
               = time_ago_in_words(topic.created_at)+"前"

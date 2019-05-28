@@ -13,9 +13,9 @@ class User < ApplicationRecord
 
   has_many :messages
   has_many :topics
-  has_many :chat_rooms
+  has_many :chat_rooms, through: :user_chat_room
   has_many :user_chat_rooms
-  has_many :thanks, dependent: :delete_all
-  has_many :bads, dependent: :delete_all
+  has_many :thanks, dependent: :destroy
+  has_many :bads, dependent: :destroy
 
 end

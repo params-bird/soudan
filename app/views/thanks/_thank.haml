@@ -1,6 +1,7 @@
-- if message.thank.blank? && message.user_id != current_user.id && message.chat_room.topic_create_user_id != message.user_id
-  #thanks-btn
-    = link_to 'ありがとう', user_message_thanks_path(user_id: message.user_id, message_id: message.id), method: :post, remote: true
-- elsif message.thank.present? && message.user_id != current_user.id && message.chat_room.topic_create_user_id != message.user_id
-  #thanks-btn-aledy
-    = link_to '&#10003; ありがとう'.html_safe, user_message_thank_path(user_id: message.user_id, message_id: message.id, id: message.thank.id), method: :delete, remote: true
+.thank-ajax{:id => "thanks-btn-#{message.id}"}
+    - if message.thank.blank? && message.user_id != current_user.id && message.chat_room.topic_create_user_id != message.user_id
+        .thanks-btn
+            = link_to 'ありがとう', user_message_thanks_path(user_id: message.user_id, message_id: message.id), method: :post, remote: true
+    - elsif message.thank.present? && message.user_id != current_user.id && message.chat_room.topic_create_user_id != message.user_id
+        .thanks-btn-aledy
+            = link_to '&#10003; ありがとう'.html_safe, user_message_thank_path(user_id: message.user_id, message_id: message.id, id: message.thank.id), method: :delete, remote: true

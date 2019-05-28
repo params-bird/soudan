@@ -12,14 +12,19 @@
               .mail-box__inner
                 .mail-box__inner__left
                   .topic-show-box__inner__user-icon
-                    = image_tag e.user.image
+                    - if e.user.present?
+                      = image_tag e.user.image
+                    - else
                 .mail-box__inner__right
                   .mail-box__info
                     -# .mail-box__info__topic_title 相談トッピック名 : #{e.chat_room.topic.title}
                     .mail-box__info__send-user-name
                       %strong
+                      - if e.user.present?
                         = e.user.name
                         さん
+                      - else
+                        退会済みユーザー
                     .mail-box__info__send-time
                       = time_ago_in_words(e.chat_room.messages.first.created_at)+"前"
                   .mail-last-message

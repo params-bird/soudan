@@ -16,7 +16,7 @@ class UserChatRoomsController < ApplicationController
     @nil_message_room_id = @current_chat_rooms - @messages               #２つの配列の差分確認のみ渡す
     UserChatRoom.where(chat_room_id: @nil_message_room_id).destroy_all            #UserChatRoomレコードの削除
     # 自分以外の反映
-    @another_rooms = UserChatRoom.where(chat_room_id: my_chat_room_ids).where('user_id != ?', current_user.id).limit(30).order(updated_at: "ASC")
+    @another_rooms = UserChatRoom.where(chat_room_id: my_chat_room_ids).where('user_id != ?', current_user.id).limit(30).order(updated_at: "DESC")
     end
   end
 

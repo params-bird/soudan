@@ -510,14 +510,14 @@
   }
 }
 
-#thanks-btn{
+.thanks-btn{
   font-size:x-small;
   color: #00a4bb;
   background-color: white;
   border:1px solid  #00a4bb;
   cursor: pointer;
 }
-#thanks-btn-aledy{
+.thanks-btn-aledy{
   font-size:x-small;
   color: white;
   background-color: #00a4bb;
@@ -525,7 +525,7 @@
   border: none;
 }
 
-#bad-btn{
+.bad-btn{
   border: none !important;
   color: gray;
   background-color: inherit;
@@ -534,7 +534,7 @@
   cursor: pointer;
   margin-left: 4px;
 }
-#bad-btn-aledy{
+.bad-btn-aledy{
   font-size:x-small;
   background-color:red;
   border: none;
